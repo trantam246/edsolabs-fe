@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="http://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Sign In</title>
+</head>
+
+<body class="sign-in-page">
+    <main class="container">
+        <img class="container__image" src="./images/login.png" alt="Sign In">
+        <div class="container__title">
+            <span class="title__welcome">Welcome Back!</span>
+            <h2 class="title__login">Please, Log In.</h2>
+        </div>
+        <form class="container__form" action="" method="post">
+            <div class="form__item form__item--user">
+                <i class="input__icon input__icon--user far fa-user "></i>
+                <input type="email" name="email" class="item__input input--user" placeholder="johnsondoe@nomail.com"
+                    autocomplete="off">
+            </div>
+            <div class="form__item form__item--password">
+                <img class="input__icon input__icon--password" src="./images/key.svg" alt="">
+                <input type="password" name="password" class="item__input input--password"
+                    placeholder="********************">
+            </div>
+            <button class="form__btn--submit btn" type="submit">
+                Continue <i class="fas fa-chevron-right "></i>
+            </button>
+            <div class="form__separator">
+                <fieldset>
+                    <legend>Or</legend>
+                </fieldset>
+            </div>
+            <a class="form__switch-link btn" href="./sign-up.html">Create an Account</a>
+        </form>
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  min-height: 100vh;
+  font-family: "SF Pro Display", sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+}
+input::placeholder {
+  color: #3c3c43;
+}
