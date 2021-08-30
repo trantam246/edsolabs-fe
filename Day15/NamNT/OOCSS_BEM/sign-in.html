@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!--Link font icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!--Link import file css-->
+    <link rel="stylesheet" href="./css/sign-in.css">
+</head>
+
+<body>
+    <!--Design figma sign-in-->
+    <!--Login-->
+    <main class="login">
+        <section class="container">
+            <!--Status bar-->
+            <div class="status">
+                <!--left-->
+                <div class="status__time">
+                    <span class="status__time--hour">
+                        9:41
+                    </span>
+                </div>
+                <!--right-->
+                <div class="status__icon">
+                    <img src="./images/Cellular Connection.png" alt="No picture">
+                    <i class="fas fa-wifi"></i>
+                    <i class="fas fa-battery-full"></i>
+                </div>
+            </div>
+            <!--End status bar-->
+
+            <!--Image login-->
+            <div class="banner">
+                <img class="banner__img" src="./images/user_login.png" alt="No picture">
+            </div>
+            <!--End Image login-->
+
+            <!--Text Login-->
+            <div class="title">
+                <div class="title__small">
+                    Wellcome Back!
+                </div>
+                <div class="title__big">
+                    Please, Login.
+                </div>
+            </div>
+            <!--End text login-->
+
+            <!--Input-->
+            <form action="" method="GET">
+                <div class="form">
+                    <div class="form__login">
+                        <div class="form__user">
+                            <img src="./images/user.png" alt="No picture">
+                            <input type="text" placeholder="Username">
+                        </div>
+                    </div>
+
+                    <div class="form__login">
+                        <div class="form__user form__password">
+                            <img src="./images/key.png" alt="No picture">
+                            <input type="password" placeholder="Password">
+                        </div>
+                    </div>
+
+                    <!--button continute-->
+                    <div class="btn">
+                        <button class="btn__item" type="submit">
+                            <a class="btn__link" href="#">
+                                <span class="btn--title">Continute</span>
+                            </a>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <!--End input-->
+            <!--Line-->
+            <div class="line">
+                <legend>--------------------------<pre>   Or   </pre>-------------------------</legend>
+            </div>
+
+            <!--button create accounnt-->
+            <a class="createAccount" href="sign-up.html">
+                <p>Create an Account</p>
+            </a>
+        </section>
+    </main>
+</body>
+
+</html>

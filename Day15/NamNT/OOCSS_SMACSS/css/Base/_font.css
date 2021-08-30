@@ -1,0 +1,14 @@
+/* define font */
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url(./font/FontsFree-Net-SFProDisplay-Regular.ttf);
+}
+
+
+/* define font*/
+
+* {
+    color: #ffffff;
+    font-family: "SF Pro Display";
+}

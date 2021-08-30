@@ -1,0 +1,14 @@
+/* css hover button continue */
+
+.input .button__continue:hover {
+    background-color: #9b33b3;
+    transition: all ease-in-out 0.5s;
+}
+
+
+/* css hover button create account */
+
+.container .createAccount:hover {
+    background: #a263b1;
+    transition: all ease-in-out 0.5s;
+}

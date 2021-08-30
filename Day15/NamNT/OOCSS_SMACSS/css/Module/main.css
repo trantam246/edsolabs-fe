@@ -1,0 +1,146 @@
+.container .statusBar {
+    padding: 12.5px 14px 12.5px 21px;
+    justify-content: space-between;
+}
+
+.divide {
+    display: flex;
+}
+
+.statusBar__time .time__hour {
+    display: block;
+    font-size: 15px;
+    width: 54px;
+    text-align: center;
+}
+
+.statusBar__icon>i {
+    margin: 0 9px 0 5px;
+}
+
+
+/* Css images login */
+
+.container .imgLogin {
+    padding: 10px 30px 5px 30px;
+}
+
+
+/* Css text login */
+
+.container .textLogin {
+    text-align: center;
+    margin-bottom: 37px;
+}
+
+.textLogin .textLogin__wellCome {
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 24px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.textLogin .textLogin__please {
+    line-height: 41px;
+    font-size: 34px;
+    font-weight: 800;
+}
+
+
+/* Css input */
+
+.container .input {
+    padding: 0 36px 32px 36px;
+}
+
+.input .input__login,
+.button__continue {
+    border: 1px solid;
+    background: #ffffff;
+    border-radius: 37px;
+    margin-bottom: 14px;
+    padding: 26.5px 0px;
+}
+
+.button__continue {
+    padding: 24.5px 0;
+}
+
+.input .input__login .login__user img {
+    color: #3C3C43;
+    padding: 0 20px 0 22px;
+}
+
+.input .input__login .login__user {
+    align-items: center;
+}
+
+.input .input__login .login__user input {
+    color: #3C3C43;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    width: 185px;
+}
+
+.login__password img {
+    height: 18px;
+}
+
+.input .input__login .login__user input:focus-visible {
+    outline: none;
+}
+
+.input .button__continue {
+    border: none;
+    background: #78258B;
+    box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+    margin-bottom: 0;
+    justify-content: center;
+    text-align: center;
+    transition: all ease-in-out 0.5s;
+}
+
+.input .button__continue .continue__item {
+    align-items: center;
+    background: none;
+    border: none;
+    line-height: 19px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.input .button__continue .continue__item .item__link {
+    text-decoration: none;
+}
+
+.input .button__continue .continue__item .item--text {
+    display: block;
+    margin-right: 5px !important;
+}
+
+
+/* css line */
+
+.container .line {
+    padding: 0 36px 32px 36px;
+    text-align: center;
+}
+
+.container .line legend {
+    justify-content: center;
+}
+
+.container .createAccount {
+    background: rgba(255, 255, 255, 0.28);
+    border-radius: 37px;
+    display: block;
+    padding: 26.5px 0;
+    margin: 0 36px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: all ease-in-out 0.5s;
+}
