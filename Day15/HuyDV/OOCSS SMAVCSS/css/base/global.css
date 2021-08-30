@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "SFPro--bold";
+    src: url(../../font/SF-Pro-Display-Bold.otf);
+}
+
+@font-face {
+    font-family: "SFPro";
+    src: url(../../font/FontsFree-Net-SFProDisplay-Regular.ttf);
+}
+
+@font-face {
+    font-family: "SFPro--text";
+    src: url(../../font/SF-Pro-Text-Regular.otf);
+}
+
+@font-face {
+    font-family: "SFPro--medium";
+    src: url(../../font/SF-Pro-Display-Medium.otf);
+}
+
+@font-face {
+    font-family: "SFPro--light";
+    src: url(../../font/SF-Pro-Display-Light.otf);
+}
+
+html{
+    font-family: "SFPro", sans-serif;
+}
+a {
+    text-decoration: none;
+}
+.text-center {
+    text-align: center;
+}
+input:focus {
+    outline: none;
+    border: none;
+}
+
