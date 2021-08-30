@@ -4,17 +4,17 @@
 @import url("./state.css");
 @import url("./theme.css");
 
-.container__button-container__submit-btn {
+.container__btn--submit {
   background-color: #78258b;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
 }
-.container__button-container__submit-btn:hover {
+.container__btn--submit:hover {
   background-color: #ac35c7cb;
 }
-.separator-container {
+.container__separator {
   color: #fff;
   position: relative;
   width: 100%;
@@ -23,16 +23,16 @@
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
 }
-.separator-container__dashed {
+.container__dashed-separate {
   border-top: 1px dashed rgba(255, 255, 255, 0.4);
 }
-.separator-container__text {
+.container__text-separate {
   padding: 0 0.5rem;
 }
-.container__button-container__nav-btn {
+.container__btn--nav {
   background: rgba(255, 255, 255, 0.28);
   box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
 }
-.container__button-container__nav-btn:hover {
+.container__btn--nav:hover {
   background: rgba(255, 255, 255, 0.445);
 }

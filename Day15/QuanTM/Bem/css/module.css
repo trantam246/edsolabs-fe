@@ -16,11 +16,11 @@
 .font-weight--800 {
   font-weight: 800;
 }
-.container__form-container {
+.container__form {
   width: 100%;
   margin: 2rem 0;
 }
-.container__form-container__input {
+.container__input {
   background: #fff;
   border-radius: 1.5rem;
   margin-bottom: 0.8rem;
@@ -29,10 +29,10 @@
   grid-template-columns: auto 1fr;
   align-items: center;
 }
-.container__form-container__input__icon {
+.container__icon {
   margin: 0 1rem;
 }
-.container__button-container__btn {
+.container__btn {
   width: 100%;
   border-radius: 2rem;
   color: #fff;

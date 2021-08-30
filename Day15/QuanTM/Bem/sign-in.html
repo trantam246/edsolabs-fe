@@ -12,52 +12,43 @@
     <title>Sign In</title>
   </head>
   <body>
-    <main class="container login-theme grid grid--center">
+    <main class="container container--login-theme grid grid--center">
       <section>
         <img src="./images/login-logo.png" alt="logo" class="logo-image" />
         <section class="text--white grid grid--center">
           <h2 class="font-weight--400">Welcome Back!</h2>
           <h1 class="font-weight--800">Please, Log In.</h1>
         </section>
-        <form class="container__form-container">
-          <div class="container__form-container__input">
+        <form class="container__form">
+          <div class="container__input">
             <img
               src="./images/user.png"
               alt="username icon"
-              class="container__form-container__input__icon"
+              class="container__icon"
             />
             <input type="text" name="username" placeholder="Username" />
           </div>
-          <div class="container__form-container__input">
+          <div class="container__input">
             <img
               src="./images/key.png"
               alt="password icon"
-              class="container__form-container__input__icon"
+              class="container__icon"
             />
             <input type="password" name="password" placeholder="Password" />
           </div>
-          <div class="container__button-container">
-            <button
-              class="
-                container__button-container__btn
-                container__button-container__submit-btn
-              "
-            >
+          <div class="container__buttons">
+            <button class="container__btn container__btn--submit">
               Continue
               <i class="material-icons-outlined">chevron_right</i>
             </button>
-            <div class="separator-container">
-              <hr class="separator-container__dashed" />
-              <p class="separator-container__text">Or</p>
-              <hr class="separator-container__dashed" />
+            <div class="container__separator">
+              <hr class="container__dashed-separate" />
+              <p class="container__text-separate">Or</p>
+              <hr class="container__dashed-separate" />
             </div>
             <a
               href="./sign-up.html"
-              class="
-                container__button-container__btn
-                container__button-container__nav-btn
-                grid grid--center
-              "
+              class="container__btn container__btn--nav grid grid--center"
               >Create an Account</a
             >
           </div>

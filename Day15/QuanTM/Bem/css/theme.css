@@ -1,17 +1,17 @@
-.signup-theme {
+.container--signup-theme {
   background: linear-gradient(180deg, #9183de 0%, #a094e3 100%);
 }
-.signup-theme .button-container__submit-btn {
+.container--signup-theme .container__btn--submit {
   background: #52439a;
   box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
 }
-.signup-theme .button-container__-btn:hover {
+.container--signup-theme .container__btn--submit:hover {
   background: #52439aa8;
 }
-.signup-theme .button-container__nav-btn {
+.container--signup-theme .container__btn--nav {
   background: rgba(255, 255, 255, 0.28);
   box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
 }
-.signup-theme .button-container__nav-btn:hover {
+.container--signup-theme .container__btn--nav:hover {
   background: rgba(255, 255, 255, 0.438);
 }
