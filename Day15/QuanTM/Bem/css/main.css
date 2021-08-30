@@ -4,14 +4,14 @@
 @import url("./state.css");
 @import url("./theme.css");
 
-.button-container__submit-btn {
+.container__button-container__submit-btn {
   background-color: #78258b;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
 }
-.button-container__submit-btn:hover {
+.container__button-container__submit-btn:hover {
   background-color: #ac35c7cb;
 }
 .separator-container {
@@ -29,10 +29,10 @@
 .separator-container__text {
   padding: 0 0.5rem;
 }
-.button-container__nav-btn {
+.container__button-container__nav-btn {
   background: rgba(255, 255, 255, 0.28);
   box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
 }
-.button-container__nav-btn:hover {
+.container__button-container__nav-btn:hover {
   background: rgba(255, 255, 255, 0.445);
 }
