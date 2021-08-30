@@ -1,0 +1,38 @@
+.grid--center {
+  display: grid;
+  place-items: center;
+}
+.logo-image {
+  max-width: 100%;
+}
+.text--white {
+  color: white;
+}
+.font-weight--400 {
+  font-weight: 400;
+}
+.font-weight--800 {
+  font-weight: 800;
+}
+.form-container {
+  width: 100%;
+  margin: 2rem 0;
+}
+.form-container__input {
+  background: #fff;
+  border-radius: 1.5rem;
+  margin-bottom: 0.8rem;
+  height: 3rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+.form-container__input__icon {
+  margin: 0 1rem;
+}
+.btn {
+  width: 100%;
+  border-radius: 2rem;
+  color: #fff;
+  height: 3rem;
+}
