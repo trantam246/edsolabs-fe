@@ -1,0 +1,9 @@
+@font-face {
+    font-family: sfPro;
+    src: url(../assets/font/FontsFree-Net-SFProDisplay-Regular.ttf);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
