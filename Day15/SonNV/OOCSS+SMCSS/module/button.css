@@ -1,0 +1,59 @@
+@import url("./animation.css");
+
+
+.btn {
+    font-family: "sfProText";
+    border: 0px solid;
+    width: 342px;
+    height: 70px;
+    border-radius: 37px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    animation: moveInBottom 0.5s ease-out 0.5s;
+    animation-fill-mode: backwards;
+  }
+  
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  
+  .btn__custom {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-decoration: none;
+    padding: 26px 0 25px 0;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.28);
+  }
+  
+  .form__unline {
+    margin: 32px 0 32px 0;
+  }
+
+  /* ------- Sign Up ---------- */
+  .container__signup .btn {
+    box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+  }
+  
+  .btn__create {
+    background: #52439a;
+  }
+  .btn__custom {
+    background: rgba(255, 255, 255, 0.28);
+  }
+  
+  /*  --------- Sign In ------------ */
+
+  .container__signin .btn {
+    box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+  }
+  
+  .btn__continue {
+    background: #78258b;
+  }
+  
