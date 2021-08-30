@@ -1,0 +1,26 @@
+  /* Header */
+    
+  .header {
+   display: flex;
+   /* height: 44px; */
+   line-height: 44px;
+   justify-content: space-between;
+}
+
+.header_time {
+   color: #ffffff;
+}
+
+.header_right {
+   display: flex;
+}
+
+.icon_ {
+   color: #ffffff;
+}
+
+.icon {
+   color: #ffffff;
+   padding-right: 15px;
+}
+/* End Header */
