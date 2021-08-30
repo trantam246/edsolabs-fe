@@ -1,0 +1,26 @@
+.separator {
+    text-align: center;
+    position: relative;
+    margin: 32px 0 30px 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.separator::before,
+.separator::after {
+    content: "";
+    height: 0;
+    width: 42%;
+    position: absolute;
+    top: 50%;
+    border: dashed 1px;
+}
+
+.separator::before {
+    left: 0;
+}
+
+.separator::after {
+    right: 0;
+}

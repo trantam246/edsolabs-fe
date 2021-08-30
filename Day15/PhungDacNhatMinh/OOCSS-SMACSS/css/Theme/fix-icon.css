@@ -1,0 +1,28 @@
+form .form__row .icon {
+    position: absolute;
+    top: 38%;
+    left: 22px;
+}
+
+form .btn .icon {
+    margin-left: 8px;
+}
+
+.icon {
+    background: url(/Day15/PhungDacNhatMinh/img/css_sprites.png);
+    width: 13px;
+    height: 20px;
+    display: inline-block;
+}
+
+.icon.icon--key {
+    background-position: -10px -10px;
+}
+
+.icon.icon--user {
+    background-position: -75px -11px;
+}
+
+.icon.icon--right {
+    background-position: -42px -10px;
+}
