@@ -1,0 +1,40 @@
+/* form  */
+.form {
+    padding: 0 6px;
+}
+
+.form__row {
+    background: #FFFFFF;
+    border-radius: 37px;
+    Width: 342px;
+    Height: 74px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.form__row-pass{
+    height: 72px;
+}
+.form__row-input {
+    font-size: 15px;
+    flex-grow: 1;
+    margin: 0px 20px;
+    border: none;
+}
+
+.form .form__row-input::placeholder {
+    font-size: 15px;
+    color: #3C3C43;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+.form .form__row-input:focus {
+    border: none;
+    outline: none;
+}
+
+.form__row-icon {
+    margin-left: 20px;
+}
