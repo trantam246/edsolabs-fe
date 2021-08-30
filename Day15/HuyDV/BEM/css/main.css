@@ -116,7 +116,6 @@ input:focus {
 /* button */
 
 .btn {
-    display: inline-block;
     width: 100%;
     font-size: 16px;
     line-height: 19px;
