@@ -1,0 +1,17 @@
+.form .form__row {
+    position: relative;
+    margin-bottom: 14px;
+}
+
+.form input::placeholder {
+    font-size: 15px;
+}
+
+.form input:focus {
+    border: 0;
+    outline: none;
+}
+
+.form input[type="password"] {
+    padding: 27px 50px;
+}
