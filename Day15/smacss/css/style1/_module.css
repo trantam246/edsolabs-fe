@@ -1,0 +1,129 @@
+.bg-sign-in{
+    background: linear-gradient(180deg, #E5B2CA 0%, #CD82DE 100%);;
+}
+@font-face {
+    font-family: myFont;
+    src: url(../../font/FontsFree-Net-SFProDisplay-Regular.ttf);
+}
+.font{
+    font-family: myFont;
+}
+.no-border{
+    border:none;
+    outline: none;
+}
+.white-text{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.black-text{
+    color: #3C3C43;
+    font-weight: 600;
+}
+.header{
+    display: flex;
+}
+.header-items{
+    margin: auto 0;
+    height: 21px;
+}
+.left-time{
+    margin-left: 21px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.right-icons{
+    margin-left: auto;
+    margin-right: 15px;
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.welcome-text{
+    margin-top: 5px;
+    margin-bottom: 37px;
+}
+.welcome-text p{
+    margin: 0px 0px 7px 0px;
+    font-weight: 600;
+    font-size: 20px;
+}
+.welcome-text h1{
+    margin: 0;
+    font-size: 34px;
+    font-weight: 800;
+}
+.btn{
+    background-color: #FFFFFF;
+    height: 70px;
+    border-radius: 37px;
+    margin-bottom: 14px;
+    width: 342px;
+    display: flex;
+    outline:none;
+}
+.btn-items{
+    margin-top: auto;
+    margin-bottom:auto;
+}
+.input-icons{
+    margin-left: 21px;
+    margin-right: 25px;
+}
+.input-field{
+    width: 70%;
+    font-size: 15px;
+}
+.email{
+    height: 74px;
+}
+.password{
+    height: 72px;
+}
+.submit{
+    margin: auto;
+    background-color: inherit;
+    font-size: 16px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 130px;
+    padding-right: 130px;
+    border-radius: 37px;
+}
+.btn-submit-sign-in{
+    background-color: #78258B;
+    box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+}
+.separate{
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left:10px ;
+    margin-right:10px ;
+    margin-bottom: 32px;
+}
+.separate::before{
+    content: "";
+    border: 1px dashed rgba(255, 255, 255, 0.4);
+    width: 148px;
+}
+.separate::after{
+    content: "";
+    border: 1px dashed rgba(255, 255, 255, 0.4);
+    width: 148px;
+}
+.link-button-sign-in{
+    background-color: rgba(255, 255, 255, 0.28);
+    box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+}
+.link{
+    padding-left: 107px;
+    padding-right: 107px;
+    
+}
+
