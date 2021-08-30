@@ -1,0 +1,209 @@
+body{
+    background-color: #e9e9e9;
+    font-family: SF Display;
+    margin: 0;
+    padding: 0;
+}
+button {
+    font-family: SF Display;
+    color: white;
+}
+input::placeholder {
+    font-family: SF Display;
+    font-weight: bold;
+}
+input {
+    outline: none;
+}
+.box {
+    width: 414px;
+    height:896px;
+    margin: 0 auto;
+}
+.sign-in {
+    background: linear-gradient(180deg, rgba(229,178,202,1) 0%, rgba(205,130,222,1) 100%);
+}
+.sign-up {
+    background: linear-gradient(180deg, #9183DE 0%, #A094E3 100%);
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.container__header {
+    display: flex;
+    flex-wrap: wrap;
+}
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 414px;
+    height: 44px;
+    font-weight: 500;
+    color:white;
+}
+.navbar__time {
+    padding-left: 21px;
+    padding-top: 10.33px;
+}
+.navbar__battery {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 10.33px;
+    padding-right: 9px;
+}
+.navbar__battery .navbar__icon {
+    padding-right: 6.33px;
+}
+.navbar--icon--cellular {
+    width: 18.77px;
+    height: 10.67px;
+}
+.navbar--icon--wifi {
+    width: 16.93px;
+    height: 11px;
+}
+.navbar--icon--battery{
+    width: 24.33px;
+    height: 11.33px;
+}
+.container__logo {
+    margin: 0 auto;
+}
+.logo {
+    width: 353px;
+    height: 290px;
+}
+.container__logo__text {
+    text-align: center;
+    padding-top: 5px;
+    color:white;
+}
+
+.container__logo__text h1 {
+    margin: 6px 0;
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 41px;
+}
+.container__logo__text p{
+    color: rgba(255, 255, 255, 0.75);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0;
+}
+.container__content {
+    padding-top: 20px;
+} 
+.input__field {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.btn {
+    width: 342px;
+}
+.input--content {
+    margin: 8px 0;
+    height: 74px;
+    border-radius: 37px;
+    background-color: white;
+    text-align: center;
+}
+.input__btn {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 37px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+}
+.sign--in--btn {
+    background-color:#78258B;
+}
+.sign-up--btn {
+    background-color:#52439A;
+}
+.input__btn:hover {
+    cursor: pointer;
+}
+.container__content input {
+    position: relative;
+    border: none;
+    width: 210px;
+    margin: 20px 0;
+    padding: 10px 0;
+    margin-right: 30px;
+}
+
+.container__content img {
+    padding-right: 30px;
+    margin: -3px auto;
+}
+
+.footer--btn {
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    color:white;
+    font-size: 16px;
+    border: none;
+
+}
+
+.footer--btn a {
+    text-decoration:none;
+    border-radius: 37px;
+    color:white;
+}
+
+.container__footer {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 25px;
+    color: white;
+}
+.option__text{
+    margin-bottom: 57px;
+}
+
+.text {
+    position: relative;
+}
+.text::before {
+    content: "";
+    display: block;
+    width: 140px;
+    border: 1px dashed rgba(255, 255, 255, 0.4);
+    top: 50%;
+    position: absolute;
+    margin-left: 10px;
+}
+.text::after {
+    content: "";
+    display: block;
+    width: 140px;
+    border: 1px dashed rgba(255, 255, 255, 0.4);
+    top: 50%;
+    position: absolute;
+    left: 27px;
+}
+.btn__footer {
+    background: rgba(255, 255, 255, 0.28);
+    box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+    border-radius: 37px;
+    padding: 25px 30%;
+}
+.login-btn {
+    padding: 25px 43%;
+}
+@font-face {
+    font-family: SF Display;
+    src: url(./font/FontsFree-Net-SFProDisplay-Regular.ttf);
+  }
+  
