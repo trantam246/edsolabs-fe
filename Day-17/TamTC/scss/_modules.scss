@@ -2,11 +2,11 @@
   border: none;
   width: 100%;
   border-radius: $borderRadius;
-  cursor: pointer;
 }
 @mixin btn($btnColor) {
   @include input;
   color: $textColor;
+  cursor: pointer;
   background-color: $btnColor;
   box-shadow: $boxShaDownBtn;
 }
