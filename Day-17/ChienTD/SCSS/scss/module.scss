@@ -1,0 +1,158 @@
+@import "./variables";
+@import "./mixin";
+
+
+/* Style container */
+.container{
+    background: linear-gradient(180deg, #E5B2CA 0%, #CD82DE 100%);
+    margin: auto;
+    @include resize(414px, 896px);
+}
+
+// style thanh status
+.style-content-status {
+    position: absolute;
+    @include fontSize(15px);
+    top: 7px;
+}
+
+.left_status_bar {
+    @include resize(54px, 21px);
+    left: 21px;
+    span {
+        position: absolute;
+        bottom: 0px;
+        left: 25%;
+    }
+}
+
+.right_status_bar {
+    right: 14px;
+    i {
+        margin-left: 5px;
+    }
+}
+
+/* Style ảnh nền */
+.header {
+    @include resize(353px, 290px);
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    img {
+        width: 423px;
+        position: absolute;
+        left: -55px;
+        top: -80px;
+    }
+}
+
+/* Style title page */
+.title_page {
+    text-align: center;
+    font-family: sfPro;
+    p:first-child{
+        font-weight: 600;
+        @include fontSize(20px);
+        line-height: 24px;
+        color: rgba(255, 255, 255, 0.75);
+    }
+    p:last-child{
+        font-weight: 800;
+        @include fontSize(34px);
+        line-height: 41px;
+        color: $textWhite;
+    }
+}
+
+/* Style Form login */
+.form {
+    margin-top: 37px;
+    .style_input {
+        @include style-input();
+        input {
+            color: #3C3C43;
+            position: absolute;
+            left: 60px;
+            border: none;
+            @include fontSize(15px);
+            font-weight: 600;
+            top: 20px;
+            @include resize(185px, 30px);
+        }
+        img {
+            width: 13px;
+            position: absolute;
+            top: 30px;
+            left: 22px;
+        }
+    }
+    .password {
+        margin-top: 14px;
+        height: 72px;
+    }
+    .sumbit {
+        text-align: center;
+        margin-top: 14px;
+        line-height: 70px;
+        cursor: pointer;
+        margin-left: 31px;
+        border: none;
+        font-family: sfPro;
+    }
+    .continue{
+        background-color: #78258B;
+        box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+    }
+    span {
+        font-weight: 700;
+        @include fontSize(16px);
+        color: $textWhite;
+    }
+    .user {
+        height: 74px;
+    }
+    button {
+        height: 70px;
+    }
+}
+
+/* Style khoảnh cách (or) */
+.or {
+    @include resize(340px, 16px);
+    color: $textWhite;
+    margin: auto;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.or::before {
+    content: "----------------------------- ";
+}
+
+.or::after {
+    content: "----------------------------";
+}
+
+
+/* Style chuyển trang */
+.change_page {
+    @include style-input();
+    background: rgba(255, 255, 255, 0.28);
+    box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+    color: $textWhite;
+    text-align: center;
+    line-height: 70px;
+    @include fontSize(16px);
+    cursor: pointer;
+    font-family: sfPro;
+    span 
+        a:visited{
+        color: $textWhite;
+        text-decoration: none;
+        }
+}
+
+
+
