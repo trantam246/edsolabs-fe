@@ -1,0 +1,24 @@
+@import "./mixin";
+@import "./variables";
+.container {
+  margin: 0 auto;
+  max-width: 414px;
+  min-width: 320px;
+  width: 100%;
+  padding: 10px 30px 45px 30px;
+}
+
+.status {
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+
+.l-status {
+    @include flex(center,space-between);
+}
+ 
+.page-image {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}

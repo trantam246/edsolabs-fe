@@ -1,0 +1,59 @@
+@import "./_variables.scss";
+
+.status {
+  .time {
+    color: $white-color;
+  }
+}
+.content {
+  h2 {
+    color: $white-color;
+  }
+
+  h4 {
+    color: rgba($white-color, 0.75);
+  }
+
+  .btn {
+    color: $white-color;
+  }
+  .form {
+    input {
+      &:focus {
+        box-shadow: 0px 4px 4px rgba($black-color, 0.25);
+      }
+
+      &::placeholder {
+        color: $black-color;
+      }
+    }
+
+    .separator {
+      color: $white-color;
+      &::before,
+      &::after {
+        content: "";
+        height: 0;
+        width: 42%;
+        position: absolute;
+        top: 50%;
+        border: dashed 1px;
+        border-color: rgba($white-color, 0.4);
+      }
+      &:before {
+        left: 0;
+      }
+
+      &:after {
+        right: 0;
+      }
+    }
+  }
+}
+.sign-in-page {
+  background: $bg-login-main-color;
+}
+
+.sign-up-page {
+  background: $bg-sign-main-color;
+}
