@@ -1,0 +1,23 @@
+@import "../base/variable";
+@import "../abstracts/mixin";
+@import "../abstracts/function";
+.btn-link {
+    background: $colorBgLInk;
+    box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+    text-decoration: none;
+    display: block;
+    line-height: 70px;
+    text-align: center;
+    margin: 0;
+    &-up{
+        @include  boxShadow($color:$colorBoxShadowLingUp)
+        
+    }
+    &-in{
+        @include  boxShadow($color:$colorBoxShadowLingIn)
+    }
+    &:hover {
+        background: reduce($colorBgLInk, 0.4);
+        transition: 0.5s all ease-in-out;
+    }
+}

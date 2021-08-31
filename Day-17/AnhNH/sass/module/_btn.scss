@@ -1,0 +1,33 @@
+@import "../base/variable";
+@import "../abstracts/mixin";
+.layout__btn {
+    @include btn();
+    &-up {
+        background-color: $colorBtnUp;
+        @include boxShadow($colorBoxShadowUp);
+        .angle-right{
+            transition: 1s all ease-in-out;
+            transform: translateY(5px);
+        }
+    }
+    &-up:hover {
+        background: rgba($colorBtnUp, .7);
+    }
+    &-up:hover {
+        .angle-right{
+            color: $colorBtnIn;
+            transform: translate(5px, 5px);
+            transition: 1s all ease-in-out;
+        }
+    }
+    &-in{
+        background-color: $colorBtnIn;
+        @include boxShadow($colorBoxShadowIn)
+    }
+    &-in:hover {
+        background: rgba($colorBtnIn, .7);
+        
+        // background: darken($colorBtnIn, 10%);
+    }
+
+}

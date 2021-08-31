@@ -1,0 +1,32 @@
+@import "../base/variable";
+
+.layout__separator {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $colorWhite;
+    position: relative;
+    text-align: center;
+    margin-bottom: 32px;
+    &::before,
+    &::after {
+        content: "";
+        // border: 1px dashed rgba(255, 255, 255, 0.4);
+        border-top:1px dashed rgba(255, 255, 255, 0.4);
+        position: absolute;
+        top: 50%;
+        width: 43%;
+        height: 0;
+        opacity: .5;
+    }
+
+    &::before {
+        right: 0;
+    }
+
+    &::after {
+        left: 0;
+    }
+}

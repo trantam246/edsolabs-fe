@@ -1,0 +1,37 @@
+@import "../base/variable";
+
+.form {
+    padding: 0 6px;
+    &__row {
+        background: $colorWhite;
+        border-radius: $bdR;
+        Width: 342px;
+        Height: 74px;
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &-pass{
+            height: 72px;
+        }
+        &-input {
+            font-size: $fontSz15;
+            flex-grow: 1;
+            margin: 0px 20px;
+            border: none;
+        }
+        &-input::placeholder {
+            font-size: $fontSz15;
+            color: $denxam;
+            font-weight: 600;
+            line-height: 18px;
+        }
+        &-input:focus {
+            border: none;
+            outline: none;
+        }
+        &-icon {
+            margin-left: 20px;
+        }
+    }
+}
