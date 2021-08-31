@@ -1,0 +1,16 @@
+@import 'define.scss';
+@font-face {
+    src: url("/Day15/PhungDacNhatMinh/font/SFPRODISPLAYBOLD.OTF");
+    font-family: SFPR;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    align-items: center;
+    font-family: SFPR;
+    font-size: $fontMain;
+}

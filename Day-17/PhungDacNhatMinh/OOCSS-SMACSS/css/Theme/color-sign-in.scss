@@ -1,0 +1,25 @@
+@import '../Base/define.scss';
+body.sign-in-page {
+    background: linear-gradient(180deg, #E5B2CA 0%, #CD82DE 100%);
+}
+
+@mixin theme ($theme) {
+    background: $theme;
+    box-shadow: $boxShadowbtnSI;
+}
+
+form.form--sign-in .btn {
+    @include theme($bgColorSIbtn)
+}
+
+form.form--sign-in .btn:hover {
+    background-color: rgba(120, 37, 139, 0.6);
+}
+
+form.form--sign-in .btn.btn--link {
+    @include theme (rgba(255, 255, 255, 0.19))
+}
+
+form.form--sign-in .btn--link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}

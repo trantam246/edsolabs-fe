@@ -1,0 +1,16 @@
+@import '../Base/define.scss';
+.btn {
+    border-radius: $borderRadiusMain;
+    width: 100%;
+    cursor: pointer;
+    font-size: $fontMain;
+    font-style: normal;
+    font-weight: bold;
+    line-height: $lineHeight;
+    padding-top: 26px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+}
