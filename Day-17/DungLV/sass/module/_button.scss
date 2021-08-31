@@ -1,0 +1,46 @@
+@import "../base/global";
+@import "../base/variable";
+@import "../base/mixin";
+@import "../base/fonts";
+.btn {
+    font-family: pro;
+    @include flexCenter();
+    font-size: 16px;
+    color: $ColorWhite;
+    width: 342px;
+    height: 70px;
+    border-radius: 37px;
+    outline: none;
+    border: none;
+    @include bgcButton("pink");
+    cursor: pointer;
+    &--blue {
+        @include bgcButton("blue");
+    }
+    &--light {
+        @include bgcButton("light");
+    }
+    &--login {
+        @include bgcButton("login");
+    }
+}
+@function hoverBtn($color, $fixColor) {
+    $save: darken($color, $fixColor);
+    @return $save;
+}
+.btn:hover {
+    background: hoverBtn(#78258b, 10%);
+    transition: 0.5s ease-in-out;
+}
+.btn--blue:hover {
+    background: hoverBtn(#52439a, 10%);
+    transition: 0.5s ease-in-out;
+}
+.btn--light:hover {
+    background: hoverBtn(rgba(255, 255, 255, 0.28), 25%);
+    transition: 0.5s ease-in-out;
+}
+.btn--login:hover {
+    background: hoverBtn(rgba(255, 255, 255, 0.28), 25%);
+    transition: 0.5s ease-in-out;
+}

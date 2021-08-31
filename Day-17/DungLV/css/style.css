@@ -1,0 +1,242 @@
+@font-face {
+  font-family: myFontFree;
+  src: url("../fonts/FontsFree-Net-SFProDisplay-Regular.ttf");
+}
+@font-face {
+  font-family: Boldd;
+  src: url("../fonts/SF-Pro-Display-Bold.otf");
+}
+@font-face {
+  font-family: pro;
+  src: url("../fonts/SF-Pro-Display-Medium.otf");
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: myFontFree;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+fieldset {
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 1px dashed rgba(255, 255, 255, 0.4);
+  margin: 23px 0 17px 0;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: myFontFree;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+fieldset {
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 1px dashed rgba(255, 255, 255, 0.4);
+  margin: 23px 0 17px 0;
+}
+
+@font-face {
+  font-family: myFontFree;
+  src: url("../../fonts/FontsFree-Net-SFProDisplay-Regular.ttf");
+}
+@font-face {
+  font-family: Boldd;
+  src: url("../../fonts/SF-Pro-Display-Bold.otf");
+}
+@font-face {
+  font-family: pro;
+  src: url("../../fonts/SF-Pro-Display-Medium.otf");
+}
+.layout {
+  width: 414px;
+  height: 896px;
+  padding: 54px 36px 0 36px;
+  margin: 100px auto;
+  text-align: center;
+  background: linear-gradient(180deg, #e5b2ca 0%, #cd82de 100%);
+}
+.layout__title {
+  font-size: 20px;
+  font-weight: 600px;
+  color: #ffffff;
+  opacity: 0.75;
+  margin-bottom: 7px;
+  line-height: 23, 87px;
+  letter-spacing: 1.1px;
+}
+.layout__request {
+  font-family: pro;
+  font-size: 34px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 37px;
+  letter-spacing: 1.1px;
+}
+.layout--signup {
+  background: linear-gradient(180deg, #9183de 0%, #a094e3 100%);
+}
+.layout__or {
+  font-size: 14px;
+  padding: 12px;
+  color: #ffffff;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: myFontFree;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+fieldset {
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 1px dashed rgba(255, 255, 255, 0.4);
+  margin: 23px 0 17px 0;
+}
+
+@font-face {
+  font-family: myFontFree;
+  src: url("../../fonts/FontsFree-Net-SFProDisplay-Regular.ttf");
+}
+@font-face {
+  font-family: Boldd;
+  src: url("../../fonts/SF-Pro-Display-Bold.otf");
+}
+@font-face {
+  font-family: pro;
+  src: url("../../fonts/SF-Pro-Display-Medium.otf");
+}
+.btn {
+  font-family: pro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #ffffff;
+  width: 342px;
+  height: 70px;
+  border-radius: 37px;
+  outline: none;
+  border: none;
+  background-color: #78258b;
+  box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+  cursor: pointer;
+}
+.btn--blue {
+  background-color: #52439a;
+  box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+}
+.btn--light {
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+}
+.btn--login {
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+}
+
+.btn:hover {
+  background: #551a63;
+  transition: 0.5s ease-in-out;
+}
+
+.btn--blue:hover {
+  background: #3f3476;
+  transition: 0.5s ease-in-out;
+}
+
+.btn--light:hover {
+  background: rgba(191, 191, 191, 0.28);
+  transition: 0.5s ease-in-out;
+}
+
+.btn--login:hover {
+  background: rgba(191, 191, 191, 0.28);
+  transition: 0.5s ease-in-out;
+}
+
+.form__input {
+  position: relative;
+}
+.form__input input {
+  color: #3c3c43;
+  font-weight: 600;
+  font-size: 15px;
+  background-color: #ffffff;
+  border-radius: 37px;
+  width: 342px;
+  height: 74px;
+  padding: 28px 97px 28px 60px;
+  margin-bottom: 14px;
+  transition: transform 0.3s linear;
+}
+.form__icon {
+  position: absolute;
+  top: 29.89px;
+  left: 21.87px;
+  z-index: 9999;
+}
+
+.form__input--password input {
+  color: var(--black);
+  font-weight: 600;
+  font-size: 14px;
+  height: 72px;
+  padding: 28px 159px 27px 50px;
+}
+
+input:focus {
+  transform: scale(1.01);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,31 @@
+@mixin bgcLayout($value) {
+    @if ($value == "pink") {
+        background: linear-gradient(180deg, #e5b2ca 0%, #cd82de 100%);
+    }
+    @if ($value == "Blue") {
+        background: linear-gradient(180deg, #9183de 0%, #a094e3 100%);
+    }
+}
+@mixin flexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin bgcButton($value) {
+    @if ($value == "light") {
+        background: rgba(255, 255, 255, 0.28);
+        box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+    }
+    @if ($value == "login") {
+        background: rgba(255, 255, 255, 0.28);
+        box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+    }
+    @if ($value == "pink") {
+        background-color: #78258b;
+        box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+    }
+    @if ($value == "blue") {
+        background-color: #52439a;
+        box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+    }
+}
