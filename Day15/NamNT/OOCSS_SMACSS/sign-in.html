@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!--Link font icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!--Link import file css-->
+    <link rel="stylesheet" href="./css/Base/_reset.css">
+    <link rel="stylesheet" href="./css/Base/_font.css">
+    <link rel="stylesheet" href="./css/Layout/_layout.css">
+    <link rel="stylesheet" href="./css/State/_hover.css">
+    <link rel="stylesheet" href="./css/Module/main.css">
+</head>
+
+<body>
+    <!--Design figma sign-in-->
+    <!--Login-->
+    <main class="login">
+        <section class="container">
+            <!--Status bar-->
+            <div class="statusBar divide">
+                <!--left-->
+                <div class="statusBar__time">
+                    <span class="time__hour">
+                        9:41
+                    </span>
+                </div>
+                <!--right-->
+                <div class="statusBar__icon">
+                    <img src="./images/Cellular Connection.png" alt="No picture">
+                    <i class="fas fa-wifi"></i>
+                    <i class="fas fa-battery-full"></i>
+                </div>
+            </div>
+            <!--End status bar-->
+
+            <!--Image login-->
+            <div class="imgLogin">
+                <img class="imgLogin__item" src="./images/user_login.png" alt="No picture">
+            </div>
+            <!--End Image login-->
+
+            <!--Text Login-->
+            <div class="textLogin">
+                <div class="textLogin__wellCome">
+                    Wellcome Back!
+                </div>
+                <div class="textLogin__please">
+                    Please, Login.
+                </div>
+            </div>
+            <!--End text login-->
+
+            <!--Input-->
+            <form action="" method="GET">
+                <div class="input">
+                    <div class="input__login">
+                        <div class="login__user divide">
+                            <img src="./images/user.png" alt="No picture user">
+                            <input type="text" placeholder="johnsondoe@nomail.com">
+                        </div>
+                    </div>
+
+                    <div class="input__login">
+                        <div class="login__user divide login__password">
+                            <img src="./images/key.png" alt="No picture key">
+                            <input type="password" placeholder="***************">
+                        </div>
+                    </div>
+
+                    <!--Continute-->
+                    <div class="button__continue divide">
+                        <button class="continue__item divide" type="submit">
+                            <a class="item__link" href="#">
+                                <span class="item--text">Continute</span>
+                            </a>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <!--End input-->
+            <!--Line-->
+            <div class="line">
+                <legend class="divide">--------------------------<pre>   Or   </pre>-------------------------</legend>
+            </div>
+
+            <!--button create accounnt-->
+            <a class="createAccount" href="sign-up.html">
+                <p>Create an Account</p>
+            </a>
+        </section>
+    </main>
+</body>
+
+</html>
