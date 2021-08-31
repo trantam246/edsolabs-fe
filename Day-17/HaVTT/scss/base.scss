@@ -1,0 +1,51 @@
+// variable
+
+$fontFamily: "SF Pro Display", sans-serif;
+$a: 600;
+$b: 16px;
+$color: #3C3C43;
+
+// reset
+
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+}
+
+:root {
+  --color-text: #ffffff;
+  --border-radius: 37px;
+}
+
+body {
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: $a;
+
+    @media screen and (max-height: 750px) {
+        #main {
+        height: 750px;
+        }
+    }
+
+    input {
+        outline: none;
+        padding-left: 56px;
+        padding-right: 36px;
+        box-sizing: border-box;
+        font-weight: $a;
+        font-size: $b;
+        line-height: $b+2px;
+        &::placeholder {
+            color: $color;
+        }
+    }
+      
+    .btn-base {
+        border: none;
+        width: 100%;
+        border-radius: var(--border-radius);
+    }
+}

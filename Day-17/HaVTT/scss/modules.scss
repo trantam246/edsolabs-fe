@@ -1,0 +1,136 @@
+@import "./mixin.scss";
+
+.l-header {
+    img {
+        width: 353px;
+    }
+}
+.l-container {
+    .container__title {
+        @include flexCenter;
+        min-width: 227px;
+        text-align: center;
+        margin-left: -4px;
+        flex-direction: column;
+        color: var(--color-text);
+        .container__title-welcome {
+            font-size: 20px;
+            line-height: 24px;
+            color: rgba(255, 255, 255, 0.75);
+        }
+        .container__title-content {
+            font-weight: 800;
+            font-size: 34px;
+            line-height: 41px;
+        }
+      }
+    .container__title-sign-up {
+        margin-left: -20px;
+    }
+    .container__form {
+        width: 100%;
+        .form {
+            margin-top: 34px;
+            .form__input {
+                position: relative;
+                margin-bottom: 14px;
+
+                .input__icon {
+                    position: absolute;
+                    top: 50%;
+                    left: 20px;
+                    transform: translateY(-50%);
+                }
+                  
+                &--user {
+                    height: 74px;
+                }
+                  
+                &--password {
+                    height: 72px;
+                }
+            }
+            .form__submit{
+                .btn-submit {
+                    color: var(--color-text);
+                    font-weight: bold;
+                    font-size: 16px;
+                    line-height: 19px;
+                    letter-spacing: 0.6px;
+                    cursor: pointer;
+                    transition: all 0.3s ease 0s;
+                    height: 70px; 
+                    &--signin{
+                        @include bg("continue");
+                        &:hover {
+                            display: block;
+                            background: rgba(120, 37, 139, 0.706);
+                        }
+                    }
+                    &--signup{
+                        @include bg("blue");
+                        &:hover {
+                            display: block;
+                            background: #52439aa8;
+                        }
+                    }
+                }
+                .fa-greater-than {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .container__separator {
+        width: 100%;
+        height: 80px;
+        @include flexCenter;
+        fieldset {
+            width: 100%;
+            border-top: 1px dashed rgba(255, 255, 255, 0.4);
+            border-image: initial;
+            border-bottom: none;
+            border-right: none;
+            border-left: none;
+
+            legend {
+                text-align: center;
+                align-self: center;
+                padding: 0px 14px;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                color: var(--color-text);
+            }
+        }
+    }
+    
+}  
+
+.l-footer {
+    .footer__switch{
+        @include flexCenter;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 1px;
+        color: var(--color-text);
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        height: 70px;
+        &--signin{
+            @include bg("create");
+            &:hover {
+                background: rgba(255, 255, 255, 0.153);
+            }
+        }
+        &--signup{
+            @include bg("login");
+            &:hover {
+                background: rgba(255, 255, 255, 0.438);
+            }
+        }
+      }
+}
