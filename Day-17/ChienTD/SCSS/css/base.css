@@ -1,0 +1,11 @@
+a {
+  color: white;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: sfPro;
+  src: url(../assets/font/FontsFree-Net-SFProDisplay-Regular.ttf);
+}
+
+/*# sourceMappingURL=base.css.map */

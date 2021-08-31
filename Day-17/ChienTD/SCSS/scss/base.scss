@@ -1,0 +1,11 @@
+@import './variables';
+
+a {
+    color: $textWhite;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: sfPro;
+    src: url(../assets/font/FontsFree-Net-SFProDisplay-Regular.ttf);
+}
