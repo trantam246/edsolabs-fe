@@ -1,0 +1,39 @@
+.btn {
+    display: inline-block;
+    width: 100%;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+    font-family: "SFPro--bold";
+    height: 70px;
+    outline: none;
+    border: none;
+    padding: 26px 0;
+    text-align: center;
+    border-radius: 37px;
+    color: var(--color-white);
+    cursor: pointer;
+    transition: transform .2s ease;
+    
+}
+
+.btn:hover{
+    transform: translateY(-1px);
+}
+.btn .btn-icon {
+    font-size: 26px;
+}
+
+.btn--violet {
+    background-color: var(--button-primary);
+}
+.btn--darkblue {
+    background-color: var(--button-secondary);
+}
+
+.btn--opacity-25 {
+    background: rgba(255, 255, 255, 0.25);
+}
+.btn--box-shadow {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
