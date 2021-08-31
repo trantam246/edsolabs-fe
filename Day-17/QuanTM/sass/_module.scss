@@ -1,0 +1,40 @@
+@import "./variables";
+.grid-center {
+  display: grid;
+  place-items: center;
+}
+.logo-image {
+  max-width: 100%;
+}
+.welcome-white {
+  color: #fff;
+}
+.font-weight-400 {
+  font-weight: map-get($font-weights, regular);
+}
+.font-weight-800 {
+  font-weight: map-get($font-weights, bold);
+}
+.form-container {
+  width: 100%;
+  margin: 2rem 0;
+}
+.input {
+  background: #fff;
+  border-radius: $border-radius;
+  margin-bottom: 0.8rem;
+  height: 3rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  overflow: hidden;
+}
+.icon {
+  margin: 0 1rem;
+}
+.btn {
+  width: 100%;
+  border-radius: $border-radius;
+  color: #fff;
+  height: 3rem;
+}
