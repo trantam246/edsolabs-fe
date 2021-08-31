@@ -1,0 +1,22 @@
+.input-field:focus{
+    outline: none;
+
+}
+.submit-up{
+    cursor: pointer;
+}
+.btn-submit-sign-up:hover{
+    background-color: #A137B9;
+}
+.link-button-sign-up:hover{
+    background-color: rgba(194, 18, 18, 0.28);
+}
+.link-button-sign-up, :link :visited{
+    color: #FFFFFF;
+    cursor: pointer;
+    text-decoration: none;
+}
+.link-button-sign-up :link:active, :visited:active{
+    color: (internal value);
+    text-decoration: none;
+}
