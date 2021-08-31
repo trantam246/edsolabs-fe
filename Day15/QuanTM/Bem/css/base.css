@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+body {
+  font-family: "SF Pro Display", "Arial";
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.3rem;
+}
+a {
+  text-decoration: none;
+  font-size: 13.3333px;
+}
+i {
+  font-size: 1.2rem;
+}
+input::placeholder {
+  color: #000;
+}
+input:focus {
+  outline: none;
+}

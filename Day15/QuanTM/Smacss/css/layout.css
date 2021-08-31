@@ -1,0 +1,14 @@
+.l-login-theme {
+  background-image: linear-gradient(180deg, #e5b2ca 0%, #cd82de 100%);
+}
+#container {
+  margin: 0 auto;
+  height: 100vh;
+  max-width: 414px;
+  padding: 0.5rem 1.5rem;
+}
+@media screen and (max-height: 750px) {
+  #container {
+    height: 750px;
+  }
+}
