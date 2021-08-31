@@ -1,0 +1,37 @@
+@import "../base/variable";
+.form {
+    &__input {
+        position: relative;
+    }
+    &__input input {
+        color: $ColorBlack;
+        font-weight: 600;
+        font-size: 15px;
+        background-color: $ColorWhite;
+        border-radius: 37px;
+        width: 342px;
+        height: 74px;
+        padding: 28px 97px 28px 60px;
+        margin-bottom: 14px;
+        transition: transform 0.3s linear;
+    }
+    &__icon {
+        position: absolute;
+        top: 29.89px;
+        left: 21.87px;
+        z-index: 9999;
+    }
+}
+.form__input--password {
+    input {
+        color: var(--black);
+        font-weight: 600;
+        font-size: 14px;
+        height: 72px;
+        padding: 28px 159px 27px 50px;
+    }
+}
+input:focus {
+    transform: scale(1.01);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}

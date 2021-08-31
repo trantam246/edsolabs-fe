@@ -1,0 +1,25 @@
+@import "./variable";
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: myFontFree;
+}
+a {
+    text-decoration: none;
+}
+input {
+    outline: none;
+    border: none;
+}
+fieldset {
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: $borderTop;
+    margin: 23px 0 17px 0;
+}
