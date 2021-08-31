@@ -1,0 +1,167 @@
+/* Color */
+.sign-in {
+    background: linear-gradient(180deg, #e5b2ca 0%, #cd82de 100%);
+}
+.sign-up {
+    background: linear-gradient(180deg, #9183de 0%, #a094e3 100%);
+}
+.btn__primary {
+    background: #78258B;
+    box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+}
+.btn__primary--regis {
+    background: #52439A;
+    box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+}
+.btn__secondary {
+    background: rgba(255, 255, 255, 0.28);
+    box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+}
+.btn__secondary--regis {
+    background: rgba(255, 255, 255, 0.28);
+    box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+}
+/* Status Bar */
+.status-bar {
+display: flex;
+justify-content: space-between;
+}
+.time {
+    margin: 14px 0 0 21px;
+    height: 18px;
+    font-size: var(--font14);
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: -0.3px;
+    color: var(--white-color);
+}
+.noti {
+    margin: 14px 14px 0 0;
+    height: 11px;
+    width: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Mask */
+.mask__img {
+    margin: 24px 0 0 31px;
+    width: 353px;
+    height: 290px;
+}
+.mask__img--regis {
+    margin: 24px 0 0 68px;
+    width: 282px;
+    height: 292px;
+}
+
+/* frame */
+.frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    height: 71px;
+    margin: 20px auto;
+}
+.title-first {
+    font-weight: 600;
+    font-size: var(--font20);
+    color: rgba(255, 255, 255, 0.75);
+    margin: 6px 0px;
+}
+.title-second {
+    font-weight: 800;
+    font-size: var(--font34);
+    color: var(--white-color);
+    margin: 6px 0px;
+}
+
+/* Input Form*/
+.input-user {
+    margin: auto;
+    width: 342px;
+    height: 74px;
+    background: var(--white-color);
+    border-radius: var(--border);
+    position: relative;
+}
+.input-user__img {
+    position: absolute;
+    width: 13.04px;
+    height: 13.91px;
+    left: 21.87px;
+    top: 29.89px;
+}
+.input-user__text {
+    position: absolute;
+    width: 250px;
+    height: 68px;
+    left: 60px;
+    top: 3px;
+}
+.input-password {
+    margin: 16px auto;
+    width: 342px;
+    height: 74px;
+    background: var(--white-color);
+    border-radius: var(--border);
+    position: relative;
+}
+.input-password__img{
+    position: absolute;
+    width: 10.22px;
+    height: 18.68px;
+    left: 21.87px;
+    top: 26.33px;
+}
+.input-password__text {
+    position: absolute;
+    width: 250px;
+    height: 68px;
+    left: 56px;
+    top: 3px;
+}
+
+/* button  */
+.btn__primary {
+    margin-bottom: 106px;
+}
+.btn__primary--regis {
+    margin-bottom: 106px;
+}
+.icon {
+    margin-left: 5px;
+}
+.btn__secondary {
+    padding: 25px 94px;
+}
+.btn__secondary--regis {
+    padding: 25px 146px;
+}
+/* separator */
+.separator {
+    position: absolute;
+    left: 200px;
+    top: 740px;
+    font-weight: 500;
+    font-size: var(--font14);
+    color: var(--white-color);
+}
+.separator::before {
+    content: "";
+    position: absolute;
+    width: 148px;
+    left: -170px;
+    top: 10px;
+    border: 1px dashed rgba(255, 255, 255, 0.4);
+}
+.separator::after {
+    content: "";
+    position: absolute;
+    width: 148px;
+    left: 36px;
+    top: 10px;
+    border: 1px dashed rgba(255, 255, 255, 0.4);
+}

@@ -1,0 +1,122 @@
+/* FONTFACE */
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SFProDisplay-BlackItalic.woff2") format("woff2"),
+      url("../fonts/SFProDisplay-BlackItalic.woff") format("woff");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SFProDisplay-HeavyItalic.woff2") format("woff2"),
+      url("../fonts/SFProDisplay-HeavyItalic.woff") format("woff");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SFProDisplay-LightItalic.woff2") format("woff2"),
+      url("../fonts/SFProDisplay-LightItalic.woff") format("woff");
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"),
+      url("../fonts/SFProDisplay-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"),
+      url("../fonts/SFProDisplay-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"),
+      url("../fonts/SFProDisplay-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SFProDisplay-SemiboldItalic.woff2") format("woff2"),
+      url("../fonts/SFProDisplay-SemiboldItalic.woff") format("woff");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SFProDisplay-UltralightItalic.woff2") format("woff2"),
+      url("../fonts/SFProDisplay-UltralightItalic.woff") format("woff");
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SFProDisplay-ThinItalic.woff2") format("woff2"),
+      url("../fonts/SFProDisplay-ThinItalic.woff") format("woff");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+  }
+  :root {
+      --white-color: #ffffff;
+      --border: 37px;
+      --font14: 14px;
+      --font20: 20px;
+      --font34: 34px;
+  }
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  a {
+    text-decoration: none;
+  }
+  input {
+    color: #3C3C43;
+    border: none;
+    outline: none;
+    font-weight: 600;
+  }
+  .app {
+  position: relative;
+  width: 414px;
+  height: 896px;
+  font-family: SF Pro Display;
+  }
+  .btn {
+    margin-left: 36px;
+    border-radius: var(--border);
+    border: none;
+    width: 342px;
+    height: 70px;
+    color: var(--white-color);
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+  .btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
