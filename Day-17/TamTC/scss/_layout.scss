@@ -1,0 +1,33 @@
+html,
+body {
+  min-height: 100vh;
+  font-family: $font;
+}
+.sign-in-page {
+  background: $backgroundSignIn;
+}
+.sign-up-page{
+  background: $backgroundSignUp;
+}
+.container {
+  margin: 0 auto;
+  max-width: 414px;
+  min-width: 320px;
+  width: 100%;
+  padding: 54px 30px 45px 30px;
+  &__image {
+    width: 100%;
+  }
+  &__title {
+    font-style: normal;
+    font-weight: 600;
+    min-width: 227px;
+    text-align: center;
+    margin-left: -4px;
+    color: $textColor;
+  }
+  &__form {
+    margin-top: 37px;
+    padding: 0 6px;
+  }
+}
