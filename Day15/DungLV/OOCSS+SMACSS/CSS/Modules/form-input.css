@@ -1,0 +1,33 @@
+.form__input input {
+    color: var(--black);
+    font-weight: 600;
+    font-size: 15px;
+    background-color: var(--white);
+    border-radius: 37px;
+    border: none;
+    outline: none;
+    width: 342px;
+    height: 74px;
+    padding: 28px 97px 28px 60px;
+    margin-bottom: 14px;
+    transition: transform 0.3s linear;
+}
+.form__input {
+    position: relative;
+}
+.form__icon {
+    position: absolute;
+    top: 29.89px;
+    left: 21.87px;
+    z-index: 9999;
+}
+.form__input--password input {
+    color: var(--black);
+    font-weight: 600;
+    font-size: 14px;
+    height: 72px;
+    padding: 28px 159px 27px 50px;
+}
+input:focus {
+    transform: translateY(-1px);
+}
