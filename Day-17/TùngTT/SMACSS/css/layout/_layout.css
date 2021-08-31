@@ -1,0 +1,20 @@
+.box {
+    width: 414px;
+    height:896px;
+    margin: 0 auto;
+}
+.header {
+    display: flex;
+    flex-wrap: wrap;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 25px;
+    color: white;
+}
