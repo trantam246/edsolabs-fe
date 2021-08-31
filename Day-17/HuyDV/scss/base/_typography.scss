@@ -1,0 +1,19 @@
+.heading {
+    font-size: 34px;
+    line-height: 41px;
+    color: #ffffff;
+    font-weight: 800;
+    font-family: "SFPro--bold";
+    margin-bottom: 7px;
+
+    &--small {
+        font-family: "SFPro--medium";
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 400;
+    }
+
+    &--opacity{
+        color: rgba(255, 255, 255, 0.75);
+    }
+}
