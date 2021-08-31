@@ -1,0 +1,32 @@
+@import "../base/variable";
+@mixin img() {
+
+    display: block;
+    margin: 0px auto;
+}
+.layout {
+    .signup__image {
+        width: 353px;
+        height: 290px;
+        @include img();
+    }
+    .signin__image {
+        @include img();
+    }
+    &__h4 {
+        text-align: center;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        margin: 0;
+        color: $colorWhite07;
+    }
+    &__h2 {
+        text-align: center;
+        font-weight: 800;
+        font-size: 34px;
+        line-height: 41px;
+        margin: 6px 0 37px 0;
+        color: $colorWhite;
+    }
+}

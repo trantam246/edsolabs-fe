@@ -1,0 +1,4 @@
+@function reduce($color, $reduce){
+    $mau: rgba($color, $reduce + 0.1);
+    @return $mau;
+}

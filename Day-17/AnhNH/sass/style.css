@@ -1,0 +1,233 @@
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../../fonts/SFProDisplay-BlackItalic.woff2") format("woff2"), url("../../font/SFProDisplay-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../../fonts/SFProDisplay-HeavyItalic.woff2") format("woff2"), url("../../fonts/SFProDisplay-HeavyItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../../fonts/SFProDisplay-LightItalic.woff2") format("woff2"), url("../../fonts/SFProDisplay-LightItalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../../fonts/SFProDisplay-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../../fonts/SFProDisplay-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../../fonts/SFProDisplay-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../../fonts/SFProDisplay-SemiboldItalic.woff2") format("woff2"), url("../../fonts/SFProDisplay-SemiboldItalic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../../fonts/SFProDisplay-UltralightItalic.woff2") format("woff2"), url("../../fonts/SFProDisplay-UltralightItalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../../fonts/SFProDisplay-ThinItalic.woff2") format("woff2"), url("../../fonts/SFProDisplay-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100vh;
+  font-family: "SF Pro Display";
+  font-size: 16px;
+}
+
+.layout {
+  width: 414px;
+  margin: auto;
+  padding: 52px 30px 45px 30px;
+}
+.layout-up {
+  background: linear-gradient(180deg, #E5B2CA 0%, #CD82DE 100%);
+}
+.layout-in {
+  background: linear-gradient(180deg, #9183DE 0%, #A094E3 100%);
+}
+
+.layout .signup__image {
+  width: 353px;
+  height: 290px;
+  display: block;
+  margin: 0px auto;
+}
+.layout .signin__image {
+  display: block;
+  margin: 0px auto;
+}
+.layout__h4 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+}
+.layout__h2 {
+  text-align: center;
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 41px;
+  margin: 6px 0 37px 0;
+  color: #ffffff;
+}
+
+.layout__btn {
+  width: 342px;
+  height: 70px;
+  font-family: "SF Pro Display";
+  font-weight: 700;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 37px;
+  border: none;
+  margin-bottom: 32px;
+}
+.layout__btn-up {
+  background-color: #78258B;
+  box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+}
+.layout__btn-up .angle-right {
+  transition: 1s all ease-in-out;
+  transform: translateY(5px);
+}
+.layout__btn-up:hover {
+  background: rgba(120, 37, 139, 0.7);
+}
+.layout__btn-up:hover .angle-right {
+  color: #52439A;
+  transform: translate(5px, 5px);
+  transition: 1s all ease-in-out;
+}
+.layout__btn-in {
+  background-color: #52439A;
+  box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+}
+.layout__btn-in:hover {
+  background: rgba(82, 67, 154, 0.7);
+}
+
+.form {
+  padding: 0 6px;
+}
+.form__row {
+  background: #ffffff;
+  border-radius: 37px;
+  Width: 342px;
+  Height: 74px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.form__row-pass {
+  height: 72px;
+}
+.form__row-input {
+  font-size: 15px;
+  flex-grow: 1;
+  margin: 0px 20px;
+  border: none;
+}
+.form__row-input::placeholder {
+  font-size: 15px;
+  color: #3C3C43;
+  font-weight: 600;
+  line-height: 18px;
+}
+.form__row-input:focus {
+  border: none;
+  outline: none;
+}
+.form__row-icon {
+  margin-left: 20px;
+}
+
+.btn-link {
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+  text-decoration: none;
+  display: block;
+  line-height: 70px;
+  text-align: center;
+  margin: 0;
+}
+.btn-link-up {
+  box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+}
+.btn-link-in {
+  box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+}
+.btn-link:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transition: 0.5s all ease-in-out;
+}
+
+.layout__separator {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  position: relative;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.layout__separator::before, .layout__separator::after {
+  content: "";
+  border-top: 1px dashed rgba(255, 255, 255, 0.4);
+  position: absolute;
+  top: 50%;
+  width: 43%;
+  height: 0;
+  opacity: 0.5;
+}
+.layout__separator::before {
+  right: 0;
+}
+.layout__separator::after {
+  left: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

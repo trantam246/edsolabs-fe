@@ -1,0 +1,17 @@
+@mixin btn() {
+    width: 342px;
+    height: 70px;
+    font-family: $font;
+    font-weight: 700;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    color: $colorWhite;
+    border-radius: $bdR;
+    border: none;
+    margin-bottom: 32px;
+    
+}
+@mixin boxShadow($color) {
+    box-shadow: 0px 25px 45px $color;
+}
