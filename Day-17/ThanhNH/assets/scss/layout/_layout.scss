@@ -1,0 +1,74 @@
+@import '../variables/variables';
+@import '../mixin/mixin';
+
+.layout {
+    width: 414px;
+    height: 896px;
+    background: linear-gradient(180deg, #9183DE 0%, #A094E3 100%);
+    margin: 20px auto;
+    color: $primaryColor;
+
+    .header {
+        text-align: center;
+        padding: 54px 66px 0 66px;
+        &.header--signIn {
+            padding: 54px 31px 0 31px;
+        }
+
+        & > &__text {
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        &__title {
+            @include fontSize(20);
+            font-weight: 600;
+            line-height: 24px;
+            letter-spacing: 0px;
+            color: rgba($primaryColor, 0.75);
+            margin-bottom: 6px;
+        }
+
+        &__content {
+            @include fontSize(34);
+            font-weight: 800;
+            line-height: 41px;
+            letter-spacing: 0px;
+        }
+    }
+
+    .form {
+        margin-top: 37px;
+        padding: 0 36px;
+    }
+
+    .form__title {
+        @include fontSize(14);
+        font-weight: 500;
+        line-height: 17px;
+        letter-spacing: 0px;
+        display: flex;
+        align-items: center;
+
+        & > span {
+            padding: 0 15px;
+        }
+
+        &::before ,
+        &::after {
+            content: "";    
+            flex: 1;
+            border-bottom: 1px dashed rgba($primaryColor, 0.4);
+        }
+    }
+
+    /* sign-in */
+    &.sign__in {
+        background: linear-gradient(180deg, #E5B2CA 0%, #CD82DE 100%);
+    }
+
+    .btn__signIn--top {
+        background-color: #78258B;
+        margin-bottom: 32px;
+    }
+}
