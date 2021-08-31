@@ -1,0 +1,47 @@
+/* Footer */
+    
+input[type="button"] {
+ outline: none;
+ border: 0px solid;
+ font-weight: 600;
+ font-style: normal;
+ font-size: 1.6rem;
+ line-height: 19px;
+ color: $color;
+ background: none;
+ cursor: pointer;
+}
+
+.content_footer {
+ position: $position;
+ width: 342px;
+ height: 70px;
+ cursor: pointer;
+ left: 70px;
+ top: 787px;
+ background: rgba(255, 255, 255, 0.28);
+box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+ border-radius: $borderRadius;
+ display: $display;
+ align-items: $center;
+@include justify(center);
+}
+
+
+/* End Footer */
+
+
+
+
+
+/* STATE */
+/* State hover */
+button:hover{
+ // background-color: rgba(120, 37, 139, 0.6);
+ background-color:buttonHover(rgba(127, 26, 150, 0.6));
+}
+.content_footer:hover {
+ // background: rgba(255, 255, 255, 0.1);
+ background:buttonHover(rgba(255, 255, 255, 0.1));
+}
+/*  */

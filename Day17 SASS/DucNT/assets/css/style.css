@@ -1,0 +1,298 @@
+/* FONTFACE */
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-BlackItalic.woff") format("woff2"), url("../fonts/SFProDisplay-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-HeavyItalic.woff2") format("woff2"), url("../fonts/SFProDisplay-HeavyItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-LightItalic.woff2") format("woff2"), url("../fonts/SFProDisplay-LightItalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-SemiboldItalic.woff2") format("woff2"), url("../fonts/SFProDisplay-SemiboldItalic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-UltralightItalic.woff2") format("woff2"), url("../fonts/SFProDisplay-UltralightItalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-ThinItalic.woff2") format("woff2"), url("../fonts/SFProDisplay-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  font-family: "SF Pro Display";
+  margin: 0 auto;
+  max-width: 414px;
+}
+
+/* Container */
+.container {
+  background: #cd82de;
+  position: absolute;
+  /* margin: 0 auto; */
+  top: 0;
+  bottom: 0;
+  min-height: auto;
+  width: 414px;
+  padding: 25px 30px 25px 30px;
+}
+@media screen and (max-height: 896px) {
+  .container {
+    display: none;
+  }
+}
+
+/* End Container */
+/* Header */
+.header {
+  display: flex;
+  /* height: 44px; */
+  line-height: 44px;
+  justify-content: space-between;
+}
+
+.header_time {
+  color: #ffffff;
+}
+
+.header_right {
+  display: flex;
+}
+
+.icon_ {
+  color: #ffffff;
+}
+
+.icon {
+  color: #ffffff;
+  padding-right: 15px;
+}
+
+/* End Header */
+/* Content */
+.main_img {
+  margin-top: 10px;
+}
+.main_img .page_img {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.main_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 227px;
+  /* height: 71px; */
+  left: 130px;
+  line-height: 10px;
+}
+.main_content .context_one {
+  color: #ffffff;
+  opacity: 0.8;
+  font-weight: lighter;
+  margin: 10px 20px 10px 0px;
+}
+.main_content .context_two {
+  color: #ffffff;
+  font-weight: bolder;
+  width: 250px;
+  text-align: center;
+}
+
+.content_field {
+  margin-top: 35px;
+  width: 342px;
+  /* : 74px;height */
+  position: absolute;
+  top: 420px;
+  left: 70px;
+}
+.content_field .field_content {
+  margin-bottom: 15px;
+}
+
+input[type=email],
+input[type=password] {
+  display: flex;
+  background-color: white;
+  text-align: left;
+  margin: 8px auto;
+  border: 1px solid white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  align-items: center;
+  padding: 27px 60px;
+  outline: none;
+  width: 65%;
+  border-radius: 37px;
+}
+
+input[type=email] {
+  background-image: url("../img/person.png");
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position-x: 20px;
+  background-position-y: center;
+  /* background-position: 15px center; */
+}
+
+input[type=password] {
+  background-image: url("../img/key.png");
+  background-repeat: no-repeat;
+  background-size: 12px;
+  /* background-position-x: left;
+  background-position-y: center; */
+  background-position: 23px center;
+}
+
+input::placeholder {
+  color: black;
+  font-weight: bold;
+  /* display: flex;
+  align-content: center; */
+}
+
+button {
+  border-radius: 37px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: bold;
+  line-height: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+  background: rgba(120, 37, 139, 0.8);
+  box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+  justify-content: center;
+  border: 0;
+  transition: background-color 0.5s;
+}
+
+.content_hor {
+  position: absolute;
+  width: 342px;
+  /* height: 16px; */
+  left: 70px;
+  top: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+fieldset {
+  border: 0;
+  border-top: 1px dashed white;
+  width: 200px;
+  padding-left: 150px;
+}
+
+h4 {
+  padding: 0 15px;
+  color: white;
+  font-weight: 200;
+}
+
+/* End Content */
+/* Footer */
+input[type=button] {
+  outline: none;
+  border: 0px solid;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 19px;
+  color: white;
+  background: none;
+  cursor: pointer;
+}
+
+.content_footer {
+  position: absolute;
+  width: 342px;
+  height: 70px;
+  cursor: pointer;
+  left: 70px;
+  top: 787px;
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+  border-radius: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* End Footer */
+/* STATE */
+/* State hover */
+button:hover {
+  background-color: rgba(127, 26, 150, 0.6);
+}
+
+.content_footer:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/*  */
+
+/*# sourceMappingURL=style.css.map */
