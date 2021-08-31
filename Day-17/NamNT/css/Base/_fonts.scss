@@ -1,0 +1,13 @@
+// define font 
+@font-face {
+    font-family: "SF Pro Display";
+    src: url(./font/FontsFree-Net-SFProDisplay-Regular.ttf);
+}
+
+$text-color:#ffffff;
+$font-family:"SF Pro Display";
+// use font and color website
+* {
+    color: $text-color;
+    font-family: $font-family;
+}

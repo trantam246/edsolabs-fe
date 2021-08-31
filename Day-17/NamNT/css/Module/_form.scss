@@ -1,0 +1,78 @@
+$size-text-input:15px;
+$color-input:#3C3C43;
+$color-bgr-btn-continue:#78258B;
+@mixin boder-input {
+    border: 1px solid;
+    background: #ffffff;
+    border-radius: 37px;
+    margin-bottom: 14px;
+    padding: 27px 0px;
+}
+
+// Css form
+.form {
+    &__login {
+        @include boder-input;
+    }
+}
+
+.btn {
+    @include boder-input;
+}
+
+.form__login {
+    .form__user {
+        display: flex;
+        align-items: center;
+        img {
+            color: $color-input;
+            padding: 0 22px 0 25px;
+        }
+        input {
+            height: 18px;
+            color: $color-input;
+            border: none;
+            font-size: $size-text-input;
+            font-weight: 600;
+            width: 185px;
+            &:focus-visible {
+                outline: none;
+            }
+        }
+    }
+}
+
+// css button continue
+.form {
+    .btn {
+        border: none;
+        background: $color-bgr-btn-continue;
+        box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+        display: flex;
+        margin-bottom: 0;
+        justify-content: center;
+        text-align: center;
+        transition: all ease-in-out 0.5s;
+        &:hover {
+            // sử dụng built in funtion hàm lighten
+            background-color: lighten(#9b33b3, 5%);
+            transition: all ease-in-out 0.5s;
+        }
+        &__item {
+            align-items: center;
+            background: none;
+            border: none;
+            display: flex;
+            line-height: 19px;
+            font-size: 16px;
+            font-weight: bold;
+            .btn--title {
+                display: block;
+                margin-right: 5px !important;
+            }
+        }
+        &__link {
+            text-decoration: none;
+        }
+    }
+}
