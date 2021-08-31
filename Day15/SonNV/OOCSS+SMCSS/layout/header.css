@@ -1,0 +1,31 @@
+.header__image {
+  margin: 10px 30px 5px 31px;
+}
+
+.header__image1 {
+  margin: 10px 66px 5px 66px;
+}
+
+.header__title {
+  margin: 0px auto 37px;
+  text-align: center;
+  padding: 0px;
+  animation: moveInTop 0.5s ease-out 0.5s;
+  animation-fill-mode: backwards;
+}
+
+h4 {
+  font-family: "sfProTextThin";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 41px;
+  margin: 6px 0;
+  color: #ffffff;
+}

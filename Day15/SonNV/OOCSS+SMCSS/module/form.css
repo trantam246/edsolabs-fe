@@ -1,0 +1,47 @@
+@import url("./animation.css");
+
+.form {
+  margin: 0 36px 45px 36px;
+  text-align: center;
+}
+
+.form__pass,
+.form__user {
+  display: flex;
+  align-items: center;
+  width: 342px;
+  background: #ffffff;
+  border-radius: 37px;
+  border: 0px solid;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.form__user {
+  animation: moveInRight 1s ease-out;
+  height: 74px;
+}
+.form__pass {
+  animation: moveInLeft 1s ease-out;
+  height: 72px;
+}
+.form__icon {
+  padding: 30px 25px 30px 22px;
+  color: #3c3c43;
+}
+
+input {
+  background: #fff;
+  border: none;
+  outline: none;
+  width: 220px;
+}
+
+::placeholder {
+  font-family: "sfProText";
+  color: #3c3c43;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+}
