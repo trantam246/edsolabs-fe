@@ -1,0 +1,211 @@
+// lay css tu base va layout
+@use 'base';
+@use 'layout';
+
+//tao 2 background color
+$sign-in-bg: linear-gradient(180deg, #E5B2CA 0%, #CD82DE 100%);
+$sign-up-bg: linear-gradient(180deg, #9183DE 0%, #A094E3 100%);
+@mixin bg($name,$color) {
+    .bg-#{$name}{
+        background: $color;
+    }
+}
+@include bg('sign-in',$sign-in-bg);
+@include bg('sign-up',$sign-up-bg);
+
+//tao 2 font chu
+@font-face {
+    font-family: display;
+    src: url(../../font/FontsFree-Net-SFProDisplay-Regular.ttf);
+}
+@font-face {
+    font-family: text;
+    src: url(../../font/FontsFree-Net-SFProText-Regular.ttf);
+}
+@mixin font($name,$type) {
+    .font-#{$name}{
+        font-family: $type;
+    }
+}
+@include font('display', display);
+@include font('text', text);
+
+//global var
+//text-color
+$white : #FFFFFF;
+$black : #3C3C43;
+
+//font-weight
+$bold : 700;
+$bolder : 800;
+$semi-bold : 600;
+$light : 500;
+
+//font-size
+$small : 14px;
+$semi-nor : 15px;
+$normal : 16px;
+$big : 20px;
+$super-big : 34px;
+
+//border-radius
+$bor-ra : 37px;
+
+//header
+%status_pos{
+    margin: auto 0;
+    height: 21px;
+}
+.header{
+    
+    &__status{
+        display: flex;
+        width: 100%;
+        height: 44px;
+        margin-bottom: 10px;
+        
+        &__time{
+            @extend %status_pos;
+            margin-left: 21px;
+            font-size: $semi-nor;
+            font-weight: $semi-bold;
+            color: $white;
+        }
+
+        &__icons{
+            @extend %status_pos;
+            margin-left: auto;
+            margin-right: 15px;
+        }
+    }
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__welcome{
+            text-align: center;
+
+            &__greeting{
+                font-size: $big;
+                font-weight: $semi-bold;
+                margin-bottom: 6px;
+                color: $white;
+            }
+
+            &__action{
+                font-size:$super-big;
+                font-weight: $bolder;
+                color: $white;
+            }
+        }
+    }
+}
+
+// main content
+%input-style{
+    font-size: $semi-nor;
+    font-weight: $semi-bold;
+    color: $black;
+}
+.form{
+    width: 100%;
+    &__input{
+        background-color: #FFFFFF;
+        border-radius: $bor-ra;
+        margin-bottom: 14px;
+        display: flex;
+
+        &__icon{
+            margin: auto 0;
+            margin-left: 21px;
+            margin-right:25px;
+        }
+
+        &__email{
+            height: 74px;
+            @extend %input-style;
+        }
+
+        &__password{
+            height: 72px;
+            @extend %input-style;
+        }
+    }
+
+    &__btn{
+        height: 70px;
+
+        &__submit{
+            border-radius: $bor-ra;
+            font-size: $normal;
+            font-weight: $bold;
+            cursor: pointer;
+            color: $white;
+        }
+    }
+}
+@function hover($name,$color){
+    @if($name == link){
+        @return darken($color, 20%)
+    }
+    @return lighten($color, 10%)
+}
+$bg-submit-sign-in: #78258B;
+$shadow-submit-sign-in: 0px 25px 45px rgba(120, 37, 139, 0.25);
+$bg-submit-sign-up: #52439A;;
+$shadow-submit-sign-up: 0px 25px 45px rgba(82, 67, 154, 0.25);
+$bg-link: rgba(255, 255, 255, 0.28);
+$shadow-link: 0px 25px 45px rgba(120, 37, 139, 0.25);
+
+@mixin bg-btn($name,$bg,$shadow) {
+    .bg-#{$name}{
+        background: $bg;
+        box-shadow: $shadow;
+
+        &:hover{
+            background: hover($name,$bg)
+        }        
+    }
+}
+@include bg-btn(submit-sign-in, $bg-submit-sign-in, $shadow-submit-sign-in);
+@include bg-btn(submit-sign-up, $bg-submit-sign-up, $shadow-submit-sign-up);
+@include bg-btn(link, $bg-link, $shadow-link);
+
+
+%separate{
+    content: "";
+    border: 1px dashed rgba(255, 255, 255, 0.4);
+    width: 148px;
+}
+.separate{
+    width: 100%;
+    font-weight: $light;
+    font-size: $small;
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $white;
+
+    &::before{
+        @extend %separate
+    }
+    &::after{
+        @extend %separate
+    }
+}
+
+.link{
+    margin-top: 32px;
+    display: flex;
+
+    &__btn{
+        text-align: center;
+        line-height: 70px;
+        @extend .form__btn;
+        @extend .form__btn__submit;
+        @extend .form
+    }
+}
