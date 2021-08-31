@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+}
+
+:root {
+  --color-text: #ffffff;
+  --border-radius: 37px;
+}
+
+body {
+  font-family: "SF Pro Display", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+input {
+  outline: none;
+  padding-left: 56px;
+  padding-right: 36px;
+  box-sizing: border-box;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+input::placeholder {
+  color: #3C3C43;
+}
+
+.btn-base {
+  border: none;
+  width: 100%;
+  border-radius: var(--border-radius);
+}
+
+  
