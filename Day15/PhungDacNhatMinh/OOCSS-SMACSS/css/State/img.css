@@ -1,0 +1,10 @@
+.page-image {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.heading .heading__img-heading {
+    width: 100%;
+    max-width: 414px;
+}

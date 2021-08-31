@@ -1,0 +1,21 @@
+body.sign-in-page {
+    background: linear-gradient(180deg, #E5B2CA 0%, #CD82DE 100%);
+}
+
+form.form--sign-in .btn {
+    background: #BD1FE1;
+    box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+}
+
+form.form--sign-in .btn:hover {
+    background-color: rgba(120, 37, 139, 0.6);
+}
+
+form.form--sign-in .btn.btn--link {
+    background: rgba(255, 255, 255, 0.19);
+    box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+}
+
+form.form--sign-in .btn--link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}

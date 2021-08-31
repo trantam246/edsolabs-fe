@@ -1,0 +1,13 @@
+.container .container__title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0;
+}
+
+.container .container__subtitle {
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 41px;
+    margin: 6px 0 37px 0;
+}
