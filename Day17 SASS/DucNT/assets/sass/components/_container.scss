@@ -1,0 +1,17 @@
+/* Container */
+  
+.container {
+ background: $backgroundBase;
+ position: $position;   
+ /* margin: 0 auto; */
+ top:0;
+ bottom:0;
+min-height:auto;
+width: $maxWithBase;
+ padding: 25px 30px 25px 30px;
+ // lớn hơn 880px thì mất
+ @include maxHeight (896px){
+  display: none;
+   }
+}
+/* End Container */
