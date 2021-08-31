@@ -1,0 +1,11 @@
+.sign-in-page {
+  background: linear-gradient(rgb(229, 178, 202) 0%, rgb(205, 130, 222) 100%);
+}
+
+.sign-up-page {
+  background: linear-gradient(180deg, #9183de 0%, #a094e3 100%);
+}
+
+.container__image {
+  width: 100%;
+}

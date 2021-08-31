@@ -1,0 +1,21 @@
+.item-input,
+.btn {
+  border: none;
+  width: 100%;
+  border-radius: 37px;
+  -webkit-border-radius: 37px;
+  -moz-border-radius: 37px;
+  -ms-border-radius: 37px;
+  -o-border-radius: 37px;
+}
+
+.form-item {
+  position: relative;
+  margin-bottom: 14px;
+}
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
