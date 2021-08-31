@@ -1,0 +1,128 @@
+.l-status-bar {
+    display: flex;
+    justify-content: space-between;
+    .time {
+        margin: 14px 0 0 21px;
+        height: 18px;
+        font-size: $font__14;
+        line-height: 18px;
+        text-align: center;
+        color: $white__color;
+    }
+    .noti {
+        margin: 14px 14px 0 0;
+        height: 11px;
+        width: 70px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.l-mask__img {
+    margin: 24px 0 0 31px;
+    width: 353px;
+    height: 290px;
+}
+.l-mask__img--regis {
+    margin: 24px 0 0 68px;
+    width: 282px;
+    height: 292px;
+}
+.l-frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    height: 71px;
+    margin: 20px auto;
+    .title-first {
+        font-weight: 600;
+        font-size: $font__20;
+        color: rgba(255, 255, 255, 0.75);
+        margin: 6px 0px;
+    }
+    .title-second {
+        font-weight: 800;
+        font-size: $font__34;
+        color: $white__color;
+        margin: 6px 0px;
+    }
+}
+.l-main {
+    .input-user {
+        margin: auto;
+        @include input;
+        &__img {
+            position: absolute;
+            width: 13.04px;
+            height: 13.91px;
+            left: 21.87px;
+            top: 29.89px;
+        }
+        &__text {
+            position: absolute;
+            width: 250px;
+            height: 68px;
+            left: 60px;
+            top: 3px;
+        }
+    }
+    .input-password {
+        margin: 16px auto;
+        @include input;
+        &__img{
+            position: absolute;
+            width: 10.22px;
+            height: 18.68px;
+            left: 21.87px;
+            top: 26.33px;
+        }
+        &__text {
+            position: absolute;
+            width: 250px;
+            height: 68px;
+            left: 56px;
+            top: 3px;
+        }
+    }
+    .btn__primary {
+        margin-bottom: 106px;
+        @include btn__primary-color;
+        @include btn;
+    }
+    .btn__primary--regis {
+        margin-bottom: 106px;
+        @include btn__primary--regis-color;
+        @include btn;
+    }
+    .icon {
+        margin-left: 5px;
+    }
+    .btn__secondary {
+        padding: 25px 94px;
+        @include btn__secondary-color;
+        @include btn;
+    }
+    .btn__secondary--regis {
+        padding: 25px 146px;
+        @include btn__secondary--regis-color;
+        @include btn;
+    }
+}
+
+.l-separator {
+    position: absolute;
+    left: 200px;
+    top: 740px;
+    font-weight: 500;
+    font-size: $font__14;
+    color: $white__color;
+    &::before {
+        @include separator__pseudo;
+        left: -170px;
+    }
+    &::after {
+        @include separator__pseudo;
+        left: 36px;
+    }
+}
