@@ -1,0 +1,7 @@
+@import '../Base/define.scss';
+.container {
+    margin: 0 auto;
+    max-width: $maxWidth;
+    width: 100%;
+    padding: 6px 36px 45px 31px;
+}

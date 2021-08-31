@@ -1,0 +1,15 @@
+@import '../Base/define.scss';
+.container {
+    &__title {
+        font-weight: 600;
+        font-size: $fontMain + 4px;
+        line-height: 24px;
+        margin: 0;
+    }
+    &__subtitle {
+        font-weight: 800;
+        font-size: $fontMain * 2 + 2px;
+        line-height: $lineHeight * 2 + 1px;
+        margin: 6px 0 37px 0;
+    }
+}
