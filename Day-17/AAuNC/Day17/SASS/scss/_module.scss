@@ -1,0 +1,187 @@
+@use "sass:color";
+
+$borderRadius: 37px;
+$colorPlaceHolder: #3C3C43;
+$backgroundSubmit: #78258B;
+$backgoundRegister: rgba(120, 37, 139, 0.25);
+$focus: 1px solid rgb(26, 142, 236);
+$boxShadow: 0px 25px 45px rgba(248, 248, 248, 0.25);
+
+@mixin size ($height, $width) {
+    height: $height;
+    width: $width;
+}
+
+@mixin font ($fontSize, $fontWeight: 0, $color: none) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    color: $color;
+}
+
+/* time */
+.time {
+    padding-left: 21px;
+    @include font(15px, bold, white);
+}
+
+/* list-icon */
+.list-icon {
+    display: flex;
+    padding-right: 14px;
+
+    i{
+        @include font($fontSize: 15px, $color: white);
+
+        &:nth-child(even){
+            padding-left: 5px;
+            padding-right: 10px;
+        }
+    }
+}
+
+/* image-block */
+.image-block-login { 
+    @include size(290px, 353px);
+    background-image: url('../images/img1.png');
+}
+
+/* text-block */
+.textSmall {
+    @include size(24px, 353px);
+    @include font(20px, 600, rgba(255, 255, 255, 0.75));
+    line-height: 24px;
+}
+
+.textBig {
+    margin-top: 6px;
+    @include size(41px, 353px);
+    @include font(34px, 800, #FFFFFF);
+    line-height: 41px;
+}
+
+/* input */
+.input {
+    @include size(100%, 100%);
+    box-sizing: border-box;
+    border: 0px;
+    border-radius: $borderRadius;
+    outline: none;
+    @include font($fontSize: 15px, $fontWeight: 600); 
+    background-size: 13px 13px;
+    background-repeat: no-repeat;
+    background-position-y: center ;
+    background-position-x: 22px;
+
+    // placeholder
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $colorPlaceHolder;
+    }
+      
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: $colorPlaceHolder;
+    }
+      
+    &::-ms-input-placeholder { /* Microsoft Edge */
+        color: $colorPlaceHolder;
+    }
+
+    //focus
+    &:focus {
+        border: $focus;
+    }
+}
+
+.input-email {
+    @extend .input;
+    @include size(74px, 342px);
+    padding: 27px 60px;
+    background-image: url('../images/user.png');
+}
+
+.input-password {
+    @extend .input;
+    margin-top: 14px;
+    @include size(72px, 342px);
+    padding: 27px 50px;  
+    background-image: url('../images/key.png');  
+}
+
+
+/* button */
+.btn {
+    margin: auto;
+    @include size(70px, 342px);
+
+    outline: none;
+    border: 0px;
+    border-radius: $borderRadius;
+    
+    @include font(19px, 600, white);
+    box-shadow: $boxShadow;
+
+    &:focus {
+        border: $focus;
+    }
+}
+
+.btn-link {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 70px;
+}
+
+.btnSubmit {
+    @extend .btn;
+    margin-top: 14px;
+    color: white;
+    background-color: $backgroundSubmit;
+
+    &:hover {
+        background-color: color.adjust($backgroundSubmit, $alpha: -0.5);
+        cursor: pointer;
+    }
+}
+
+.btnRegister {
+    @extend .btn;
+    @extend .btn-link; 
+    background-color: $backgoundRegister;
+
+    &:hover {
+        background-color: color.adjust($backgoundRegister, $alpha: 0.5);;
+    }
+}
+
+/* line */
+.beforeAfter {
+    content: "";
+    height: 1px;
+    width: 148px;
+    border-top: 2px dashed white;
+    position: absolute;
+}
+
+.line {
+    margin: auto;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    width: 342px;
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+
+    &::before {
+        @extend .beforeAfter;
+        top: 8px;
+        right: 0px;
+    }
+
+    &::after {
+        @extend .beforeAfter;
+        top: 8px;
+        left: 0px;
+    }
+}
+

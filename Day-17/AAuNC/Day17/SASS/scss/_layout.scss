@@ -1,0 +1,44 @@
+$backgroundLogin: linear-gradient(180deg, #E5B2CA 0%, #CD82DE 100%);
+
+@mixin size ($height, $width: 414px) {
+    height: $height;
+    width: $width;
+}
+
+.l-login {
+    margin: auto;
+    @include size($height: 896px);
+    background: $backgroundLogin
+}
+
+.l-header {
+    @include size($height: 44px);
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.l-main {
+    @include size($height: 852px);
+}
+
+// image-block
+.image-block {
+    margin: auto;
+    background-size: cover;
+}
+
+//text-block
+.text-block {
+    @include size(71px, 353px);
+    margin: auto;
+    text-align: center;
+}
+
+//form
+form {
+    margin: auto;
+    margin-top: 37px;
+    @include size(auto, 342px);
+}
+
