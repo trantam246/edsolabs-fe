@@ -1,0 +1,21 @@
+.line-hr {
+    width: 100%;
+    text-align: center;
+
+    fieldset {
+        border: none;
+        margin: 32px 0;
+        height: 20px;
+        width: 100%;
+        border-top: 1px dashed rgba(255, 255, 255, 0.2);
+    }
+    legend {
+        color: #ffffff;
+        font-family: "SFPro";
+        font-weight: 400;
+        display: inline-block;
+        padding: 0 15px 0 16px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

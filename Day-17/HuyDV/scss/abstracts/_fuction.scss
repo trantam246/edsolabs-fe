@@ -1,0 +1,5 @@
+
+@function invert($color, $amount: 0%) {
+    $inverse: darken($color,$amount);
+    @return $inverse
+}
