@@ -1,0 +1,35 @@
+@import "./variable";
+@mixin fontweight($size: 600) {
+    font-weight : $size;
+}
+
+@mixin textalign($text: center) {
+    text-align : $text;
+}
+
+@mixin button(){
+    width: 100%;
+    height: 74px;
+    color: $basiccolor;
+    outline: none;
+    font-weight: bold;
+    font-size: $fontsize + 1px;
+    border: 0px;
+    border-radius: $borderradius;
+    text-align: center;
+    cursor: pointer;
+}
+
+@mixin input(){
+    width: 100%;
+      height: 74px;
+      color: #3c3c43;
+      background: $basiccolor;
+      @include fontweight(600);
+      font-size: $fontsize;
+      border-radius: $borderradius;
+      outline: none;
+      border: 0px;
+      padding-left: 60px;
+      margin-bottom: 14px;
+}
