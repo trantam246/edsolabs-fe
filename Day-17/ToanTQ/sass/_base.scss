@@ -1,0 +1,125 @@
+@import "./variables";
+
+/* FONTFACE */
+@font-face {
+  font-family: "SF Pro Display";
+  src: url($sfPro-font-path + "-BlackItalic.woff2") format("woff2"),
+    url($sfPro-font-path + "-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url($sfPro-font-path + "-HeavyItalic.woff2") format("woff2"),
+    url($sfPro-font-path + "-HeavyItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url($sfPro-font-path + "-LightItalic.woff2") format("woff2"),
+    url($sfPro-font-path + "-LightItalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url($sfPro-font-path + "-Bold.woff2") format("woff2"),
+    url($sfPro-font-path + "-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url($sfPro-font-path + "-Regular.woff2") format("woff2"),
+    url($sfPro-font-path + "-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url($sfPro-font-path + "-Medium.woff2") format("woff2"),
+    url($sfPro-font-path + "-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url($sfPro-font-path + "-SemiboldItalic.woff2") format("woff2"),
+    url($sfPro-font-path + "-SemiboldItalic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url($sfPro-font-path + "-UltralightItalic.woff2") format("woff2"),
+    url($sfPro-font-path + "-UltralightItalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url($sfPro-font-path + "-ThinItalic.woff2") format("woff2"),
+    url($sfPro-font-path + "-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  font-family: "SF Pro Display";
+
+  h2,
+  h4 {
+    text-align: center;
+  }
+
+  h4 {
+    font-weight: map-get($font-weights, medium);
+    font-size: map-get($font-sizes, h4);
+    line-height: 24px;
+    margin: 0;
+  }
+
+  h2 {
+    font-weight: map-get($font-weights, bold);
+    font-size: map-get($font-sizes, h2);
+    line-height: 41px;
+    margin: 6px 0 37px 0;
+  }
+
+  input:focus {
+    outline: none;
+  }
+}
