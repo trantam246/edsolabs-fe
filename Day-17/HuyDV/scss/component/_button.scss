@@ -1,0 +1,65 @@
+@import "../base/variables";
+@import "../abstracts/mixins";
+@import "../abstracts/fuction";
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    height: $size-btn - 2px;
+    padding: 26px 0;
+
+    font-family: "SFPro--bold";
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 700;
+    color: $color-white;
+    text-align: center;
+
+    border-radius: $border-radius;
+    outline: none;
+    border: none;
+
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    @include flexbox(center, center, row);
+
+    &:hover {
+        transform: translateY(-1px);
+        .btn--icon{
+            transform: translateX(10px) rotate(360deg);
+        }
+    }
+
+    &--icon {
+        transform: translateX(0) rotate(0);
+        transition: all 2s ease-in-out;
+        font-size: 26px;
+        display: inline-block;
+    }
+
+    &--violet {
+        background-color: invert($button-primary);
+
+        &:hover {
+            background-color: invert($button-primary, 10%);
+        }
+    }
+
+    &--darkblue {
+        background-color: invert($button-secondary);
+
+        &:hover {
+            background-color: invert($button-secondary, 10%);
+        }
+    }
+
+    &--opacity-25 {
+        background: rgba(255, 255, 255, 0.25);
+    }
+
+    &--box-shadow {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    }
+}
+

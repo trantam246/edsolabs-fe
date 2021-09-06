@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In SMACSS</title>
+    <link href="./css/base/_base.css" rel="stylesheet">
+    <link href="./css/layout/_layout.css" rel="stylesheet">
+    <link href="./css/theme/_theme.css" rel="stylesheet">
+    <link href="./css/module/_module.css" rel="stylesheet">
+</head>
+<body>
+    <div class="box sign-in">
+        <div class="container">
+            <div class="header">
+                <div class="navbar">
+                    <div class="time">
+                        9:41
+                    </div>
+                    <div class="state">
+                        <img class="icon cellular" src="./img/Cellular Connection.png">
+                        <img class="icon wifi" src="./img/Wifi.png">
+                        <img class="icon battery" src="./img/Battery.png">
+                    </div>
+                </div>
+                <div class="logo-header">
+                    <img class="logo" src="./img/Sally-4 1@2x.png">
+                    <div class="welcome">
+                        <p>Welcome back!</p>
+                        <h1>Please, Log In.</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <form class="input-field">
+                    <div class="input-content username">
+                        <img src="./img/user.png">
+                        <input type="text" placeholder="johnsondoe@nomail.com">
+                    </div>
+                    <div class="input-content password">
+                        <img src="./img/key.png">
+                        <input type="password" minlength="8" required placeholder="*****************">
+                    </div>
+                    <div class="input-content">
+                        <button class="input-btn btn-sign-in" type="submit">Continue ></button>
+                    </div>
+                </form>
+            </div>
+            <div class="footer">
+               <div class="option-text">
+                    <span class="text">Or</span>
+               </div> 
+               <div class="footer-btn">
+                <a class="create-acc" href="sign-up.html">
+                    <span>Create an Accounts</span>
+                </a>
+               </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

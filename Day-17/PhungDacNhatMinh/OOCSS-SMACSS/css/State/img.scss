@@ -1,0 +1,13 @@
+@import '../Base/define.scss';
+.page-image {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.heading {
+    &__img-heading {
+        width: 100%;
+        max-width: $maxWidth;
+    }
+}

@@ -1,0 +1,108 @@
+$white__color: #FFFFFF;
+$borderRadius: 37px;
+$font__14: 14px;
+$font__20: 20px;
+$font__34: 34px;
+
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"),
+      url("../fonts/SFProDisplay-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"),
+      url("../fonts/SFProDisplay-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"),
+      url("../fonts/SFProDisplay-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SFProDisplay-SemiboldItalic.woff2") format("woff2"),
+      url("../fonts/SFProDisplay-SemiboldItalic.woff") format("woff");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+  }
+
+a {
+    text-decoration: none;
+}
+input {
+    color: #3C3C43;
+    border: none;
+    outline: none;
+    font-weight: 600;
+}
+.app {
+    position: relative;
+    width: 414px;
+    height: 896px;
+    font-family: SF Pro Display;
+}
+.sign-in {
+    background: linear-gradient(180deg, #e5b2ca 0%, #cd82de 100%);
+}
+.sign-up {
+    background: linear-gradient(180deg, #9183de 0%, #a094e3 100%);
+}
+@mixin btn {
+    margin-left: 36px;
+    border-radius: $borderRadius;
+    border: none;
+    width: 342px;
+    height: 70px;
+    color: $white__color;
+    font-weight: 800;
+    letter-spacing: 1px;
+    &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
+}
+@mixin separator__pseudo {
+    content: "";
+    position: absolute;
+    width: 148px;
+    top: 10px;
+    border: 1px dashed rgba(255, 255, 255, 0.4);
+}
+@mixin input {
+  width: 342px;
+  height: 74px;
+  background: $white__color;
+  border-radius: $borderRadius;
+  position: relative;
+}
+@mixin btn__primary-color {
+    background: #78258B;
+    box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+}
+@mixin btn__primary--regis-color {
+    background: #52439A;
+    box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+}
+@mixin btn__secondary-color {
+    background: rgba(255, 255, 255, 0.28);
+    box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+}
+@mixin btn__secondary--regis-color {
+    background: rgba(255, 255, 255, 0.28);
+    box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+}

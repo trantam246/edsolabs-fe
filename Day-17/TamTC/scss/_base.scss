@@ -1,0 +1,48 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css";
+@import "http://fonts.cdnfonts.com/css/sf-pro-display";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+$textColor: #fff;
+$textInputColor: #3c3c43;
+$btnSubmitColor: #78258b;
+$btnSwitchColor: rgba(255, 255, 255, 0.28);
+$boxShaDownInput: 0px 4px 4px rgba(0, 0, 0, 0.25);
+$boxShaDownBtn: rgba(120, 37, 139, 0.25) 0px 25px 45px;
+$borderRadius: 37px;
+$borderTopSeparator: 1px dashed rgba(255, 255, 255, 0.4);
+
+$font: "SF Pro Display", sans-serif;
+$fontWeight: (600, 800, bold);
+
+
+@mixin fontSize($size) {
+  font-size: $size + px;
+  font-size: $size / 16 + rem;
+}
+@mixin absolute($top, $left, $y){
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translateY($y);
+  -webkit-transform: translateY($y);
+  -moz-transform: translateY($y);
+  -ms-transform: translateY($y);
+  -o-transform: translateY($y);
+}
+
+%center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@function colorBtnHover($color) {
+  @if ($color == $btnSwitchColor) {
+    @return darken($color, 30%);
+  }
+    @return lighten($color, 10%);
+}

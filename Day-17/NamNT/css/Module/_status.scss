@@ -1,0 +1,37 @@
+$size-time:15px;
+$size-title-small:20px;
+$size-title-big:34px;
+// css detail status
+.status__time {
+    &--hour {
+        display: block;
+        font-size: $size-time;
+        width: 54px;
+        text-align: center;
+    }
+}
+
+.status__icon {
+    &--wifi {
+        margin: 0 9px 0 5px;
+    }
+}
+
+// Css title
+.title {
+    &__small {
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 24px;
+        font-size: $size-title-small;
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+}
+
+.title {
+    &__big {
+        line-height: 41px;
+        font-size: $size-title-big;
+        font-weight: 800;
+    }
+}

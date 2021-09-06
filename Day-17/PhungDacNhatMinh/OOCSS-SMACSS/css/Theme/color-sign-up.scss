@@ -1,0 +1,25 @@
+@import '../Base/define.scss';
+body.sign-up-page {
+    background: linear-gradient(180deg, #9183DE 0%, #A094E3 100%);
+}
+
+@mixin theme ($theme) {
+    background: $theme;
+    box-shadow: $boxShadowbtnSU;
+}
+
+form.form--sign-up .btn {
+    @include theme($bgColorSUbtn)
+}
+
+form.form--sign-up .btn.btn:hover {
+    background: rgba(82, 67, 154, 0.8);
+}
+
+form.form--sign-up .btn.btn--link {
+    @include theme(rgba(255, 255, 255, 0.28))
+}
+
+form.form--sign-up .btn--link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}

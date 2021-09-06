@@ -1,0 +1,16 @@
+@mixin fontSize($size) {
+    font-size: $size;
+}
+
+@mixin  resize($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin style-input() {
+    width: 342px;
+    background: $bgWhite;
+    border-radius: $radius;
+    position: relative;
+    margin: auto;
+}

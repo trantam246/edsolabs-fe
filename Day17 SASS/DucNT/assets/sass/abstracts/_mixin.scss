@@ -1,0 +1,36 @@
+@mixin txtColor($textColor) {
+ color:$textColor;
+
+}
+@mixin bgColor($bgColor:white){
+   background-color:$bgColor;
+}
+
+// @mixin size($width , $height:$width){
+//  width:$width;
+//  height:$height;
+//}
+@mixin justify($justify:center){
+justify-content: $justify;
+}
+// @mixin absCenter($direction:"left"){
+//  position:absolute;
+//  @if $direction == "left"{
+//       left:50%;
+//       transform:translateX(-50%);
+//  }
+//  @if $direction == "right"{
+//   top:50%;
+//   transform:translateY(-50%);
+// }
+// @if $direction == "both"{
+//  left:50%;
+//  top:50%;
+//  transform:translate(-50%,-50%);
+// }
+// }
+@mixin maxHeight($value){
+ @media screen and (max-height:$value){
+   @content;
+ }
+}

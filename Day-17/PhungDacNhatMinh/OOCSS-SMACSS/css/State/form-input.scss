@@ -1,0 +1,21 @@
+@import '../Base/define.scss';
+.form {
+    &__row {
+        position: relative;
+        margin-bottom: 14px;
+    }
+    &__row .icon {
+        position: absolute;
+        top: 38%;
+        left: 22px;
+    }
+}
+
+.form input:focus {
+    border: 0;
+    outline: none;
+}
+
+.form input[type="password"] {
+    padding: 27px 50px;
+}

@@ -1,0 +1,23 @@
+@import "./variables";
+
+input:focus {
+  outline: none;
+}
+
+.submit-btn:hover {
+  background: lighten(map-get($button-colors, signin-submit-color), 10%);
+}
+.nav-btn:hover {
+  background: darken(map-get($button-colors, signin-nav-color), 10%);
+}
+
+.l-signup-theme {
+  .submit-btn:hover {
+    background: lighten(map-get($button-colors, signup-submit-color), 10%);
+  }
+}
+.l-signup-theme {
+  .nav-btn:hover {
+    background: darken(map-get($button-colors, signup-nav-color), 10%);
+  }
+}

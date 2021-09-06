@@ -1,0 +1,39 @@
+@mixin flex(
+  $align: flex-start,
+  $justify: flex-start,
+  $wrap: nowrap,
+  $direction: row
+) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+}
+
+@mixin corner-icon($name, $position, $width, $height) {
+  .#{$name}-bg {
+    background: url("../images/Icon.png") no-repeat $position;
+    width: $width;
+    height: $height;
+    display: inline-block;
+    min-width: 18px;
+  }
+}
+
+@mixin corner-icon-2($name, $position) {
+  .icon-#{$name} {
+    background: url("../images/css_sprites.png") no-repeat $position;
+    width: 12px;
+    height: 20px;
+    display: inline-block;
+  }
+}
+
+@mixin btn-bg($bgColor, $alpha-bg, $alpha-sd, $alpha-hv) {
+  background: rgba($color: $bgColor, $alpha: $alpha-bg);
+  box-shadow: 0px 25px 45px rgba($color: $bgColor, $alpha: $alpha-sd);
+  &:hover {
+    background: rgba($color: $bgColor, $alpha: $alpha-hv);
+  }
+}

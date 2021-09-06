@@ -1,0 +1,28 @@
+ /* Header */
+// @import "../abstracts/variable";
+// @import "../abstracts/mixin";
+ .header {
+  display: $display;
+  /* height: 44px; */
+  line-height: 44px;
+  @include justify(space-between);
+  
+}
+
+.header_time {
+ @include txtColor(#ffffff);
+}
+
+.header_right {
+  display: $display;
+}
+
+.icon_ {
+ @include txtColor(#ffffff);
+}
+
+.icon {
+ @include txtColor(#ffffff);
+  padding-right: 15px;
+}
+/* End Header */

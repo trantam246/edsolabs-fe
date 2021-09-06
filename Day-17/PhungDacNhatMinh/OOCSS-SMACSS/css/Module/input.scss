@@ -1,0 +1,11 @@
+@import '../Base/define.scss';
+input {
+    border: 0;
+    border-radius: $borderRadiusMain;
+    line-height: $lineHeight - 3px;
+    width: 100%;
+    padding: 28px 60px;
+    font-size: $fontMain;
+    font-style: normal;
+    font-weight: normal;
+}

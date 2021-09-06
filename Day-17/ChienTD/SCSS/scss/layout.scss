@@ -1,0 +1,13 @@
+@import './variables';
+
+.l-status {
+    color: $textWhite;
+    height: 44px;
+    width: $width;
+    position: relative;
+    font-family: sfProl;
+}
+
+.l-main {
+    width: $width;
+}

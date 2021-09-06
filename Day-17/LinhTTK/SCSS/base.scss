@@ -1,0 +1,30 @@
+@import "./variable";
+@font-face {
+    font-family: "SFProDisplay";
+    src: url("../Font/FontsFree-Net-SFProDisplay-Regular.ttf") format("truetype");
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "SFProDisplay";
+    color: $basiccolor;
+  
+  
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}

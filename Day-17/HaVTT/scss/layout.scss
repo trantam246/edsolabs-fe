@@ -1,0 +1,35 @@
+@import "./mixin";
+
+.main {
+    margin: 0px auto;
+    max-width: 414px;
+}
+.main-login {
+    @include bg("signin");
+}
+  
+.main-sign-up {
+    @include bg("signup");
+}
+  
+@media screen and (max-height: 750px) {
+    #main {
+      height: 750px;
+    }
+  }
+.l-header {
+    @include flexCenter;
+    padding-top: 10px;
+}
+
+.l-container {
+    width: 342px;
+    padding: 0px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}  
+
+.l-footer {
+    padding: 0px 36px 40px;
+}

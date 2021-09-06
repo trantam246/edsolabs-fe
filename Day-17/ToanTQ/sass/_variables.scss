@@ -1,0 +1,26 @@
+$blue-color: #52439a;
+$pink-color: #78258b;
+$white-color: #ffffff;
+$black-color: #000000;
+
+$bg-login-main-color: linear-gradient(180deg, #e5b2ca 0%, #cd82de 100%);
+$bg-sign-main-color: linear-gradient(180deg, #9183de 0%, #a094e3 100%);
+
+$sfPro-font-path: "../fonts/SFProDisplay";
+
+$font-sizes: (
+  "h2": 3.4rem,
+  "h4": 2rem,
+  "btn": 1.6rem,
+  "p": 1.5rem,
+  "i": 1.4rem,
+);
+
+$font-weights: (
+  "regular": 400,
+  "light": 500,
+  "medium": 600,
+  "bold": 800,
+);
+
+$border-radius: 3.7rem;

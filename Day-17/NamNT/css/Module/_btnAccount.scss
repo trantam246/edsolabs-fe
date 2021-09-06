@@ -1,0 +1,18 @@
+.container {
+    .createAccount {
+        background: rgba(255, 255, 255, 0.28);
+        border-radius: 37px;
+        display: block;
+        padding: 26.5px 0;
+        margin: 0 36px;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        transition: all ease-in-out 0.5s;
+        &:hover {
+            background: lighten(#932eac, 10%);
+            transition: all ease-in-out 0.5s;
+        }
+    }
+}
