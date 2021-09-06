@@ -1,0 +1,11 @@
+.container_sig {
+	width: 414px;
+	height: 880px;
+}
+.container {
+	width: 414px;
+	height: 880px;
+	background: linear-gradient(180deg, #E5B2CA 0%, #CD82DE 100%);
+    margin:  0 auto;
+	
+}

@@ -1,0 +1,22 @@
+.container{
+    margin: 0 auto;
+    max-width: 414px;
+    width: 100%;
+    padding: 54px 30px 45px 30px;
+}
+.mb-37{
+    margin-bottom: 37px !important;
+}
+.bg-main--primary{
+    background:var( --bg-primary);
+}
+.bg-main--secondary{
+    background:var( --bg-secondary);
+}
+.banner__img{
+    height: 290px;
+}
+.page{
+    padding: 0 6px;
+    width: 100%;
+}

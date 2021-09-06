@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../common/reset-css.css">
+    <link rel="stylesheet" href="../common/style.css">
+    <link rel="stylesheet" href="style_Login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <!-- Thanh status -->
+        <div class="l-status">
+            <div class="status__left"><span>9:41</span></div>
+            <div class="status__right">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+
+        <!-- Phần chính -->
+        <div class="l-main">
+            <!-- Ảnh nền -->
+            <div class="main__img">
+                <img src="../assets/img/img-login.png" alt="đây là ảnh nền mục login">
+            </div>
+            <!-- Tên trang -->
+            <div class="main__title">
+                <p>Welcome Back!</p>
+                <p>Please, Log In.</p>
+            </div>
+            <!-- Form đăng nhậP -->
+            <form class="main__form">
+                <div class="main__user main__style-input">
+                    <img src="../assets/icon/user.png">
+                    <input type="text" value="johnsondoe@nomail.com">
+                </div>
+                <div class="main__password main__style-input">
+                    <img src="../assets/icon/key.png">
+                    <input type="password" value="ádasdasdasdasdsdđáádasd">
+                </div>
+                <button class="main__continue main__style-input main__sumbit main__btn--hover" type="submit">
+                    <span>Continue <i class="fas fa-chevron-right"></i></span>
+                </button>
+            </form>
+            <div class="main__or">
+                <span> Or </span>
+            </div>
+            <a href="/register/register.html">
+                <div class="main__create main__change--page">
+                    Create an Account
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

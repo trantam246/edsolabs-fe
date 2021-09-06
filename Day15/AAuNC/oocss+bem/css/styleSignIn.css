@@ -1,0 +1,235 @@
+
+/*====================COMMON===================== */
+@import url('./normalize.css');
+@import url('./fonts.css');
+
+body {
+    font-family: SF-font;
+}
+
+/*====================container===================== */
+.container {
+    margin: auto;
+    width: 414px;
+    height: 896px;
+}
+
+.container-login {
+    background: linear-gradient(180deg, #E5B2CA 0%, #CD82DE 100%);
+}
+
+/*====================header===================== */
+
+.header {
+    width: 100%;
+    height: 44px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* time */
+.header__time {
+    padding-left: 21px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+/* list-icon */
+.header__icons {
+    display: flex;
+    padding-right: 14px;
+}
+
+.header__icons__item {
+    font-size: 15px;
+    color: white;
+}
+
+.header__icons__item:nth-child(even){
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+
+/*====================main===================== */
+.main {
+    width: 100%;
+    height: 852px;
+}
+
+/* image-block */
+
+.main__image {
+    margin: auto;
+    background-size: cover;
+}
+
+.main__image-login {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 353px;
+    height: 290px;
+    background-image: url('../images/img1.png');
+}
+
+/* text */
+.main__text {
+    width: 353px;
+    height: 71px;
+    margin: auto;
+    text-align: center;
+}
+
+.main__text--small {
+    height: 24px;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.main__text--big {
+    margin-top: 6px;
+    height: 41px;
+    font-size: 34px;
+    line-height: 41px;
+    font-weight: 800;
+    color: #FFFFFF;
+}
+
+/* form */
+.main__form {
+    margin: auto;
+    margin-top: 37px;
+    width: 342px;
+}
+
+/* input */
+.main__form__input {
+    width: 342px;
+    height: 100%;
+    
+    border: 0px;
+    border-radius: 37px;
+    box-sizing: border-box;
+    outline: none;
+
+    font-weight: 600;
+    font-size: 15px;
+    
+    background-size: 13px 13px;
+    background-repeat: no-repeat;
+    background-position-y: center ;
+    background-position-x: 22px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #3C3C43;
+}
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #3C3C43;
+}
+  
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #3C3C43;
+}
+
+.main__form__input:focus {
+    border: 2px solid blue;
+}
+
+.main__form__input-email {
+    height: 74px;
+    padding: 27px 60px;
+    background-image: url('../images/user.png');
+}
+
+.main__form__input-password {
+    margin-top: 14px;
+    height: 72px;
+    padding: 27px 50px;  
+    background-image: url('../images/key.png');  
+}
+
+
+/* button */
+.main__form__btn {
+    margin: auto;
+    width: 342px;
+    height: 70px;
+
+    outline: none;
+    border: 0px;
+    border-radius: 37px;
+    
+    font-size: 19px;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0px 25px 45px rgba(248, 248, 248, 0.25);
+}
+
+.main__form__btn:focus {
+    border: 2px solid blue;
+}
+
+.main__form__btn-link {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 70px;
+}
+
+.main__form__btn-submit {
+    margin-top: 14px;
+    color: white;
+    background-color: #78258B;
+}
+
+.main__form__btn-submit:hover {
+    background-color: #78258b96;
+    cursor: pointer;
+}
+
+.main__form__btn-register {   
+    background-color: rgba(120, 37, 139, 0.25);
+}
+
+.main__form__btn-register:hover {
+    background-color: rgb(120, 37, 139, 0.6);
+}
+
+/* line */
+
+.main__form__line {
+    margin: auto;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    width: 342px;
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+}
+
+.main__form__line::before, .main__form__line::after {
+    content: "";
+    height: 1px;
+    width: 148px;
+    border-top: 2px dashed white;
+    position: absolute;
+}
+
+.main__form__line::before {
+    top: 8px;
+    right: 0px;
+}
+
+.main__form__line::after {
+    top: 8px;
+    left: 0px;
+}
+
+

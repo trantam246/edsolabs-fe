@@ -1,0 +1,26 @@
+body {
+    background-color: #e9e9e9;
+    font-family: SF Display;
+    margin: 0;
+    padding: 0;
+    color:white
+}
+input::placeholder {
+    font-family: SF Display;
+    font-weight: bold;
+}
+input {
+    outline: none;
+}
+button {
+    font-family: SF Display;
+    color: white;
+}
+a {
+    color:white;
+    text-decoration:none;
+}
+@font-face {
+    font-family: SF Display;
+    src: url(/SMACSS/font/FontsFree-Net-SFProDisplay-Regular.ttf);
+}

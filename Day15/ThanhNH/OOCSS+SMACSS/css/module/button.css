@@ -1,0 +1,56 @@
+.form__btn {
+    border-radius: 37px;
+    height: 70px;
+    padding: 25px 96px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0px;
+    border-radius: 37px;
+    transition: all ease 0.3s;
+    box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+}
+
+.form__btn button {
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0px;
+}
+
+.form__btn button {
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0px;
+}
+
+.btn__register--top {
+    background-color: #52439A;
+    margin-bottom: 32px;
+}
+
+.continue__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nextIcon {
+    margin-left: 4px;
+}
+
+.btn__link {
+    margin-top: 32px;
+    background: rgba(255, 255, 255, 0.28);
+}
+
+.form__btn:hover {
+    transform: scale(1.01);
+} 

@@ -1,0 +1,50 @@
+@import url("base/fonts.css");
+@import url("base/reset.css");
+@import url("layout/layout.css");
+@import url("module/form.css");
+@import url("module/btn.css");
+/* reset page */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100vh;
+    font-family: "SF Pro Display";
+    font-size: 16px;
+}
+
+.signup__image {
+    width: 353px;
+    height: 290px;
+    display: block;
+    margin: 0px auto;
+}
+
+.signin__image {
+    width: 353px;
+    height: 290px;
+    display: block;
+    margin: 0px auto;
+}
+
+.layout__h4, .layout__h2 {
+    text-align: center;
+}
+
+.layout__h4 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.layout__h2 {
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 41px;
+    margin: 6px 0 37px 0;
+    color: #FFFFFF;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <title>Sign In</title>
+  </head>
+  <body>
+    <main class="container container--login-theme grid grid--center">
+      <section>
+        <img src="./images/login-logo.png" alt="logo" class="logo-image" />
+        <section class="text--white grid grid--center">
+          <h2 class="font-weight--400">Welcome Back!</h2>
+          <h1 class="font-weight--800">Please, Log In.</h1>
+        </section>
+        <form class="container__form">
+          <div class="container__input">
+            <img
+              src="./images/user.png"
+              alt="username icon"
+              class="container__icon"
+            />
+            <input type="text" name="username" placeholder="Username" />
+          </div>
+          <div class="container__input">
+            <img
+              src="./images/key.png"
+              alt="password icon"
+              class="container__icon"
+            />
+            <input type="password" name="password" placeholder="Password" />
+          </div>
+          <div class="container__buttons">
+            <button class="container__btn container__btn--submit">
+              Continue
+              <i class="material-icons-outlined">chevron_right</i>
+            </button>
+            <div class="container__separator">
+              <hr class="container__dashed-separate" />
+              <p class="container__text-separate">Or</p>
+              <hr class="container__dashed-separate" />
+            </div>
+            <a
+              href="./sign-up.html"
+              class="container__btn container__btn--nav grid grid--center"
+              >Create an Account</a
+            >
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

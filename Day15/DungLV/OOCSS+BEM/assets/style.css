@@ -1,0 +1,143 @@
+@font-face {
+    font-family: myFontFree;
+    src: url("../fonts/FontsFree-Net-SFProDisplay-Regular.ttf");
+}
+
+@font-face {
+    font-family: Boldd;
+    src: url("../fonts/SF-Pro-Display-Bold.otf");
+}
+
+@font-face {
+    font-family: pro;
+    src: url("../fonts/SF-Pro-Display-Medium.otf");
+}
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: myFontFree;
+}
+a {
+    text-decoration: none;
+}
+::placeholder {
+    color: #3c3c43;
+}
+:root {
+    --white: #ffffff;
+    --black: #3c3c43;
+}
+.btn {
+    font-family: pro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: var(--white);
+    width: 342px;
+    height: 70px;
+    border-radius: 37px;
+    outline: none;
+    border: none;
+    background: #78258b;
+    box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+    cursor: pointer;
+}
+@import url("./Base/variable.css");
+@import url("./Base/global.css");
+@import url("./Base/reset.css");
+@import url("./Component/button.css");
+.layout {
+    width: 414px;
+    height: 896px;
+    text-align: center;
+    margin: 100px auto;
+    padding: 54px 36px 45px 36px;
+    background: linear-gradient(180deg, #e5b2ca 0%, #cd82de 100%);
+}
+.layout__title {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 23, 87px;
+    margin-bottom: 7px;
+    letter-spacing: 1.1px;
+}
+.layout__request {
+    font-family: pro;
+    color: var(--white);
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 37px;
+    letter-spacing: 1.1px;
+}
+.form__input {
+    position: relative;
+}
+.form__icon {
+    position: absolute;
+    top: 29.89px;
+    left: 21.87px;
+    z-index: 9999;
+}
+.form__input input {
+    color: var(--black);
+    font-weight: 600;
+    font-size: 15px;
+    background-color: var(--white);
+    border-radius: 37px;
+    border: none;
+    outline: none;
+    width: 342px;
+    height: 74px;
+    padding: 28px 97px 28px 60px;
+    margin-bottom: 14px;
+    transition: transform 0.3s linear;
+}
+.form__input--password input {
+    color: var(--black);
+    font-weight: 600;
+    font-size: 14px;
+    height: 72px;
+    padding: 28px 159px 27px 50px;
+}
+fieldset {
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px dashed rgba(255, 255, 255, 0.4);
+    margin: 23px 0 17px 0;
+}
+.layout__or {
+    font-size: 14px;
+    padding: 12px;
+    color: var(--white);
+}
+.btn--light {
+    background: rgba(255, 255, 255, 0.28);
+    box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+}
+/* Sign-up setting */
+.layout--signup {
+    background: linear-gradient(180deg, #9183de 0%, #a094e3 100%);
+}
+.btn--blue {
+    background: #52439a;
+    box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+}
+.btn--signup {
+    background: rgba(255, 255, 255, 0.28);
+    box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+}
+.btn:hover {
+    opacity: 0.65;
+    transition: opacity 0.5s ease-in-out;
+}
+input:focus {
+    transform: translateY(-1px);
+}

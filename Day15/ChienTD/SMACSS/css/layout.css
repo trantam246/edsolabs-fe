@@ -1,0 +1,11 @@
+.l-status {
+    color: white;
+    height: 44px;
+    width: 414px;
+    position: relative;
+    font-family: sfProl;
+}
+
+.l-main {
+    width: 414px;
+}

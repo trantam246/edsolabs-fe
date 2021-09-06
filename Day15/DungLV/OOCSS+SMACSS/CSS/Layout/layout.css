@@ -1,0 +1,37 @@
+.layout {
+    width: 414px;
+    height: 896px;
+    text-align: center;
+    margin: 100px auto;
+    padding: 54px 36px 45px 36px;
+    background: linear-gradient(180deg, #e5b2ca 0%, #cd82de 100%);
+}
+.layout__title {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 23, 87px;
+    margin-bottom: 7px;
+    letter-spacing: 1.1px;
+}
+.layout__request {
+    font-family: pro;
+    color: var(--white);
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 37px;
+    letter-spacing: 1.1px;
+}
+.layout__or {
+    font-size: 14px;
+    padding: 12px;
+    color: var(--white);
+}
+.btn--light {
+    background: rgba(255, 255, 255, 0.28);
+    box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+}
+/* Sign-up setting */
+.layout--signup {
+    background: linear-gradient(180deg, #9183de 0%, #a094e3 100%);
+}

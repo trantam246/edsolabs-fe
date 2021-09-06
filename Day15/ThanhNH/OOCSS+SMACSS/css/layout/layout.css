@@ -1,0 +1,66 @@
+.layout {
+    width: 414px;
+    height: 896px;
+    background: linear-gradient(180deg, #9183DE 0%, #A094E3 100%);
+    margin: 20px auto;
+    color: #fff;
+}
+
+.header {
+    padding: 54px 66px 0 66px;
+}
+.header__text {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.header__title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 6px;
+}
+
+.header__content {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 41px;
+    letter-spacing: 0px;
+}
+
+.form {
+    margin-top: 37px;
+    padding: 0 36px;
+}
+
+.form__title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.form__title span {
+    padding: 0 15px;
+}
+
+.form__title::before ,
+.form__title::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+}
+
+/* sign-in */
+.layout.sign__in {
+    background: linear-gradient(180deg, #E5B2CA 0%, #CD82DE 100%);
+}
+
+.btn__signIn--top {
+    background-color: #78258B;
+    margin-bottom: 32px;
+}
