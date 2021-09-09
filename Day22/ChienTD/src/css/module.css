@@ -1,0 +1,164 @@
+@charset "UTF-8";
+/* Style container */
+.container {
+  background: linear-gradient(180deg, #E5B2CA 0%, #CD82DE 100%);
+  margin: auto;
+  width: 414px;
+  height: 896px;
+}
+
+.style-content-status {
+  position: absolute;
+  font-size: 15px;
+  top: 7px;
+}
+
+.left_status_bar {
+  width: 54px;
+  height: 21px;
+  left: 21px;
+}
+.left_status_bar span {
+  position: absolute;
+  bottom: 0px;
+  left: 25%;
+}
+
+.right_status_bar {
+  right: 14px;
+}
+.right_status_bar i {
+  margin-left: 5px;
+}
+
+/* Style ảnh nền */
+.header {
+  width: 353px;
+  height: 290px;
+  margin-top: 10px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+}
+.header img {
+  width: 423px;
+  position: absolute;
+  left: -55px;
+  top: -80px;
+}
+
+/* Style title page */
+.title_page {
+  text-align: center;
+  font-family: sfPro;
+}
+.title_page p:first-child {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.75);
+}
+.title_page p:last-child {
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 41px;
+  color: white;
+}
+
+/* Style Form login */
+.form {
+  margin-top: 37px;
+}
+.form .style_input {
+  width: 342px;
+  background: white;
+  border-radius: 37px;
+  position: relative;
+  margin: auto;
+}
+.form .style_input input {
+  color: #3C3C43;
+  position: absolute;
+  left: 60px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  top: 20px;
+  width: 185px;
+  height: 30px;
+}
+.form .style_input img {
+  width: 13px;
+  position: absolute;
+  top: 30px;
+  left: 22px;
+}
+.form .password {
+  margin-top: 14px;
+  height: 72px;
+}
+.form .sumbit {
+  text-align: center;
+  margin-top: 14px;
+  line-height: 70px;
+  cursor: pointer;
+  margin-left: 31px;
+  border: none;
+  font-family: sfPro;
+}
+.form .continue {
+  background-color: #78258B;
+  box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+}
+.form span {
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+}
+.form .user {
+  height: 74px;
+}
+.form button {
+  height: 70px;
+}
+
+/* Style khoảnh cách (or) */
+.or {
+  width: 340px;
+  height: 16px;
+  color: white;
+  margin: auto;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.or::before {
+  content: "----------------------------- ";
+}
+
+.or::after {
+  content: "----------------------------";
+}
+
+/* Style chuyển trang */
+.change_page {
+  width: 342px;
+  background: white;
+  border-radius: 37px;
+  position: relative;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+  color: white;
+  text-align: center;
+  line-height: 70px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: sfPro;
+}
+.change_page span a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=module.css.map */
