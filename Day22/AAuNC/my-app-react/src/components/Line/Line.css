@@ -1,0 +1,28 @@
+.line {
+    margin: auto;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    width: 342px;
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+}
+
+.line::before, .line::after {
+    content: "";
+    height: 1px;
+    width: 148px;
+    border-top: 2px dashed white;
+    position: absolute;
+}
+
+.line::before {
+    top: 8px;
+    right: 0px;
+}
+
+.line::after {
+    top: 8px;
+    left: 0px;
+}
