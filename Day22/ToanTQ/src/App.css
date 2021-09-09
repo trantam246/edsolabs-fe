@@ -1,0 +1,329 @@
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("./fonts/SFProDisplay-BlackItalic.woff") format("woff");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100vh;
+    font-size: 62.5%;
+}
+
+body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: "SF Pro Display";
+}
+
+body h2,
+body h4 {
+    text-align: center;
+}
+
+body h4 {
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 24px;
+    margin: 0;
+}
+
+body h2 {
+    font-weight: 800;
+    font-size: 3.4rem;
+    line-height: 41px;
+    margin: 6px 0 37px 0;
+}
+
+body input:focus {
+    outline: none;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 414px;
+    min-width: 320px;
+    width: 100%;
+    padding: 10px 30px 45px 30px;
+}
+
+.status {
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
+
+.l-status {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.page-image {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.btn {
+    border-radius: 3.7rem;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 2.6rem 0;
+    border: 0;
+    -webkit-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+}
+
+.btn-link {
+    text-decoration: none;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border: 0;
+}
+
+.status .time {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 18px;
+}
+
+.status .status-group .cellular-bg {
+    background: url("./assets/images/Icon.png") no-repeat -27px -1px;
+    width: 20px;
+    height: 12px;
+    display: inline-block;
+    min-width: 18px;
+}
+
+.status .status-group .wifi-bg {
+    background: url("./assets/images/Icon.png") no-repeat 0px -2px;
+    width: 25px;
+    height: 12px;
+    display: inline-block;
+    min-width: 18px;
+}
+
+.status .status-group .Battery-bg {
+    background: url("./assets/images/Icon.png") no-repeat -52px -2px;
+    width: 18px;
+    height: 12px;
+    display: inline-block;
+    min-width: 18px;
+}
+
+.content .icon-key {
+    background: url("./assets/images/css_sprites.png") no-repeat -10px -10px;
+    width: 12px;
+    height: 20px;
+    display: inline-block;
+}
+
+.content .icon-user {
+    background: url("./assets/images/css_sprites.png") no-repeat -75px -10px;
+    width: 12px;
+    height: 20px;
+    display: inline-block;
+}
+
+.content .icon-chevron-right {
+    background: url("./assets/images/css_sprites.png") no-repeat -42px -10px;
+    width: 12px;
+    height: 20px;
+    display: inline-block;
+}
+
+.content .separator {
+    text-align: center;
+    position: relative;
+    margin: 32px 0 30px 0;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 17px;
+}
+
+.content .form {
+    padding: 0 6px;
+}
+
+.content .form .form-row {
+    margin-bottom: 14px;
+    position: relative;
+}
+
+.content .form .form-row .icon {
+    position: absolute;
+    top: 50%;
+    left: 22px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.content .form .form-row .btn .icon {
+    margin-left: 8px;
+}
+
+.content .form input {
+    border: 0;
+    border-radius: 37px;
+    line-height: 18px;
+    width: 100%;
+    padding: 28px 60px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.status .time {
+    color: #ffffff;
+}
+
+.content h2 {
+    color: #ffffff;
+}
+
+.content h4 {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.content .btn {
+    color: #ffffff;
+}
+
+.content .form input:focus {
+    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.content .form input::-webkit-input-placeholder {
+    color: #000000;
+}
+
+.content .form input:-ms-input-placeholder {
+    color: #000000;
+}
+
+.content .form input::-ms-input-placeholder {
+    color: #000000;
+}
+
+.content .form input::placeholder {
+    color: #000000;
+}
+
+.content .form .separator {
+    color: #ffffff;
+}
+
+.content .form .separator::before,
+.content .form .separator::after {
+    content: "";
+    height: 0;
+    width: 42%;
+    position: absolute;
+    top: 50%;
+    border: dashed 1px;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.content .form .separator:before {
+    left: 0;
+}
+
+.content .form .separator:after {
+    right: 0;
+}
+
+.sign-in-page {
+    background: -webkit-gradient(linear, left top, left bottom, from(#e5b2ca), to(#cd82de));
+    background: linear-gradient(180deg, #e5b2ca 0%, #cd82de 100%);
+}
+
+.sign-up-page {
+    background: -webkit-gradient(linear, left top, left bottom, from(#9183de), to(#a094e3));
+    background: linear-gradient(180deg, #9183de 0%, #a094e3 100%);
+}
+
+.sign-in-page .btn {
+    background: rgba(120, 37, 139, 0.8);
+    -webkit-box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+    box-shadow: 0px 25px 45px rgba(120, 37, 139, 0.25);
+}
+
+.sign-in-page .btn:hover {
+    background: rgba(120, 37, 139, 0.6);
+}
+
+.sign-in-page .btn-link {
+    background: rgba(255, 255, 255, 0.28);
+    -webkit-box-shadow: 0px 25px 45px rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 25px 45px rgba(255, 255, 255, 0.25);
+}
+
+.sign-in-page .btn-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sign-up-page .btn {
+    background: rgba(82, 67, 154, 0.8);
+    -webkit-box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+    box-shadow: 0px 25px 45px rgba(82, 67, 154, 0.25);
+}
+
+.sign-up-page .btn:hover {
+    background: rgba(82, 67, 154, 0.6);
+}
+
+.sign-up-page .btn-link {
+    background: rgba(255, 255, 255, 0.28);
+    -webkit-box-shadow: 0px 25px 45px rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 25px 45px rgba(255, 255, 255, 0.25);
+}
+
+.sign-up-page .btn-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/*# sourceMappingURL=style.css.map */
