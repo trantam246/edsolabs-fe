@@ -1,0 +1,28 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 1280px;
+    margin: auto;
+    align-items: center;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+    background: #fff;
+
+    .todayWeatherComponent {
+        width: 40%;
+        margin: 20px;
+    }
+
+    .progressWrapper {
+        position: relative;
+        margin-top: 10px;
+    }
+
+    .progress {
+        position: absolute;
+        left: -50px;
+        top: -12px;
+    }
+
+
+}

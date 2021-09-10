@@ -1,0 +1,17 @@
+.wrapper {
+    width: 60%;
+
+    .header {
+        margin: 10px 0 20px 10px;
+    }
+
+    .wrapperList {
+        display: flex;
+        width: 100%;
+
+        .widgetItem {
+            width: 20%;
+            padding: 0 10px;
+        }
+    }
+}
