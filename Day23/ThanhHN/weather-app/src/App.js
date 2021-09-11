@@ -46,14 +46,17 @@ function App() {
       .then(res => setTodayWeather(res.data));
 
     weather.getForecastWeather(url)
-      .then(res => setForecast(res.data.forecast.forecastday))
+      .then(res => {
+        setForecast(res.data.forecast.forecastday);
+        setLoading(false);
+      })
   }
 
   const handleShowModal = () => {
     setShowModal(true);
   }
 
-  const hanldeCloseModal = () => {
+  const handleCloseModal = () => {
     setShowModal(false);
   }
 
@@ -74,7 +77,7 @@ function App() {
         loading={loading}
         showModal={showModal}
         onClickMyName={handleShowModal}
-        onClickModal={hanldeCloseModal}
+        onClickModal={handleCloseModal}
       />
     </>
   );
