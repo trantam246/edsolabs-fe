@@ -1,0 +1,24 @@
+
+#root {
+  margin: 3rem auto;
+  padding: 4rem;
+  width: 96%;
+  min-height: 100vh;
+  box-shadow: rgb(200 200 211 / 90%) 0 0.7rem 2.9rem 0;
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  -webkit-border-radius: 3rem;
+  -moz-border-radius: 3rem;
+  -ms-border-radius: 3rem;
+  -o-border-radius: 3rem;
+}
+.loading{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+}
