@@ -52,11 +52,11 @@ function App() {
       <Search onAddWeather={addWeatherHandler} />
       {loading ? (
         <div className="loading">
-          <Default color="#fff" />{" "}
+          <Default color="#fff" />
           <span> Getting information, please wait...</span>
         </div>
       ) : (
-        <WeatherList data={weatherData}></WeatherList>
+        <WeatherList data={weatherData} />
       )}
       <Footer />
     </>
