@@ -1,0 +1,94 @@
+@import "base";
+@import "theme";
+@import "modules";
+@import "layout";
+
+.title {
+  &__welcome {
+    font-weight: nth($fontWeight, 1);
+    @include fontSize(20);
+    line-height: 24px;
+    margin-bottom: 6px;
+    display: block;
+    color: rgba(255, 255, 255, 0.75);
+  }
+  &__login {
+    font-weight: nth($fontWeight, 2);
+    @include fontSize(34);
+    line-height: 41px;
+  }
+}
+
+.form {
+  &__item {
+    position: relative;
+    margin-bottom: 14px;
+  }
+  &__input {
+    @include input;
+    outline: none;
+    padding: 28px 60px;
+    box-sizing: border-box;
+    font-weight: nth($fontWeight, 1);
+    @include fontSize(15);
+    line-height: 18px;
+    color: $textInputColor;
+    &:focus {
+      box-shadow: $boxShaDownInput;
+    }
+    &::placeholder {
+      color: $textInputColor;
+    }
+    &--password {
+      padding: 27px 60px;
+    }
+  }
+  &__icon {
+    @include absolute(50%, 20px, -50%);
+  }
+  &__btn--submit {
+    @include btn($btnSubmitColor);
+    height: 70px;
+    font-weight: nth($fontWeight, 3);
+    line-height: 19px;
+    letter-spacing: 0.6px;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background: colorBtnHover($btnSubmitColor);
+    }
+  }
+  &__separator {
+    width: 100%;
+    height: 80px;
+    @extend %center;
+    & fieldset {
+      width: 100%;
+      padding: 0;
+      border-top: $borderTopSeparator;
+      border-bottom: none;
+      border-right: none;
+      border-left: none;
+    }
+    & legend {
+      text-align: center;
+      padding: 0px 14px;
+      @include fontSize(14);
+      line-height: 17px;
+      color: $textColor;
+    }
+  }
+  &__switch {
+    @include btn($btnSwitchColor);
+    @extend %center;
+    height: 70px;
+    text-decoration: none;
+    font-weight: nth($fontWeight, 3);
+    line-height: 19px;
+    letter-spacing: 1px;
+    overflow: hidden;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background: colorBtnHover($btnSwitchColor);
+    }
+  }
+}

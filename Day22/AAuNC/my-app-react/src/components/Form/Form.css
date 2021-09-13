@@ -1,0 +1,100 @@
+form {
+    margin: auto;
+    margin-top: 37px;
+    width: 342px;
+}
+
+/* input */
+.input {
+    width: 342px;
+    height: 100%;
+    
+    border: 0px;
+    border-radius: 37px;
+    box-sizing: border-box;
+    outline: none;
+
+    font-weight: 600;
+    font-size: 15px;
+    
+    background-size: 13px 13px;
+    background-repeat: no-repeat;
+    background-position-y: center ;
+    background-position-x: 22px;
+}
+
+.input:focus {
+    border: 2px solid rgb(26, 142, 236);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #3C3C43;
+}
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #3C3C43;
+}
+  
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #3C3C43;
+}
+
+input[type="email"] {
+    height: 74px;
+    padding: 27px 60px;
+    background-image: url('/src/assets/images/user.png');
+}
+
+input[type="password"] {
+    margin-top: 14px;
+    height: 72px;
+    padding: 27px 50px;  
+    background-image: url('/src/assets/images/key.png');  
+}
+
+
+/* button */
+.btn {
+    margin: auto;
+    width: 342px;
+    height: 70px;
+
+    outline: none;
+    border: 0px;
+    border-radius: 37px;
+    
+    font-size: 19px;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0px 25px 45px rgba(248, 248, 248, 0.25);
+}
+
+.btn:focus {
+    border: 2px solid rgb(26, 142, 236);
+}
+
+.btn-link {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 70px;
+}
+
+.submit {
+    margin-top: 14px;
+    color: white;
+    background-color: #78258B;
+}
+
+.submit:hover {
+    background-color: #78258b96;
+    cursor: pointer;
+}
+
+.register {   
+    background-color: rgba(120, 37, 139, 0.25);
+}
+
+.register:hover {
+    background-color: rgb(120, 37, 139, 0.6);
+}

@@ -1,0 +1,248 @@
+@font-face {
+ font-family: "SF Pro Display";
+ src: url("../font/SFProDisplay-BlackItalic.woff2") format("woff2"),
+   url("../font/SFProDisplay-BlackItalic.woff") format("woff");
+ font-weight: 900;
+ font-style: italic;
+ font-display: swap;
+}
+
+@font-face {
+ font-family: "SF Pro Display";
+ src: url("../font/SFProDisplay-HeavyItalic.woff2") format("woff2"),
+   url("../font/SFProDisplay-HeavyItalic.woff") format("woff");
+ font-weight: 900;
+ font-style: italic;
+ font-display: swap;
+}
+
+@font-face {
+ font-family: "SF Pro Display";
+ src: url("../font/SFProDisplay-LightItalic.woff2") format("woff2"),
+   url("../font/SFProDisplay-LightItalic.woff") format("woff");
+ font-weight: 200;
+ font-style: italic;
+ font-display: swap;
+}
+
+@font-face {
+ font-family: "SF Pro Display";
+ src: url("../font/SFProDisplay-Bold.woff2") format("woff2"),
+   url("../font/SFProDisplay-Bold.woff") format("woff");
+ font-weight: bold;
+ font-style: normal;
+ font-display: swap;
+}
+
+@font-face {
+ font-family: "SF Pro Display";
+ src: url("../font/SFProDisplay-Regular.woff2") format("woff2"),
+   url("../font/SFProDisplay-Regular.woff") format("woff");
+ font-weight: normal;
+ font-style: normal;
+ font-display: swap;
+}
+
+@font-face {
+ font-family: "SF Pro Display";
+ src: url("../font/SFProDisplay-Medium.woff2") format("woff2"),
+   url("../font/SFProDisplay-Medium.woff") format("woff");
+ font-weight: 500;
+ font-style: normal;
+ font-display: swap;
+}
+
+@font-face {
+ font-family: "SF Pro Display";
+ src: url("../font/SFProDisplay-SemiboldItalic.woff2") format("woff2"),
+   url("../font/SFProDisplay-SemiboldItalic.woff") format("woff");
+ font-weight: 600;
+ font-style: italic;
+ font-display: swap;
+}
+
+@font-face {
+ font-family: "SF Pro Display";
+ src: url("../font/SFProDisplay-UltralightItalic.woff2") format("woff2"),
+   url("../font/SFProDisplay-UltralightItalic.woff") format("woff");
+ font-weight: 200;
+ font-style: italic;
+ font-display: swap;
+}
+
+@font-face {
+ font-family: "SF Pro Display";
+ src: url("../font/SFProDisplay-ThinItalic.woff2") format("woff2"),
+   url("../font/SFProDisplay-ThinItalic.woff") format("woff");
+ font-weight: 100;
+ font-style: italic;
+ font-display: swap;
+}
+* {
+ box-sizing: border-box;
+}
+html {
+   font-size:62.5%;
+}
+html,
+body {
+ min-height: 100vh;
+}
+
+body {
+ display: flex;
+ align-items:center;
+ justify-content: center;
+ font-family: "SF Pro Display";
+ font-size: 1.5rem;
+}
+
+.container {
+ margin: 0.5rem auto;
+ max-width: 41.4rem;
+ min-width: 32rem;
+ width: 100%;
+ padding: 5.2rem 3rem 4.5rem 3rem;
+ background: linear-gradient(180deg, #e5b2ca 0%, #cd82de 100%);
+}
+.page-image {
+ max-width: 100%;
+ margin: 0 auto;
+ display: block;
+}
+.main-section {
+ display : flex;
+  flex-direction : column;
+  justify-content : center;
+  text-align:center;
+  
+}
+ h4 {
+   font-size:2.2rem;
+   line-height:2.4rem;
+   font-weight:200;
+   color: rgba(255, 255, 255, 0.75);
+   margin:1.2rem 0 0 0;
+}  
+ h2 {
+  font-weight: 600;
+  font-size: 3.4rem;
+  color: #FFFFFF;
+  margin: 1.2rem 0 3.7rem 0;
+ }
+ .btn ,.btn-submit {
+  border-radius: 3.7rem;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding-top: 2.6rem;
+  padding-bottom: 2.6rem;
+  border: 0;
+  transition: background 0.5s;
+  background: rgba(120, 37, 139, 0.8);
+  box-shadow: 0rem 2.5rem 4.5rem rgb(120 37 139 / 25%);
+  color: white;
+}
+/* .icon , .icon-key {
+  background-image : url("../../assets/img/right.png");
+
+} */
+.form {
+ padding: 0 0.6rem;
+}
+.form .form-row {
+ margin-bottom: 1.4rem;
+ position: relative;
+}
+.form input {
+ border: 0;
+ border-radius: 3.7rem;
+ line-height: 1.8rem;
+ width: 100%;
+ padding: 2.8rem 6rem;
+ font-size: 1.5rem;
+ font-weight: 600;
+}
+.form input::placeholder {
+  color:black;
+ font-size: 1.6rem;
+ font-weight:600;
+}
+.form input:focus {
+ border: 0;
+ outline: none;
+}
+.form input[type="password"] {
+ padding: 2.7rem 6rem;
+ font-weight:600;
+
+}
+form input {
+ box-shadow: 0.01rem 0.09rem 0.01rem 0.01rem black;
+}
+form .form-row .icon-user {
+ position: absolute;
+ top: 39.5%;
+ left: 2.6rem;
+ 
+}
+form .form-row .icon-key {
+ position: absolute;
+ top: 38%;
+ left: 2.6rem;
+ 
+}
+/* .separator {
+ color: #fff;
+}
+.separator::before,
+.separator::after {
+ border-color: rgba(255, 255, 255, 0.4);
+} */
+.separator {
+ text-align: center;
+ position: relative;
+ margin: 3.2rem 0 3rem 0;
+ font-weight: 400;
+ font-size: 1.4rem;
+ line-height: 1.7rem;
+ color:#ffffff;
+}
+.separator::before,
+.separator::after {
+ content: "";
+ height: 0;
+ width: 40%;
+ position: absolute;
+ top: 50%;
+ border: dashed 0.05rem;
+ 
+}
+.separator::before {
+ left: 1.2rem;
+}
+.separator::after {
+ right: 1.2rem;
+}
+
+.btn-submit:hover{
+ background-color: rgba(120, 37, 139, 0.6);
+}
+input[type="button"],a {
+ font-size: 1.6rem;
+ font-weight: bold;
+ padding-top: 2.6rem;
+ padding-bottom: 2.6rem;
+ border: 0;
+ color:white;
+ cursor: pointer;
+ transition: background 0.7s;
+ background: rgba(255, 255, 255, 0.28);
+ box-shadow: 0rem 2.5rem 4.5rem rgba(82, 67, 154, 0.25);
+ border-radius: 3.7rem;
+ 
+}
+input[type="button"]:hover {
+ background: rgba(255, 255, 255, 0.2);
+}

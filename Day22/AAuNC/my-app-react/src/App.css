@@ -1,0 +1,17 @@
+@import url(./assets/css/normalize.css);
+@import url(./assets/css/fonts.css);
+
+#l-login, #l-header, #l-main {
+  font-family: SF-font;
+  width: 414px;
+}
+
+#l-login {
+  margin: auto;
+  height: 896px;
+  background: linear-gradient(180deg, #E5B2CA 0%, #CD82DE 100%);
+}
+
+#l-main {
+  height: 852px;
+}

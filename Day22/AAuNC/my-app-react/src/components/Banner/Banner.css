@@ -1,0 +1,7 @@
+.image-block {
+    width: 353px;
+    height: 290px;
+    margin: 10px 30px 5px 30px;
+    background-image: url('/src/assets/images/img1.png');
+    background-size: cover;
+}
