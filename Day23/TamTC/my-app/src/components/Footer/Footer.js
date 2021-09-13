@@ -43,7 +43,7 @@ const Footer = () => {
           {"© " + new Date().getFullYear() + " by FE class. Made with "}
           <FavoriteIcon className={classes.favoriteIcon} /> {"by "}
           <Link className={classes.link} onClick={handleShow}>
-            Tran Tam
+            {process.env.REACT_APP_AUTHOR_NAME}
           </Link>
         </Typography>
       </Box>

@@ -13,14 +13,13 @@ function App() {
   const getUserGeolocation = () => {
     try {
       setLoading(true);
-      fetch("https://ipinfo.io/171.236.1.246?token=55cddd654da35a")
+      fetch(`${process.env.REACT_APP_API_ADDRESS_URL}?token=${process.env.REACT_APP_API_ADDRESS_KEY}`)
         .then((response) => response.json())
         .then((data) => {
           setAddress(data?.city);
           setLoading(false);
         });
     } catch (err) {
-      console.log("has error address", err.message);
       setLoading(false);
     }
   };
@@ -28,8 +27,7 @@ function App() {
   const addWeatherHandler = (value) => {
     try {
       setLoading(true);
-      const myKey = "668b662680ba41c38ab40422210909";
-      const requestUrl = `http://api.weatherapi.com/v1/forecast.json?key=${myKey}&q=${value}&days=3`;
+      const requestUrl = `${process.env.REACT_APP_API_WEATHER_URL}?key=${process.env.REACT_APP_API_WEATHER_KEY}&q=${value}&days=3`;
       fetch(requestUrl)
         .then((response) => response.json())
         .then((data) => {
@@ -37,7 +35,6 @@ function App() {
           setLoading(false);
         });
     } catch (err) {
-      console.log("has error weather", err.message);
       setLoading(false);
     }
   };
