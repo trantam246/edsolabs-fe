@@ -71,3 +71,27 @@ export const chooseTag = (a, b, c, d) => {
   }
   return arr;
 };
+
+// formatTimeSpent
+
+export const formatTimeSpent = (e) => {
+  if (e < 60) {
+    return `${e} mins`;
+  } else if (e < 1440 && 60 < e) {
+    let h = Math.floor(e / 60);
+    let m = Math.floor(e % 60);
+    return `${h} hours ${m} mins`;
+  } else if (e > 1440) {
+    let d = Math.floor(e / 1440);
+    let h = Math.floor((e % 1440) / 60);
+    let m = Math.floor((e % 60) % 60);
+    return `${d} days ${h} hours ${m} mins`;
+  }
+};
+//renderTags
+export const renderTags = (i) => {
+  if (!i) return;
+  const listTag = ["Online", "Meeting", "Training", "Coding"];
+  const tag = i.tags.map((i) => listTag[i - 1]);
+  return tag;
+};

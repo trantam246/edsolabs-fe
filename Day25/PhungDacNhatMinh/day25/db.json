@@ -16,13 +16,13 @@
       "id": 2,
       "description": "This is a second task",
       "start_time": "2021-09-14 17:00:0",
-      "end_time": null,
-      "time_spent": null,
+      "end_time": "2021-09-17 23:17:44",
+      "time_spent": "3 days 6 hours 17 mins",
       "tags": [
         3,
         4
       ],
-      "status": 0
+      "status": 1
     },
     {
       "description": "This is a third task",
@@ -74,14 +74,26 @@
     {
       "description": "Coding with reactJS",
       "start_time": "2021-09-17 14:46",
-      "end_time": null,
-      "time_spent": null,
+      "end_time": "2021-09-17 23:19:32",
+      "time_spent": "8 hours 33 mins",
       "tags": [
         1,
         4
       ],
       "status": 0,
       "id": 7
+    },
+    {
+      "description": "Coding with reactJS",
+      "start_time": "2021-09-17 22:02",
+      "end_time": "2021-09-17 22:05",
+      "time_spent": "2.31 mins",
+      "tags": [
+        1,
+        4
+      ],
+      "status": 1,
+      "id": 8
     }
   ],
   "tags": [
