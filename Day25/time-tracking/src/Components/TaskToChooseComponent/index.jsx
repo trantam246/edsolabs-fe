@@ -8,7 +8,7 @@ export const TaskToChooseComponent = ({
 }) => {
   const [status, setStatus] = useState(false);
   const handleAddTag = () => {
-    setStatus(true);
+    setStatus(!status);
     onAddTag(id);
   };
 

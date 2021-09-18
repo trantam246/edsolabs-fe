@@ -88,8 +88,16 @@ export const Timer = () => {
         ...taskValue,
         tags: [...taskValue.tags, tagId],
       });
+    } else {
+      const newTags = taskValue.tags.filter((item) => item !== tagId);
+      setTaskValue({
+        ...taskValue,
+        tags: newTags,
+      });
     }
   };
+
+  console.log(taskValue);
 
   const handleChangeInputValue = (e) => {
     setValueDescription(e.target.value);
