@@ -5,11 +5,8 @@
       "description": "This is a first task",
       "start_time": "2021-09-13 17:00:0",
       "end_time": "2021-09-13 13:30:0",
-      "time_spent": 2342423,
-      "tags": [
-        1,
-        2
-      ],
+      "time_spent": 86403,
+      "tags": [1, 2],
       "status": 1
     },
     {
@@ -17,11 +14,8 @@
       "description": "This is a second task",
       "start_time": "2021-09-14 07:00:0",
       "end_time": null,
-      "time_spent": null,
-      "tags": [
-        3,
-        4
-      ],
+      "time_spent": 134124,
+      "tags": [3, 4],
       "status": 0
     },
     {
@@ -29,11 +23,8 @@
       "description": "This is a 3 task",
       "start_time": "2021-09-14 17:00:0",
       "end_time": null,
-      "time_spent": null,
-      "tags": [
-        1,
-        4
-      ],
+      "time_spent": 12341,
+      "tags": [1, 4],
       "status": 0
     },
     {
@@ -41,11 +32,8 @@
       "description": "This is a 4 task",
       "start_time": "2021-09-15 19:00:0",
       "end_time": null,
-      "time_spent": null,
-      "tags": [
-        1,
-        2
-      ],
+      "time_spent": 124324,
+      "tags": [1, 2],
       "status": 0
     },
     {
@@ -54,10 +42,7 @@
       "start_time": "2021-09-17 17:00:0",
       "end_time": null,
       "time_spent": "2342",
-      "tags": [
-        3,
-        2
-      ],
+      "tags": [3, 2],
       "status": 0
     },
     {
@@ -65,10 +50,7 @@
       "start_time": "2021-09-18 16:14:59",
       "end_time": "2021-09-18 16:15:11",
       "time_spent": 12,
-      "tags": [
-        4,
-        3
-      ],
+      "tags": [4, 3],
       "status": 1,
       "createdAt": 1631956499290,
       "id": 6
@@ -78,13 +60,20 @@
       "start_time": "2021-09-18 16:44:07",
       "end_time": "2021-09-18 16:44:24",
       "time_spent": 17,
-      "tags": [
-        1,
-        2
-      ],
+      "tags": [1, 2],
       "status": 1,
       "createdAt": 1631958247026,
       "id": 7
+    },
+    {
+      "description": "Chartjs react",
+      "start_time": "2021-09-18 22:55:34",
+      "end_time": "2021-09-18 22:56:07",
+      "time_spent": 31,
+      "tags": [4],
+      "status": 1,
+      "createdAt": 1631980534852,
+      "id": 8
     }
   ],
   "tags": [
