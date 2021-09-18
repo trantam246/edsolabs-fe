@@ -1,3 +1,5 @@
+import moment from "moment";
+//data by date
 export const PROCESS_DAY_GROUP = (input) => {
   const output = [];
 
@@ -42,6 +44,7 @@ export const formatNowDay = (date) => {
   }
   return;
 };
+
 //formatTime
 export const formatTime = (e) => {
   if (e) {
@@ -53,8 +56,14 @@ export const formatTime = (e) => {
   return;
 };
 
-// chooseTag
+//handleClick
+export const handleClickTimeFormat = () => {
+  const x = new Date();
+  const timeFormat = `${formatNowDay(x)} ${formatTime(x)}`;
+  return timeFormat;
+};
 
+// chooseTag
 export const chooseTag = (a, b, c, d) => {
   const arr = [];
   if (a) {
@@ -73,10 +82,10 @@ export const chooseTag = (a, b, c, d) => {
 };
 
 // formatTimeSpent
-
 export const formatTimeSpent = (e) => {
   if (e < 60) {
-    return `${e} mins`;
+    let m = Math.floor(e);
+    return `${m} mins`;
   } else if (e < 1440 && 60 < e) {
     let h = Math.floor(e / 60);
     let m = Math.floor(e % 60);
@@ -88,10 +97,31 @@ export const formatTimeSpent = (e) => {
     return `${d} days ${h} hours ${m} mins`;
   }
 };
+
 //renderTags
 export const renderTags = (i) => {
   if (!i) return;
   const listTag = ["Online", "Meeting", "Training", "Coding"];
   const tag = i.tags.map((i) => listTag[i - 1]);
   return tag;
+};
+
+//duration
+export const durationMins = (e) => {
+  let now = moment(e);
+  let end = moment(new Date());
+  let d = moment.duration(end.diff(now));
+  let days = d.asDays();
+  let mins = days * 1440;
+  return mins;
+};
+
+//duration 2 days
+export const durationMins2Days = (a, b) => {
+  let now = moment(a);
+  let end = moment(b);
+  let d = moment.duration(end.diff(now));
+  let days = d.asDays();
+  let mins = days * 1440;
+  return mins;
 };

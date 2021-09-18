@@ -3,9 +3,8 @@ import MyTasks from "./MyTasks";
 import { getTasks, getTags, createTasks, updateTasks } from "../api/api";
 import {
   PROCESS_DAY_GROUP,
-  formatNowDay,
-  formatTime,
   chooseTag,
+  handleClickTimeFormat,
 } from "./Function";
 AddTask.propTypes = {};
 function AddTask(props) {
@@ -54,16 +53,6 @@ function AddTask(props) {
       .catch((err) => err)
       .finally((done) => done);
   }, []);
-  const handleStart = () => {
-    const x = new Date();
-    const timeStart = `${formatNowDay(x)} ${formatTime(x)}`;
-    return timeStart;
-  };
-  const handleStop = () => {
-    const y = new Date();
-    const timeEnd = `${formatNowDay(y)} ${formatTime(y)}`;
-    return timeEnd;
-  };
   return (
     <>
       <header className="job__Title border-bottom border-dark">
@@ -152,7 +141,7 @@ function AddTask(props) {
                     setCheckR(false);
                     createTasks({
                       description: job,
-                      start_time: handleStart(),
+                      start_time: handleClickTimeFormat(),
                       end_time: null,
                       time_spent: null,
                       tags: chooseTag(checkO, checkM, checkT, checkR),
@@ -168,7 +157,6 @@ function AddTask(props) {
                       .catch((error) => console.error(error));
                     setTimerOn(true);
                     setJob("");
-                    return handleStart();
                   }}
                 >
                   <i type="button" className="fas fa-play-circle fa-2x"></i>
@@ -177,10 +165,11 @@ function AddTask(props) {
                 <button
                   onClick={() => {
                     updateTasks(task.length, {
-                      end_time: handleStop(),
+                      end_time: handleClickTimeFormat(),
                       time_spent: `${
                         Math.floor((timer / 60000) * 100) / 100
                       } mins`,
+                      status: 1,
                     })
                       .then(() => {
                         getTasks()
@@ -191,7 +180,6 @@ function AddTask(props) {
                       })
                       .catch((error) => console.error(error));
                     setTimerOn(false);
-                    return handleStop();
                   }}
                 >
                   <i type="button" className="fas fa-stop-circle fa-2x"></i>
