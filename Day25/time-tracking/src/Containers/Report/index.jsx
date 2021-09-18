@@ -63,6 +63,23 @@ export const Report = () => {
     });
   }, [aboutDays.startDate, aboutDays.endDate]);
 
+  useEffect(() => {
+    dataApi.getTasks().then((res) => {
+      const dayList = PROCESS_DAY_GROUP(res.data).sort((a, b) => {
+        a = new Date(a.date);
+        b = new Date(b.date);
+        return b - a;
+      });
+      const arrThisWeek = dayList.filter((item) => {
+        return GET_CURRENT_WEEK().includes(
+          moment(item.date).format('YYYY-MM-DD'),
+        );
+      });
+      setGroupDay(arrThisWeek);
+      setDates({ id: 3, name: 'This week' });
+    });
+  }, []);
+
   const handleChooseDate = (date) => {
     setDates(date);
     dataApi.getTasks().then((res) => {
