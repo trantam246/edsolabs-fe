@@ -57,7 +57,7 @@ export const AppUI = ({
                         </div>
                         <Next5DayComponent forecast={forecast} dayArr={dayArr}/> 
                     </> 
-                    : loading &&<div className={styles.progressWrapper}>
+                    : loading && <div className={styles.progressWrapper}>
                                     <CircularProgress className={styles.progress} color="secondary"/>Getting information, please wait ...
                                 </div> 
                 }

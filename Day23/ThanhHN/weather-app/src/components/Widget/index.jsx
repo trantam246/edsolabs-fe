@@ -9,7 +9,6 @@ export const Widget = ({
     dayOfMonth = 'loading...', // demo data for collapse item
     todayWeather = {},
     dayWeather = {}
-
 }) => {
 
     return (

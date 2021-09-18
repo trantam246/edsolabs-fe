@@ -1,0 +1,20 @@
+.wrapper {
+  padding: 10px 5px;
+  position: relative;
+  &:hover {
+    background-color: burlywood;
+  }
+
+  .dateRange {
+    position: absolute;
+    display: flex;
+    right: 0;
+    top: 50px;
+    border: 2px solid #000;
+    padding: 10px 20px 40px 20px;
+
+    .startDate {
+      margin-right: 5px;
+    }
+  }
+}
