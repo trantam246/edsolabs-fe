@@ -60,6 +60,10 @@ export const Report = () => {
       });
 
       setGroupDay(arrDateRange);
+      setDates({
+        id: 7,
+        name: `from ${aboutDays.startDate} to ${aboutDays.endDate}`,
+      });
     });
   }, [aboutDays.startDate, aboutDays.endDate]);
 
@@ -76,7 +80,10 @@ export const Report = () => {
         );
       });
       setGroupDay(arrThisWeek);
-      setDates({ id: 3, name: 'This week' });
+      setDates({
+        id: 3,
+        name: 'This week',
+      });
     });
   }, []);
 
