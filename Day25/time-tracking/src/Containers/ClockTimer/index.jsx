@@ -1,23 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 export const ClockTimer = ({ onHandleTimeSpend = () => {} }) => {
   const [clockTime, setClockTime] = useState({ hour: 0, minute: 0, second: 0 });
+  const clockTimeRef = useRef({ hour: 0, minute: 0, second: 0 });
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const newClockTime = {
+      setClockTime({
         ...clockTime,
         second:
           clockTime.second === 59
             ? ((clockTime.second = 0), (clockTime.minute += 1))
             : (clockTime.second += 1),
         hour: clockTime.minute === 59 ? (clockTime.hour += 1) : clockTime.hour,
-      };
+      });
 
-      setClockTime(newClockTime);
+      if (clockTimeRef.current.second === 59) {
+        clockTimeRef.current.second = 0;
+        clockTimeRef.current.minute++;
+      } else {
+        clockTimeRef.current.second++;
+      }
+      if (clockTimeRef.current.minutes === 59) {
+        clockTimeRef.hour++;
+      }
     }, 1000);
     return () => {
       clearInterval(interval);
+      clockTimeRef.current.second = 0;
+      clockTimeRef.current.minute = 0;
+      clockTimeRef.current.hour = 0;
     };
   }, []);
 
@@ -31,9 +43,17 @@ export const ClockTimer = ({ onHandleTimeSpend = () => {} }) => {
 
   return (
     <div>
-      {clockTime.hour >= 10 ? clockTime.hour : `0${clockTime.hour}`}:
-      {clockTime.minute >= 10 ? clockTime.minute : `0${clockTime.minute}`}:
-      {clockTime.second >= 10 ? clockTime.second : `0${clockTime.second}`}
+      {clockTimeRef.current.hour >= 10
+        ? clockTimeRef.current.hour
+        : `0${clockTimeRef.current.hour}`}
+      :
+      {clockTimeRef.current.minute >= 10
+        ? clockTimeRef.current.minute
+        : `0${clockTimeRef.current.minute}`}
+      :
+      {clockTimeRef.current.second >= 10
+        ? clockTimeRef.current.second
+        : `0${clockTimeRef.current.second}`}
     </div>
   );
 };

@@ -46,7 +46,11 @@ export const TaskComponent = ({
         <div className={styles.listIcon}>
           <BsThreeDotsVertical onClick={handleActionDelete} />
           {actionDelete ? (
-            <MenuTask taskJob={taskJob} onChooseYes={onChooseYes} />
+            <MenuTask
+              taskJob={taskJob}
+              onChooseYes={onChooseYes}
+              onChooseNo={handleActionDelete}
+            />
           ) : (
             ''
           )}

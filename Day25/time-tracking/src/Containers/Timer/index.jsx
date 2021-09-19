@@ -61,7 +61,8 @@ export const Timer = () => {
     setTaskValue({
       ...taskValue,
       tags: [],
-      end_time: moment().format('YYYY-MM-DD h:mm:ss'),
+      end_time: '',
+      time_spent: '',
       status: 1,
     });
 
