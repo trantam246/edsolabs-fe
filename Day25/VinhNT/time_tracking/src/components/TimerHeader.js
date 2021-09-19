@@ -93,7 +93,7 @@ export default function AddTask(props) {
         setOpenTag(false);
       })
       .catch((e) => {
-        console.log(e);
+        alert('da co loi');
       });
   };
   const newTask = () => {

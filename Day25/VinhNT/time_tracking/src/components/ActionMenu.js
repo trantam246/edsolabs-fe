@@ -84,7 +84,7 @@ export default function ActionMenu(props) {
         alert('da xoa thanh cong');
       })
       .catch((err) => {
-        console.log(err);
+        alert('da co loi');
       });
   };
   const handleStartAction = () => {
@@ -100,7 +100,7 @@ export default function ActionMenu(props) {
       .createTask(data)
       .then((res) => {})
       .catch((err) => {
-        console.log(err);
+        alert('da co loi');
       });
   };
   const body = (
