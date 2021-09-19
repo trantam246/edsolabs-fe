@@ -12,6 +12,7 @@ export const ListTaskComponent = ({
   onChooseDate,
   onDateRangeClick,
   onChooseAboutDay,
+  onExit,
 }) => {
   return (
     <div className={styles.wrapper}>
@@ -30,6 +31,7 @@ export const ListTaskComponent = ({
             onDateRangeClick={onDateRangeClick}
             dateRangeStatus={dateRangeStatus}
             onChooseAboutDay={onChooseAboutDay}
+            onExit={onExit}
           />
         </>
       ) : (

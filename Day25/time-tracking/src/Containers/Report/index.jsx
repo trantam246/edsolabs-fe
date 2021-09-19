@@ -14,9 +14,6 @@ import {
 
 export const Report = () => {
   const [DateStatus, showDateStatus] = useState(false);
-  const handleStatus = () => {
-    showDateStatus(!DateStatus);
-  };
   const [dates, setDates] = useState({ id: 1, name: 'Today' });
   const [groupDay, setGroupDay] = useState([]);
   const [dateRangeStatus, setDateRangeStatus] = useState(false);
@@ -31,8 +28,16 @@ export const Report = () => {
     { id: 6, name: 'Last month' },
   ];
 
+  const handleStatus = () => {
+    showDateStatus(!DateStatus);
+  };
+
   const handleDateRangeClick = () => {
     setDateRangeStatus(true);
+  };
+
+  const handleExitDateRange = () => {
+    setDateRangeStatus(false);
   };
 
   const handleChooseAboutDay = (e) => {
@@ -62,7 +67,7 @@ export const Report = () => {
       setGroupDay(arrDateRange);
       setDates({
         id: 7,
-        name: `from ${aboutDays.startDate} to ${aboutDays.endDate}`,
+        name: `From ${aboutDays.startDate} to ${aboutDays.endDate}`,
       });
     });
   }, [aboutDays.startDate, aboutDays.endDate]);
@@ -199,6 +204,7 @@ export const Report = () => {
       onDateRangeClick={handleDateRangeClick}
       dateRangeStatus={dateRangeStatus}
       onChooseAboutDay={handleChooseAboutDay}
+      onExit={handleExitDateRange}
     />
   );
 };

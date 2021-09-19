@@ -97,8 +97,6 @@ export const Timer = () => {
     }
   };
 
-  console.log(taskValue);
-
   const handleChangeInputValue = (e) => {
     setValueDescription(e.target.value);
     setTaskValue({ ...taskValue, description: e.target.value });

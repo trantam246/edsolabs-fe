@@ -18,6 +18,7 @@ export const ReportComponent = ({
   onChooseDate = () => {},
   onDateRangeClick,
   onChooseAboutDay,
+  onExit,
 }) => {
   return (
     <Grid item xs={10}>
@@ -38,6 +39,7 @@ export const ReportComponent = ({
                 onDateRangeClick={onDateRangeClick}
                 dateRangeStatus={dateRangeStatus}
                 onChooseAboutDay={onChooseAboutDay}
+                onExit={onExit}
               />
             )}
           </div>

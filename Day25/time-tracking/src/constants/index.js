@@ -44,6 +44,8 @@ export const REPORT_SLICE_DAY = (numDay) => {
 };
 
 export const GET_CURRENT_WEEK = () => {
+  // from sunday to saturday
+
   var weekStart = moment(moment().startOf('week')).format('YYYY-MM-DD'); // start day of this week
   var days = [];
 
@@ -54,6 +56,8 @@ export const GET_CURRENT_WEEK = () => {
 };
 
 export const GET_LAST_WEEK = () => {
+  // from sunday to saturday
+
   var lastWeekStart = moment(
     moment().startOf('week').subtract(1, 'weeks'),
   ).format('YYYY-MM-DD');
