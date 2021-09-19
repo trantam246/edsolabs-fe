@@ -1,0 +1,19 @@
+.tagText {
+    display: flex;
+    width: 30%;
+    align-items: center;
+}
+
+.timeBox {
+    display: flex;
+    width: 40%;
+}
+
+.time {
+    text-align: left;
+    width: 60%;
+}
+
+.duration {
+    text-align: left;
+}
