@@ -88,7 +88,7 @@ export default function Report() {
       </Paper>
       <ReportContainer>
         <ReportHeader />
-        <Grid container>
+        <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Pie
               width={100}
