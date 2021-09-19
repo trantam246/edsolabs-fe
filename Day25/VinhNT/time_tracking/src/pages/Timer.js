@@ -27,7 +27,7 @@ export default function Timer() {
       setTask(res.data);
     }
     getTask();
-  }, []);
+  }, [task]);
   useEffect(() => {
     async function getTag() {
       const res = await action.getTags();

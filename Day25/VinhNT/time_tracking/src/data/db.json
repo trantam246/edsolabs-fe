@@ -26,25 +26,42 @@
     },
     {
       "id": 3,
-      "description": "abc",
+      "description": "đọc tài liệu liên quan",
+      "start_time": "2021-09-15 08:29:15",
+      "end_time": "2021-09-15 11:29:28",
+      "time_spent": "180 mins",
+      "tags": [
+        1,
+        4
+      ],
+      "status": 1
+    },
+    {
+      "id": 4,
+      "description": "khởi tạo prj",
       "start_time": "2021-09-16 20:29:15",
-      "end_time": "2021-09-16 20:29:28",
-      "time_spent": "0 mins",
-      "tags": [],
+      "end_time": "2021-09-16 20:32:28",
+      "time_spent": "3 mins",
+      "tags": [
+        1,
+        4
+      ],
       "status": 1
     },
     {
       "id": 5,
-      "description": "alo123",
+      "description": "set up login",
       "start_time": "2021-09-16 20:35:25",
-      "end_time": "2021-09-17 15:59:34",
-      "time_spent": "1164 mins",
-      "tags": [],
+      "end_time": "2021-09-17 08:59:34",
+      "time_spent": "744 mins",
+      "tags": [
+        4
+      ],
       "status": 1
     },
     {
       "id": 6,
-      "description": "test lại time",
+      "description": "Bắt đầu làm time header",
       "start_time": "2021-09-17 08:57:7",
       "end_time": "2021-09-17 14:50:56",
       "time_spent": "353 mins",
@@ -56,30 +73,34 @@
     },
     {
       "id": 7,
-      "description": "test lại lần nữa",
-      "start_time": "2021-09-17 08:58:24",
-      "end_time": "2021-09-17 08:58:44",
-      "time_spent": "0 mins",
+      "description": "test description",
+      "start_time": "2021-09-17 09:28:24",
+      "end_time": "2021-09-17 09:29:44",
+      "time_spent": "1 mins",
       "tags": [
-        1
+        1,
+        4
       ],
       "status": 1
     },
     {
       "id": 8,
-      "description": "test lại 2 laanf",
-      "start_time": "2021-09-17 09:03:19",
-      "end_time": "2021-09-17 09:43:32",
+      "description": "làm tags",
+      "start_time": "2021-09-17 09:33:19",
+      "end_time": "2021-09-17 10:13:32",
       "time_spent": "40 mins",
-      "tags": [],
+      "tags": [
+        1,
+        4
+      ],
       "status": 1
     },
     {
       "id": 9,
-      "description": "bat dau 1 lan full chuc nang cua header",
-      "start_time": "2021-09-17 09:48:28",
-      "end_time": "2021-09-17 09:50:31",
-      "time_spent": "2 mins",
+      "description": "bắt đầu làm nút start stop và đồng hồ",
+      "start_time": "2021-09-17 10:30:28",
+      "end_time": "2021-09-17 14:14:31",
+      "time_spent": "224 mins",
       "tags": [
         4,
         3
@@ -88,31 +109,34 @@
     },
     {
       "id": 10,
-      "description": "fyftydytdtudud",
-      "start_time": "2021-09-17 10:30:31",
-      "end_time": "2021-09-17 10:30:39",
-      "time_spent": "0 mins",
+      "description": "test chức năng header",
+      "start_time": "2021-09-17 14:30:31",
+      "end_time": "2021-09-17 14:31:39",
+      "time_spent": "1 mins",
       "tags": [
         1,
-        2
+        2,
+        4
       ],
       "status": 1
     },
     {
       "id": 11,
-      "description": "tung pho",
-      "start_time": "2021-09-17 10:37:3",
-      "end_time": "2021-09-17 10:37:14",
-      "time_spent": "0 mins",
-      "tags": [],
+      "description": "post len database",
+      "start_time": "2021-09-17 14:35:3",
+      "end_time": "2021-09-17 14:40:14",
+      "time_spent": "5 mins",
+      "tags": [
+        4
+      ],
       "status": 1
     },
     {
       "id": 12,
-      "description": "test tug pho",
-      "start_time": "2021-09-17 10:38:5",
-      "end_time": "2021-09-17 10:38:15",
-      "time_spent": "0 mins",
+      "description": "update lên database",
+      "start_time": "2021-09-17 14:40:5",
+      "end_time": "2021-09-17 14:47:15",
+      "time_spent": "7 mins",
       "tags": [
         1,
         2,
@@ -123,71 +147,53 @@
     {
       "id": 13,
       "description": "test list tag",
-      "start_time": "2021-09-17 10:44:57",
-      "end_time": "2021-09-17 10:45:7",
-      "time_spent": "0 mins",
+      "start_time": "2021-09-17 14:44:57",
+      "end_time": "2021-09-17 14:45:7",
+      "time_spent": "1 mins",
       "tags": [
-        2
-      ],
-      "status": 1
-    },
-    {
-      "id": 14,
-      "description": "test list tag 2",
-      "start_time": "2021-09-17 10:46:33",
-      "end_time": "2021-09-17 10:46:42",
-      "time_spent": "0 mins",
-      "tags": [],
-      "status": 1
-    },
-    {
-      "id": 16,
-      "description": "test list tag 4",
-      "start_time": "2021-09-17 10:47:25",
-      "end_time": "2021-09-17 10:47:38",
-      "time_spent": "0 mins",
-      "tags": [
-        1,
-        2
-      ],
-      "status": 1
-    },
-    {
-      "id": 18,
-      "description": "test lai 1 chut thoi nao hi hi",
-      "start_time": "2021-09-17 12:30:41",
-      "end_time": "2021-09-17 15:07:19",
-      "time_spent": "156 mins",
-      "tags": [
-        1,
+        2,
         4
       ],
       "status": 1
     },
     {
-      "id": 19,
-      "description": "abcdefg",
-      "start_time": "2021-09-17 13:01:36",
-      "end_time": "2021-09-17 13:03:1",
+      "id": 14,
+      "description": "test header full",
+      "start_time": "2021-09-17 14:46:33",
+      "end_time": "2021-09-17 14:47:42",
       "time_spent": "1 mins",
       "tags": [
-        1,
-        2
+        4
       ],
       "status": 1
     },
     {
-      "id": 22,
-      "description": "abcdef",
-      "start_time": "2021-09-17 13:30:35",
-      "end_time": "2021-09-17 14:14:9",
-      "time_spent": "43 mins",
-      "tags": [],
+      "id": 16,
+      "description": "bắt đầu làm time body",
+      "start_time": "2021-09-17 15:00:25",
+      "end_time": "2021-09-17 19:27:38",
+      "time_spent": "267 mins",
+      "tags": [
+        1,
+        2,
+        4
+      ],
+      "status": 1
+    },
+    {
+      "id": 17,
+      "description": "xem hospital playlist",
+      "start_time": "2021-09-17 16:00:25",
+      "end_time": "2021-09-17 18:00:38",
+      "time_spent": "120 mins",
+      "tags": [
+        1
+      ],
       "status": 1
     },
     {
       "id": 23,
-      "description": "làm lại để test nut delete",
+      "description": "làm lại để test nút delete",
       "start_time": "2021-09-17 17:06:42",
       "end_time": "2021-09-17 17:08:4",
       "time_spent": "1 mins",
@@ -198,25 +204,18 @@
     },
     {
       "id": 24,
-      "description": "chuẩn bị test nút start",
+      "description": "chuẩn bị test nút start ở body",
       "start_time": "2021-09-17 17:16:6",
       "end_time": "2021-09-17 17:21:18",
       "time_spent": "5 mins",
-      "tags": [],
-      "status": 1
-    },
-    {
-      "id": 25,
-      "description": "chuẩn bị test nút start",
-      "start_time": "2021-09-17 17:22:26",
-      "end_time": "2021-09-17 17:23:54",
-      "time_spent": "1 mins",
-      "tags": [],
+      "tags": [
+        4
+      ],
       "status": 1
     },
     {
       "id": 26,
-      "description": "thử lại variant count up",
+      "description": "thử lại variant cho count up",
       "start_time": "2021-09-18 08:16:16",
       "end_time": "2021-09-18 08:17:19",
       "time_spent": "1 mins",

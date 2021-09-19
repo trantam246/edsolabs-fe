@@ -43,7 +43,7 @@ export default function ListTags(props) {
               button
               onClick={handleToggle(value)}
             >
-              <ListItemIcon>
+              <ListItemIcon key={props.tags.indexOf(value) + 0.1}>
                 <Checkbox
                   edge="start"
                   tabIndex={-1}
@@ -52,7 +52,11 @@ export default function ListTags(props) {
                   onClick={props.update(checked)}
                 />
               </ListItemIcon>
-              <ListItemText id={labelId} primary={value} />
+              <ListItemText
+                key={props.tags.indexOf(value) + 0.2}
+                id={labelId}
+                primary={value}
+              />
             </ListItem>
           </>
         );
