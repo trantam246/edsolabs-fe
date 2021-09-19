@@ -6,14 +6,16 @@ import Sidebar from "../common/Sidebar";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import { useStyles } from "./style";
+import { useTaskContext } from "../common/taskContext";
 import { getTasks } from "../apis/apis";
 
 export default function Timer() {
   const classes = useStyles();
-  const [limit, setLimit] = useState(1);
+  const [limit, setLimit] = useState(5);
   const handleLoadmore = () => {
-    setLimit(limit + 1);
+    setLimit(limit + 5);
   };
+  const { render } = useTaskContext();
   const [tasks, setTask] = useState([]);
   useEffect(() => {
     getTasks()
@@ -24,7 +26,7 @@ export default function Timer() {
         console.log(err);
         alert("Không thể kết nối tới server");
       });
-  }, [limit]);
+  }, [render]);
   return (
     <div>
       {" "}

@@ -1,82 +1,33 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import InputBase from "@mui/material/InputBase";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import PlayCircleFilledIcon from "@mui/icons-material/PlayCircleFilled";
 import StopCircleIcon from "@mui/icons-material/StopCircle";
 import { useStyles } from "./style";
 import FormatTime from "./formatTime";
-import { chooseTag, StyledMenu } from "../common/common";
+import { StyledMenu } from "../common/common";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import moment from "moment";
-import { updateTasks, createTasks } from "../apis/apis";
+import { useTaskContext } from "../common/taskContext";
 
 export default function HeaderTimer() {
   const classes = useStyles();
-  const [timer, setTimer] = useState(0);
   const [anchorMenu, setanchorMenu] = useState(null);
-  const [startTime, setStart] = useState(``);
-  const [isActive, setIsActive] = useState(false);
-  const [description, setDescription] = useState("");
-  const [counting, setCounting] = useState([]);
-  const countRef = useRef(null);
-  const [state, setState] = useState({
-    checkedA: false,
-    checkedB: false,
-    checkedC: false,
-    checkedD: false,
-  });
-
+  const {
+    isActive,
+    handleStart,
+    handleReset,
+    state,
+    timer,
+    setState,
+    setDescription,
+  } = useTaskContext();
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
 
   const handleClose = () => {
     setanchorMenu(null);
-  };
-  const handleStart = () => {
-    const start = moment().format(`YYYY-MM-DD H:mm:ss`);
-    setIsActive(true);
-    setStart(start);
-    countRef.current = setInterval(() => {
-      setTimer((timer) => timer + 1);
-    }, 1000);
-    createTasks({
-      description: description,
-      start_time: start,
-      status: 0,
-      tags: chooseTag(
-        state.checkedA,
-        state.checkedB,
-        state.checkedC,
-        state.checkedD
-      ),
-    })
-      .then((res) => {
-        setCounting(res.data);
-      })
-      .catch((err) => {
-        alert("Không thể kết nối tới server");
-      });
-  };
-  const handleReset = () => {
-    clearInterval(countRef.current);
-    setIsActive(false);
-    const end = moment().format(`YYYY-MM-DD H:mm:ss`);
-    updateTasks(counting.id, {
-      description: description,
-      start_time: startTime,
-      end_time: end,
-      time_spent: `${moment(end).diff(startTime, "seconds")}`,
-      tags: chooseTag(
-        state.checkedA,
-        state.checkedB,
-        state.checkedC,
-        state.checkedD
-      ),
-      status: 1,
-    });
-    setTimer(0);
   };
   return (
     <header className={classes.header}>

@@ -19,4 +19,10 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     margin: "12px 48px",
   },
+  totalTime: {
+    width: "200px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
 }));

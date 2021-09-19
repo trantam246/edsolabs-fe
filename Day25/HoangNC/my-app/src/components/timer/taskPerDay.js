@@ -1,35 +1,19 @@
 import React, { useState } from "react";
-import { deleteTasks } from "../apis/apis";
 import moment from "moment";
 import { useStyles } from "./style";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import ListItemText from "@mui/material/ListItemText";
 import { renderTags, StyledMenu, StyledMenuItem } from "../common/common";
+import { useTaskContext } from "../common/taskContext";
 
 export default function TaskPerDay(props) {
   const classes = useStyles();
   const { tasksInDay } = props;
   const [iddel, setIddel] = useState("");
   const [stt, setStt] = useState("");
-  const [dotMenu, setdotMenu] = useState(null);
-  const handleClose = () => {
-    setdotMenu(null);
-  };
-  const handleStop = () => {
-    setdotMenu(null);
-  };
-  function handleDelete(id) {
-    if (window.confirm("Delete this file?")) {
-      deleteTasks(id)
-        .then(() => {
-          setdotMenu(null);
-        })
-        .catch(() => {
-          alert("Lỗi");
-        });
-    }
-  }
+  const { handleDelete, handleClose, handleReset, setdotMenu, dotMenu } =
+    useTaskContext();
   return (
     <div className={classes.dayGroup}>
       {tasksInDay.map((e, index, arr) => {
@@ -74,7 +58,7 @@ export default function TaskPerDay(props) {
                   >
                     <StyledMenuItem>
                       {stt === 0 ? (
-                        <ListItemText onClick={() => handleStop()}>
+                        <ListItemText onClick={() => handleReset()}>
                           Stop
                         </ListItemText>
                       ) : (

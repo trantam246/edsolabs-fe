@@ -14,7 +14,7 @@ export default function Report() {
   const [time, setTime] = useState("");
   const totalTimeSpent = () => {
     const total = TimeTags().reduce((prev, curr) => prev + curr.time_spent, 0);
-    return total;
+    return total.toFixed(2);
   };
   console.log(totalTimeSpent());
   return (
@@ -28,8 +28,8 @@ export default function Report() {
         </header>
         <main>
           <div className={classes.filter}>
-            <div>
-              <span>This week: </span>
+            <div className={classes.totalTime}>
+              <h3>This week: </h3>
               <span>{totalTimeSpent()} hours</span>
             </div>
             <FormControl className={classes.formControl}>

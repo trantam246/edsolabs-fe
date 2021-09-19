@@ -3,7 +3,7 @@
 ## Timer
 
 - Chưa chọn ngày cụ thể để xem các task
-- Restart và Stop ở single task chưa chạy
+- Restart ở single task chưa chạy
 
 ## Report
 
