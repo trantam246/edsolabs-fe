@@ -35,6 +35,8 @@ function getModalStyle() {
   };
 }
 export default function ActionMenu(props) {
+  // props.render(1);
+  console.log(props);
   const curTask = {
     id: props.id,
     description: props.description,
@@ -63,6 +65,7 @@ export default function ActionMenu(props) {
     setOpen(false);
   };
   const handleStopAction = () => {
+    props.update(1);
     let a = moment(moment().format('YYYY-MM-DD HH:mm:s'));
     let b = moment(curTask.start_time);
     let data = {
@@ -77,6 +80,7 @@ export default function ActionMenu(props) {
     action.updateTask(curTask.id, data);
   };
   const handleDeleteAction = () => {
+    props.update(1);
     setAnchorEl(null);
     action
       .removeTask(props.id)
@@ -87,7 +91,9 @@ export default function ActionMenu(props) {
         alert('da co loi');
       });
   };
+
   const handleStartAction = () => {
+    props.update(1);
     let data = {
       description: curTask.description,
       start_time: moment().format('YYYY-MM-DD HH:mm:s'),

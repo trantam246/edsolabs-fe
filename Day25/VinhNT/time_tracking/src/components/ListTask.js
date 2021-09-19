@@ -32,6 +32,7 @@ export default function ListTask(props) {
   const [date, setDate] = useState();
   const classes = useStyles();
   const [taskByDay, setTaskByDay] = useState();
+
   const taskGroupByDays = Object.entries(
     props.task.reduce(function (r, a) {
       r[moment(a.start_time).format('YYYY-MM-DD')] =
@@ -188,6 +189,7 @@ export default function ListTask(props) {
                                     end_time={o.end_time}
                                     time_spent={o.time_spent}
                                     tags={o.tags}
+                                    update={props.update}
                                   />
                                 </Grid>
                               </Grid>

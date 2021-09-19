@@ -64,6 +64,7 @@ export default function AddTask(props) {
   };
   const saveTask = () => {
     setLocalStart(moment());
+    props.update(1);
     const numTags = tags.map((e) => {
       return getNumTag(e);
     });
@@ -100,6 +101,7 @@ export default function AddTask(props) {
     updateTask();
     setTask(initTask);
     setSubmitted(false);
+    props.update(1);
   };
   const getLocalEnd = () => {
     if (submitted) {

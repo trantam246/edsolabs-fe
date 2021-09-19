@@ -3,7 +3,7 @@ import SideNavBar from '../components/SideNarbar';
 import { makeStyles } from '@material-ui/core/styles';
 import { drawerWidth } from '../components/SideNarbar';
 import action from '../services/action';
-import AddTask from '../components/TimerHeader';
+import TimerHeader from '../components/TimerHeader';
 import { Container } from '@material-ui/core';
 import ListTask from '../components/ListTask';
 import image from '../public/assest/paper.jpg';
@@ -21,13 +21,14 @@ export default function Timer() {
   const classes = useStyles();
   const [task, setTask] = useState([]);
   const [tags, setTags] = useState([]);
+  const [render, setRender] = useState(1);
   useEffect(() => {
     async function getTask() {
       const res = await action.getTasks();
       setTask(res.data);
     }
     getTask();
-  }, [task]);
+  }, [render]);
   useEffect(() => {
     async function getTag() {
       const res = await action.getTags();
@@ -36,14 +37,16 @@ export default function Timer() {
     }
     getTag();
   }, []);
-
+  const onUpdate = (data) => {
+    setRender(render + data);
+  };
   return (
     <>
       <SideNavBar />
       <main className={classes.content}>
-        <AddTask tags={tags} />
+        <TimerHeader update={onUpdate} tags={tags} />
         <Container maxWidth="md">
-          <ListTask task={task} tags={tags} />
+          <ListTask task={task} update={onUpdate} tags={tags} />
         </Container>
       </main>
     </>
