@@ -4,7 +4,7 @@ body {
   background: linear-gradient(135deg, rgba(207,255,101,1) 0%, rgba(98,255,182,1) 50%, rgba(157,179,255,1) 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x:hidden
+  overflow-x:hidden;
 }
 
 code {

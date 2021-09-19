@@ -191,9 +191,12 @@ export const TimerHeader = (props) => {
             </Menu>
           </Grid>
           <Grid key={2} item xs>
-            <Typography variant="h5" id="timer">
+            {hide === true && <Typography variant="h5" id="timer">
               00:00:00
-            </Typography>
+            </Typography>}
+            {hide === false && <Typography variant="h5" id="timer">
+              {moment(moment() - startTime).utc().format('HH:mm:ss')}
+            </Typography>}
           </Grid>
           <Grid key={3} item xs>
             {(hide === false) && <IconButton onClick={addTask}>

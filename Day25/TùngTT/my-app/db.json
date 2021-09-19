@@ -1,54 +1,6 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "description": "This is a first task",
-      "start_time": "2021-09-12 17:00:0",
-      "end_time": "2021-09-12 17:30:0",
-      "time_spent": "30 mins",
-      "tags": [
-        1,
-        2
-      ],
-      "status": 1
-    },
-    {
-      "id": 2,
-      "description": "This is a first task",
-      "start_time": "2021-09-13 17:00:0",
-      "end_time": "2021-09-13 17:30:0",
-      "time_spent": "30 mins",
-      "tags": [
-        1,
-        2
-      ],
-      "status": 1
-    },
-    {
-      "id": 3,
-      "description": "This is a second task",
-      "start_time": "2021-09-14 17:00:0",
-      "end_time": "2021-09-14 17:30:0",
-      "time_spent": "30 mins",
-      "tags": [
-        1,
-        2
-      ],
-      "status": 1
-    },
-    {
-      "id": 4,
-      "description": "This is a thirst task",
-      "start_time": "2021-09-15 17:00:0",
-      "end_time": "2021-09-15 17:30:0",
-      "time_spent": "30 mins",
-      "tags": [
-        1,
-        2
-      ],
-      "status": 1
-    },
-    {
       "id": 5,
       "description": "Test 2",
       "start_time": "2021-09-19 01:12:23",

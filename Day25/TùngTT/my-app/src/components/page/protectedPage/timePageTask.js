@@ -11,9 +11,11 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import dataFunction from '../func/dataFunction';
+import moment from 'moment';
 
 export const TimePageTask = (props) => {
   const [btnHide, setHideBtn] = useState(true); 
+  const [startTime, setStart] = useState({})
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -24,12 +26,6 @@ export const TimePageTask = (props) => {
   const handleCloseDot = () => {
     setAnchorEl(null);
   };
-  // const handleStart = ()  => {
-  //   setHideBtn(false)
-  // }
-  const handleStop = ()  => {
-    setHideBtn(true)
-  }
   // Open dialog
   const [openDialog, setOpen] = useState(false);
 
@@ -87,8 +83,7 @@ export const TimePageTask = (props) => {
   //addTask function
   const handleStart = e => {
     e.preventDefault();
-    setHideBtn(false)
-    props.getHide(true)
+    setStart(moment())
     const data = {
       description: props.descrip,
       start_time: props.startT,
@@ -109,11 +104,23 @@ export const TimePageTask = (props) => {
           status: response.data.status
         });
         setSubmitted(true);
-        console.log(response.data);
       })
       .catch(e => {
         console.log(e);
       });
+  }
+    // Update data 
+  const handleStop = (e) => {
+    let data = {
+      id: props.id,
+      description: props.descrip,
+      start_time: props.startT,
+      end_time:  moment().format('YYYY-MM-DD HH:mm:s'),
+      time_spent: moment(moment() - startTime).utc().format('HH:mm:ss'),
+      tags: getTagbyName(props.tag),
+      status: 1
+    }
+    dataFunction.update(props.id, data)
   }
   return (
     <>
@@ -127,10 +134,11 @@ export const TimePageTask = (props) => {
         open={open} 
         onClose={handleCloseDot} 
         TransitionComponent={Fade}>
-        {btnHide === true && <MenuItem onClick={handleStart}>Start</MenuItem>}
-        {btnHide === false && <MenuItem onClick={handleStop}>Stop</MenuItem>}
+        {props.status === 1 ? (
+          <MenuItem onClick={handleStart}>Start</MenuItem>
+        )  : (
+          <MenuItem onClick={handleStop}>Stop</MenuItem>)}
         <MenuItem onClick={handleClickOpenDialog}>Delete</MenuItem>
-        {!<MenuItem onClick={handleCloseDot}>Logout</MenuItem>}
         <Dialog
           open={openDialog}
           onClose={handleCloseDialog}

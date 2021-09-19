@@ -83,7 +83,6 @@ export const TimerPage = (props) => {
     dataFunction.getAll()
       .then(response => {
         setData(response.data.reverse());
-        // console.log(response.data);
       })
       .catch(e => {
         console.log(e);
@@ -185,7 +184,7 @@ export const TimerPage = (props) => {
                               endT={null}
                               timeSpent={null}
                               tag={getTag(ele,tags)}
-                              status={(0)}
+                              status={ele.status}
                               getHide={props.getHide}
                             />
                             </Grid>
