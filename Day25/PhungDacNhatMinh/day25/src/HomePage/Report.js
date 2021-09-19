@@ -12,7 +12,9 @@ import {
   formatTimeSpent,
   formatNowDay,
 } from "../Components/Function";
-
+import moment from "moment";
+import BarChart from "../Components/BarChart";
+import PieChart from "../Components/PieChart";
 function Report() {
   const history = useHistory();
   const [dateRange, setDateRange] = useState("Options");
@@ -26,6 +28,10 @@ function Report() {
       key: "selection",
     },
   ]);
+  const [perO, setPerO] = useState();
+  const [perM, setPerM] = useState();
+  const [perT, setPerT] = useState();
+  const [perC, setPerC] = useState();
   if (localStorage.getItem("user") === null) {
     alert("Chưa đăng nhập, quay về trang Login.");
     history.push("/");
@@ -45,29 +51,6 @@ function Report() {
   let timeM = 0;
   let timeT = 0;
   let timeC = 0;
-  // if (data) {
-  //   if (
-  //     formatNowDay(PROCESS_DAY_GROUP(data).reverse()[0].date) ===
-  //     formatNowDay(new Date())
-  //   ) {
-  //     console.log("done");
-  //   }
-  //   console.log(
-  //     formatTimeSpent(
-  //       Math.floor(
-  //         PROCESS_DAY_GROUP(data)
-  //           .reverse()[0]
-  //           .tasks.map((e) => {
-  //             let d = durationMins2Days(e.start_time, e.end_time);
-  //             // let totalTimer = d.reduce((pre, cur) => pre + cur);
-  //             // let m = formatTimeSpent(d);
-  //             return d;
-  //           })
-  //           .reduce((pre, cur) => pre + cur)
-  //       )
-  //     )
-  //   );
-  // }
 
   const totalTimerInRange = (e) => {
     setDateRange(e);
@@ -77,25 +60,116 @@ function Report() {
       formatNowDay(PROCESS_DAY_GROUP(data).reverse()[0].date) ===
         formatNowDay(new Date())
     ) {
-      let time = formatTimeSpent(
+      let time0 = formatTimeSpent(
         Math.floor(
           PROCESS_DAY_GROUP(data)
             .reverse()[0]
             .tasks.map((e) => {
+              let O = 0;
+              let M = 0;
+              let T = 0;
+              let C = 0;
+              if (!e.end_time) {
+                alert("Exist not completed tasks");
+              }
               let d = durationMins2Days(e.start_time, e.end_time);
-              // let totalTimer = d.reduce((pre, cur) => pre + cur);
-              // let m = formatTimeSpent(d);
+              let arr = e.tags;
+              let equally = d / arr.length;
+              arr.forEach((e) => {
+                if (e === 1) {
+                  O = equally;
+                  timeO += O;
+                }
+                if (e === 2) {
+                  M = equally;
+                  timeM += M;
+                }
+                if (e === 3) {
+                  T = equally;
+                  timeT += T;
+                }
+                if (e === 4) {
+                  C = equally;
+                  timeC += C;
+                }
+              });
               return d;
             })
             .reduce((pre, cur) => pre + cur)
         )
       );
-      setTotalTimer(time);
+      let sum = timeO + timeM + timeT + timeC;
+      let perO = timeO / sum;
+      let perM = timeM / sum;
+      let perT = timeT / sum;
+      let perC = timeC / sum;
+      setPerO(perO);
+      setPerM(perM);
+      setPerT(perT);
+      setPerC(perC);
+      setTotalTimer(time0);
     } else if (
       formatNowDay(PROCESS_DAY_GROUP(data).reverse()[0].date) !==
       formatNowDay(new Date())
     ) {
       setTotalTimer(0);
+    }
+    if (data && e === "Yesterday") {
+      let check = PROCESS_DAY_GROUP(data).filter(
+        (e) =>
+          formatNowDay(e.date) === formatNowDay(moment().add(-1, "days")._d)
+      );
+      if (check.length > 0) {
+        let time1 = formatTimeSpent(
+          Math.floor(
+            check[0].tasks
+              .map((e) => {
+                let O = 0;
+                let M = 0;
+                let T = 0;
+                let C = 0;
+                if (!e.end_time) {
+                  alert("Exist not completed tasks");
+                }
+                let d = durationMins2Days(e.start_time, e.end_time);
+                let arr = e.tags;
+                let equally = d / arr.length;
+                arr.forEach((e) => {
+                  if (e === 1) {
+                    O = equally;
+                    timeO += O;
+                  }
+                  if (e === 2) {
+                    M = equally;
+                    timeM += M;
+                  }
+                  if (e === 3) {
+                    T = equally;
+                    timeT += T;
+                  }
+                  if (e === 4) {
+                    C = equally;
+                    timeC += C;
+                  }
+                });
+                return d;
+              })
+              .reduce((pre, cur) => pre + cur)
+          )
+        );
+        let sum = timeO + timeM + timeT + timeC;
+        let perO = timeO / sum;
+        let perM = timeM / sum;
+        let perT = timeT / sum;
+        let perC = timeC / sum;
+        setPerO(perO);
+        setPerM(perM);
+        setPerT(perT);
+        setPerC(perC);
+        setTotalTimer(time1);
+      } else {
+        return 0;
+      }
     }
   };
 
@@ -195,6 +269,14 @@ function Report() {
                 </ul>
               </div>
             </section>
+            <div className="d-flex justify-content-around">
+              <div className="col-5">
+                <PieChart perO={perO} perM={perM} perT={perT} perC={perC} />
+              </div>
+              <div className="col-6">
+                <BarChart perO={perO} perM={perM} perT={perT} perC={perC} />
+              </div>
+            </div>
           </main>
         </div>
       </div>
