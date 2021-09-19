@@ -3,8 +3,8 @@
     {
       "id": 1,
       "description": "React JS",
-      "start_time": "2021-09-19 11:49:49",
-      "end_time": "2021-09-19 11:50:10",
+      "start_time": "2021-09-14 11:49:49",
+      "end_time": "2021-09-14 11:50:10",
       "time_spent": "21s",
       "tags": [
         1
@@ -14,37 +14,107 @@
     {
       "id": 2,
       "description": "JS nâng cao",
-      "start_time": "2021-09-18 17:03:26",
-      "end_time": "2021-09-18 17:04:40",
+      "start_time": "2021-09-15 17:03:26",
+      "end_time": "2021-09-15 17:04:40",
       "time_spent": "1m14s",
-      "tags": [3,4],
+      "tags": [
+        3,
+        4
+      ],
       "status": 1
     },
     {
       "id": 3,
       "description": "JS cơ bản",
-      "start_time": "2021-09-18 17:03:26",
-      "end_time": "2021-09-18 17:03:40",
+      "start_time": "2021-09-17 17:03:26",
+      "end_time": "2021-09-17 17:03:40",
       "time_spent": "14s",
-      "tags": [1,2,3],
-      "status": 
+      "tags": [
+        1,
+        2,
+        3
+      ],
+      "status": 0
     },
     {
       "id": 4,
       "description": "CSS",
-      "start_time": "2021-09-17 17:03:32",
+      "start_time": "2021-09-18 17:03:32",
       "end_time": null,
       "time_spent": null,
-      "tags": [1],
+      "tags": [
+        1
+      ],
       "status": 0
     },
     {
       "id": 5,
       "description": "HTML",
-      "start_time": "2021-09-17 17:03:32",
+      "start_time": "2021-09-18 17:03:32",
       "end_time": null,
       "time_spent": null,
-      "tags": [1,2],
+      "tags": [
+        1,
+        2
+      ],
+      "status": 0
+    },
+    {
+      "id": 6,
+      "description": "id",
+      "start_time": "2021-09-19 20:45:58",
+      "end_time": null,
+      "time_spent": null,
+      "tags": [
+        1,
+        2
+      ],
+      "status": 0
+    },
+    {
+      "id": 7,
+      "description": "Toang quá",
+      "start_time": "2021-09-20 00:37:45",
+      "end_time": null,
+      "time_spent": null,
+      "tags": [
+        4
+      ],
+      "status": 0
+    },
+    {
+      "id": 8,
+      "description": "Haizz...",
+      "start_time": "2021-09-20 00:43:34",
+      "end_time": null,
+      "time_spent": null,
+      "tags": [
+        3,
+        4
+      ],
+      "status": 0
+    },
+    {
+      "id": 9,
+      "description": "HELP ME",
+      "start_time": "2021-09-20 00:45:4",
+      "end_time": null,
+      "time_spent": null,
+      "tags": [
+        4,
+        3
+      ],
+      "status": 0
+    },
+    {
+      "id": 10,
+      "description": "Vẫn chưa xong được...",
+      "start_time": "2021-09-20 00:46:38",
+      "end_time": null,
+      "time_spent": null,
+      "tags": [
+        4
+      ],
       "status": 0
     }
   ],

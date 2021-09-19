@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
-import Header from '../UI/Header/Header';
+import Header from '../UI/Header';
 import { makeStyles } from "@material-ui/core/styles"
 import LoyaltyIcon from '@material-ui/icons/Loyalty';
 import Watch from './Watch'

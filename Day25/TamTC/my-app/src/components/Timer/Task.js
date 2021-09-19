@@ -50,7 +50,7 @@ export default function Task(props) {
         <ListItem alignItems="flex-start" className={classes.task__item}>
             <Typography className={classes.title}>{props.desc}</Typography>
             <div className={classes.time}>
-                <Typography className={classes.task__tag}>{props.tagsDesc && <LoyaltyIcon className={classes.icon__tag} />}{props.tagsDesc}</Typography>
+                <Typography className={classes.task__tag}><LoyaltyIcon className={classes.icon__tag} />{props.tagsDesc}</Typography>
                 <Typography>{formatTime}</Typography>
                 <Typography>{props.spent}</Typography>
             </div>
