@@ -7,19 +7,13 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import DateFnsUtils from '@date-io/date-fns';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; 
 import 'react-date-range/dist/theme/default.css';
-import {
-  DatePicker,
-  TimePicker,
-  DateTimePicker,
-  MuiPickersUtilsProvider,
-} from '@material-ui/pickers';
+
 import { Chart } from './barChart';
 const useStyles = makeStyles((theme) => ({
   modGrid: {
@@ -98,9 +92,7 @@ export const ReportPage = () => {
        <Grid container spacing={4}>
         <Grid item xs={6} className={classes.modGrid}>
           <Typography variant="h4">
-              <Button>
-                Click me
-              </Button>
+              This week: 
           </Typography>
         </Grid>
         <Grid item xs={6}  className={classes.modGrid} className={classes.btnPos}>

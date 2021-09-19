@@ -19,16 +19,15 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export const TimerHeader = () => {
+export const TimerHeader = (props) => {
   const classes = useStyles();
   const [hide, setHide] = useState(false);
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     Online: false,
     Meeting: false,
     Training: false,
     Relax: false,
   });
-  const [chooseState, setChoose ] = useState()
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleChangeBox = (event) => {
@@ -43,15 +42,8 @@ export const TimerHeader = () => {
   };
   //Get Start and Stop
   const [startTime, setStart] = useState({})
-  const [endTime, setEndtime] = useState({})
   const [descrip, setDescrip] = useState("")
-  const startTimer = () => {
-    setStart(moment());
-    setHide(true)
-  }
-  const stopTimer = () => {
-    setHide(false)
-  }
+
   const getKeyByValue = (object, value) => {
     return Object.keys(object).filter(key => object[key] === value);
   }
@@ -124,7 +116,7 @@ export const TimerHeader = () => {
     handleInputChange(e);
     setHide(false)
     let data = {
-      id: getTask.id,
+      id: props.id,
       description: getTask.description,
       start_time: getTask.start_time,
       end_time:  moment().format('YYYY-MM-DD HH:mm:s'),
@@ -204,10 +196,10 @@ export const TimerHeader = () => {
             </Typography>
           </Grid>
           <Grid key={3} item xs>
-            {hide === false && <IconButton onClick={addTask}>
+            {(hide === false) && <IconButton onClick={addTask}>
               <PlayCircleFilledWhiteIcon/>
             </IconButton>}
-            {hide === true && <IconButton onClick={updateTask}>
+            {(hide === true) && <IconButton onClick={updateTask}>
               <StopIcon/>
             </IconButton>}
           </Grid>

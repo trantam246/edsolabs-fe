@@ -5,6 +5,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import LockIcon from '@material-ui/icons/Lock';
+import { LoginFunction } from "./loginFunc";
 import {
   useHistory,
   useLocation
@@ -34,46 +35,36 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export const LoginPage = () => {
+export const LoginPage = (props) => {
     const classes = useStyles();
     const history = useHistory();
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const [user, setUser] = useState({})
-    const hanldeUsername = () => {
+    const [user, setUser] = useState([])
 
-    }
     const loginUser = (e) => {
         e.preventDefault();
-        
-        const urlencode = new URLSearchParams();
-        urlencode.append("username", setUsername(user.username));
-        urlencode.append("password", setPassword(user.password))
-        // fetch('http://localhost:3001/users', {
-        //   method: 'POST',
-        //   headers: {
-        //     'Content-Type': 'application/json'
-        //   },
-        //   body: urlencode,
-        //   redirect: 'follow'
-        // })
-        //   .then(data => data.json())
-        //   .then(result => {
-        //         console.log(result)
-        //         setUser(result)
-        localStorage.setItem("acess",true);
-        history.push("/home")
-        //   })
+        user.map(item => {
+            if(username === item.username && password === item.password) {
+                props.getAvt(item.avatar)
+                props.getName(item.fullname)
+                localStorage.setItem("acess",true);
+                history.push("/home")
+            } else {
+                alert('Sai thong tin dang nhap')
+                setUsername('')
+                setPassword('')
+                history.push("/")
+            }
+        })
     }
+
     useEffect(() => {
         fetch('http://localhost:3001/users')
           .then(data => data.json())
           .then(result => {
-                // console.log(result)
                 setUser(result)
                 console.log(result)
-                // localStorage.setItem("acess",true);
-                // history.push("/home")
           })
     },[])
     return (

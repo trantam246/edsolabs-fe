@@ -9,17 +9,8 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import {Link} from '@material-ui/core';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import Fade from '@material-ui/core/Fade';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import dataFunction from '../func/dataFunction';
-
+import { TimePageTask } from './timePageTask';
 import moment from 'moment';
 moment().format();
 const useStyles = makeStyles((theme) => ({
@@ -79,7 +70,7 @@ const tags = [
       "name": "Coding"
   }
 ]
-export const TimerPage = () => {
+export const TimerPage = (props) => {
   const classes = useStyles();
   const [visible, setVisible] = useState(5);
   const [isLoad, setLoad] = useState(false);
@@ -87,7 +78,7 @@ export const TimerPage = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     retrieveTutorials();
-  }, []);
+  });
   const retrieveTutorials = () => {
     dataFunction.getAll()
       .then(response => {
@@ -188,7 +179,15 @@ export const TimerPage = () => {
                               <p>{ele.time_spent} mins</p>
                             </Grid>
                             <Grid item xs>
-                            <MenuA id={ele.id}/>
+                            <TimePageTask id={ele.id}
+                              descrip={ele.description}
+                              startT={moment().format('YYYY-MM-DD HH:mm:s')}
+                              endT={null}
+                              timeSpent={null}
+                              tag={getTag(ele,tags)}
+                              status={(0)}
+                              getHide={props.getHide}
+                            />
                             </Grid>
                           </Grid>                          
                         </Paper>
@@ -213,82 +212,4 @@ export const TimerPage = () => {
       </div>
     </React.Fragment>
   );
-}
-
-export const MenuA = (props) => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-
-  };
-
-  const handleCloseDot = () => {
-    setAnchorEl(null);
-  };
-
-  // Open dialog
-  const [openDialog, setOpen] = React.useState(false);
-
-  const handleClickOpenDialog = (event) => {
-    setOpen(true);
-    // console.log(getTask)
-  };
-
-  const handleCloseDialog = () => {
-    setOpen(false);    
-  };
-  const handleDelete = (e) => {
-    setAnchorEl(null);
-    dataFunction.remove(props.id)
-      .then((res) => {
-        alert('da xoa thanh cong');
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-      setOpen(false);
-  };
-
-  return (
-    <>
-      <IconButton aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
-                <MoreVertIcon/>
-      </IconButton>
-      <Menu
-        id="fade-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={open} 
-        onClose={handleCloseDot} 
-        TransitionComponent={Fade}
-      >
-        <MenuItem onClick={handleCloseDot}>Start</MenuItem>
-        <MenuItem onClick={handleClickOpenDialog}>Delete</MenuItem>
-        {!<MenuItem onClick={handleCloseDot}>Logout</MenuItem>}
-        <Dialog
-          open={openDialog}
-          onClose={handleCloseDialog}
-          aria-labelledby="alert-dialog-title"
-          aria-describedby="alert-dialog-description"
-        >
-        <DialogTitle id="alert-dialog-title">{"Confirmation"}</DialogTitle>
-          <DialogContent>
-            <DialogContentText id="alert-dialog-description">
-              Are you sure to delete this item?
-              </DialogContentText>
-            </DialogContent>
-          <DialogActions>
-            <Button onClick={handleCloseDialog} color="primary">
-              No
-            </Button>
-            <Button onClick={handleDelete} color="primary" autoFocus>
-              Yes
-            </Button>
-          </DialogActions>
-        </Dialog>
-      </Menu> 
-    </>
-  )
 }

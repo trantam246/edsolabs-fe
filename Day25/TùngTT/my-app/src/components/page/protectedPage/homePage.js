@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -25,6 +25,7 @@ import AssessmentIcon from '@material-ui/icons/Assessment';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Grid from '@material-ui/core/Grid';
 import { TimerHeader } from './timerPageHeader';
+import { ErrPage } from '../../errorPage/404Page'
 const drawerWidth = 320;
 
 const useStyles = makeStyles((theme) => ({
@@ -60,10 +61,15 @@ const useStyles = makeStyles((theme) => ({
   },
   linkMod: {
     color: '#000000',
+  },
+  fixImg: {
+    width: '50%',
+    borderRadius: '50%'
   }
 }));
 
 export const HomePage = (props) => {
+  const [hide, setHide] = useState(false);
   const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
@@ -76,13 +82,16 @@ export const HomePage = (props) => {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+  //-------props
+  const hideBtn = e => {
+    setHide(e)
+  }
   const drawer = (
     <div>
       <List>
         <ListItem>
-          <ListItemIcon><AccountCircleIcon/></ListItemIcon>
-          <ListItemText primary='My Admin' />
+          <ListItemIcon><img src={props.getUser} alt="avatar" className={classes.fixImg}/></ListItemIcon>
+          <ListItemText primary={props.getName} />
         </ListItem>
       </List>
       <Divider />
@@ -134,10 +143,13 @@ export const HomePage = (props) => {
           <Grid container justifyContent="space-between">
             <Switch>
               <Route path="/home/timer">
-                  <TimerHeader/>
+                <TimerHeader getHide={hide}/>
               </Route>
               <Route path="/home/report">
-                  <HeaderReport />
+                <HeaderReport />
+              </Route>
+              <Route path="/home/*">
+                <ErrPage/>
               </Route>
             </Switch>
           </Grid>
@@ -180,10 +192,13 @@ export const HomePage = (props) => {
             <Home/>
           </Route>
           <Route path="/home/timer">
-            <TimerPage/>
+            <TimerPage getHide={hideBtn}/>
           </Route>
           <Route path="/home/report">
             <ReportPage/>
+          </Route>
+          <Route path="/home/*">
+            <ErrPage/>
           </Route>
         </Switch>
       </main>
