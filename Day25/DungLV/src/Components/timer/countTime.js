@@ -22,7 +22,7 @@ const CountTimer = (props) => {
     const handleStart = () => {
       //biến lưu trữ ngày current với time
       const d = new Date();
-      const currentDate = `0${
+      const currentDate = `${
         d.getMonth() + 1
       }/${d.getDate()}/${d.getFullYear()}`;
       const time = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
