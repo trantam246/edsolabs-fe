@@ -13,6 +13,7 @@ const getDay = (tasks) => {
   ];
 
   listDay.sort((a, b) => b.split('/').join('') - a.split('/').join(''));
+
   return listDay;
 };
 
@@ -24,15 +25,34 @@ const Timer = () => {
   const [listDays, setListDays] = useState(listDaysInit);
   const [listTasks, setListTasks] = useState(tasks);
 
+  const [dateFilter, setDateFilter] = useState('');
+
+  const getDateFilter = (value) => {
+    setDateFilter(moment(value).format('DD/MM/YYYY'));
+    // console.log(moment(value).format('DD/MM/YYYY'));
+  };
+
+  const refreshData = () => {
+    setDateFilter('');
+  };
+
   useEffect(() => {
     setListDays(getDay(tasks));
     setListTasks(tasks);
   }, [tasks]);
 
-  console.log();
+  useEffect(() => {
+    if (dateFilter.trim() !== '') {
+      const day = getDay(tasks).filter((d) => d === dateFilter);
+      setListDays(day);
+    } else {
+      setListDays(getDay(tasks));
+    }
+  }, [tasks, dateFilter]);
+
   return (
     <div>
-      <DateFilter />
+      <DateFilter getDateFilter={getDateFilter} refreshData={refreshData} />
 
       {listDays.map((day, index) => {
         const tasksInDay = listTasks.filter(

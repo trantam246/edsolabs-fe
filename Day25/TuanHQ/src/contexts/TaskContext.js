@@ -81,7 +81,7 @@ export const TaskContextProvider = ({ children }) => {
 
   const handleRestart = (task) => {
     setTaskRestarted(task);
-    console.log(task);
+    // console.log(task);
   };
 
   useEffect(() => {

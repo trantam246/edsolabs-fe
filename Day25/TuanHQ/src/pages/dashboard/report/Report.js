@@ -69,7 +69,7 @@ const Report = () => {
     return total.toFixed(2);
   };
 
-  console.log(totalTimeSpent());
+  // console.log(totalTimeSpent());
   return (
     <div>
       {!playing && <Productivity />}
