@@ -54,7 +54,11 @@ export default function ReportBody(props) {
     setStart(moment(data.startDate).format('YYYY-MM-DD'));
     setEnd(moment(data.endDate).format('YYYY-MM-DD'));
     if (data.label === undefined) {
-      setLabel('range');
+      setLabel(
+        `${moment(data.startDate).format('DD/MM/YYYY')}-${moment(
+          data.endDate
+        ).format('DD/MM/YYYY')}`
+      );
     } else {
       setLabel(data.label);
     }
@@ -68,7 +72,7 @@ export default function ReportBody(props) {
     let a = removeHead(taskGroupByDays, end);
     if (a === undefined) alert('vui long chon khoang thoi gian khac');
     let b = removeTail(taskGroupByDays, start);
-    let newArr = taskGroupByDays.slice(a, a + b - a + 1);
+    let newArr = taskGroupByDays.slice(a, b + 1);
     newArr.forEach((e) => {
       e[1].forEach((o) => {
         if (o.time_spent === null) {
