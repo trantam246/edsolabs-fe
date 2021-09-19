@@ -3,8 +3,10 @@ import axios from "axios";
 export const getUser = async () => {
   return await axios.get(`${process.env.REACT_APP_API_USER}`);
 };
-export const getTasks = async () => {
-  return await axios.get(`${process.env.REACT_APP_API_TASK}`);
+export const getTasks = async (filterDay) => {
+  return await axios.get(
+    `${process.env.REACT_APP_API_TASK}?start_time_like=${filterDay}`
+  );
 };
 export const getTags = async () => {
   return await axios.get(`${process.env.REACT_APP_API_TAG}`);

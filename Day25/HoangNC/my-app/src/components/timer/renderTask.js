@@ -1,10 +1,13 @@
 import React from "react";
-import moment from "moment";
 import TaskPerDay from "./taskPerDay";
 import { groupDay } from "../common/common";
+import { useTaskContext } from "../common/taskContext";
+import moment from "moment";
 
 export default function Showtask(props) {
   const { task, limit } = props;
+  const { value } = useTaskContext();
+  console.log(moment(`${value}`).format("DD/MM/YYYY"));
   return (
     <>
       {groupDay(task)

@@ -5,10 +5,12 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "@mui/lab/DatePicker";
 import { useStyles } from "./style";
+import { useTaskContext } from "../common/taskContext";
 
 export default function DateFilter() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(null);
+  const { value, setValue, setRender, render } = useTaskContext();
+
   return (
     <div className={classes.filter}>
       <div className={classes.dateFilter}>
@@ -20,6 +22,7 @@ export default function DateFilter() {
               label="Pickday"
               value={value}
               onChange={(newValue) => {
+                setRender(!render);
                 setValue(newValue);
               }}
               renderInput={(params) => <TextField {...params} />}

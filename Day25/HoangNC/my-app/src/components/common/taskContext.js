@@ -14,6 +14,7 @@ export const TaskContextProvider = ({ children }) => {
   const [description, setDescription] = useState("");
   const [counting, setCounting] = useState([]);
   const [dotMenu, setdotMenu] = useState(null);
+  const [value, setValue] = useState(null);
   const [state, setState] = useState({
     checkedA: false,
     checkedB: false,
@@ -45,6 +46,9 @@ export const TaskContextProvider = ({ children }) => {
       })
       .catch((err) => {
         alert("Không thể kết nối tới server");
+      })
+      .finally(() => {
+        setRender(!render);
       });
   };
 
@@ -66,20 +70,22 @@ export const TaskContextProvider = ({ children }) => {
         state.checkedD
       ),
       status: 1,
-    });
-    setTimer(0);
+    })
+      .then(() => setTimer(0))
+      .catch(() => console.log("Error"))
+      .finally(() => setRender(!render));
   };
 
   const handleDelete = (id) => {
     if (window.confirm("Delete this file?")) {
       deleteTasks(id)
         .then(() => {
-          setRender(!render);
           setdotMenu(null);
         })
         .catch(() => {
           alert("Lỗi");
-        });
+        })
+        .finally(() => setRender(!render));
     }
   };
   const handleRestart = (r) => {
@@ -93,6 +99,7 @@ export const TaskContextProvider = ({ children }) => {
     }
   };
   const handleClose = () => {
+    setRender(!render);
     setdotMenu(null);
   };
   const data = {
@@ -110,8 +117,9 @@ export const TaskContextProvider = ({ children }) => {
     handleDelete,
     handleClose,
     handleRestart,
-    render,
     setRender,
+    value,
+    setValue,
   };
 
   return <TaskContext.Provider value={data}>{children}</TaskContext.Provider>;

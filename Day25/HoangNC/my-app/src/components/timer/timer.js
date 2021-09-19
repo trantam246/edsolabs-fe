@@ -3,6 +3,7 @@ import Header from "../timer/header";
 import Filter from "../timer/dateFilter";
 import Showtask from "../timer/renderTask";
 import Sidebar from "../common/Sidebar";
+import moment from "moment";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import { useStyles } from "./style";
@@ -11,21 +12,36 @@ import { getTasks } from "../apis/apis";
 
 export default function Timer() {
   const classes = useStyles();
+  const { render, setRender, value } = useTaskContext();
   const [limit, setLimit] = useState(5);
   const handleLoadmore = () => {
+    setRender();
     setLimit(limit + 5);
   };
-  const { render } = useTaskContext();
   const [tasks, setTask] = useState([]);
+  console.log(value);
   useEffect(() => {
-    getTasks()
-      .then((res) => {
-        setTask(res.data.reverse());
-      })
-      .catch((err) => {
-        console.log(err);
-        alert("Không thể kết nối tới server");
-      });
+    if (value === null) {
+      console.log(1);
+      getTasks(0)
+        .then((res) => {
+          setTask(res.data.reverse());
+        })
+        .catch((err) => {
+          console.log(err);
+          alert("Không thể kết nối tới server");
+        });
+    } else {
+      console.log(2);
+      getTasks(moment(`${value}`).format("YYYY-MM-DD"))
+        .then((res) => {
+          setTask(res.data.reverse());
+        })
+        .catch((err) => {
+          console.log(err);
+          alert("Không thể kết nối tới server");
+        });
+    }
   }, [render]);
   return (
     <div>
