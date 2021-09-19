@@ -82,6 +82,16 @@ export const TaskContextProvider = ({ children }) => {
         });
     }
   };
+  const handleRestart = (r) => {
+    if (isActive === true) {
+      alert("Đang có task chạy...");
+    } else {
+      setDescription(r);
+      console.log(r);
+      // setState(t);
+      handleStart();
+    }
+  };
   const handleClose = () => {
     setdotMenu(null);
   };
@@ -99,6 +109,9 @@ export const TaskContextProvider = ({ children }) => {
     handleReset,
     handleDelete,
     handleClose,
+    handleRestart,
+    render,
+    setRender,
   };
 
   return <TaskContext.Provider value={data}>{children}</TaskContext.Provider>;
