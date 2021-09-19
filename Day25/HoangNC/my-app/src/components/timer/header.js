@@ -17,7 +17,6 @@ export default function HeaderTimer() {
   const [anchorMenu, setanchorMenu] = useState(null);
   const [startTime, setStart] = useState(``);
   const [isActive, setIsActive] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
   const [description, setDescription] = useState("");
   const [counting, setCounting] = useState([]);
   const countRef = useRef(null);
@@ -38,7 +37,6 @@ export default function HeaderTimer() {
   const handleStart = () => {
     const start = moment().format(`YYYY-MM-DD H:mm:ss`);
     setIsActive(true);
-    setIsPaused(true);
     setStart(start);
     countRef.current = setInterval(() => {
       setTimer((timer) => timer + 1);
@@ -64,7 +62,6 @@ export default function HeaderTimer() {
   const handleReset = () => {
     clearInterval(countRef.current);
     setIsActive(false);
-    setIsPaused(false);
     const end = moment().format(`YYYY-MM-DD H:mm:ss`);
     updateTasks(counting.id, {
       description: description,
@@ -151,7 +148,7 @@ export default function HeaderTimer() {
         <p className={classes.formatTime}>{FormatTime(timer)}</p>
         <div>
           {" "}
-          {!isActive && !isPaused ? (
+          {!isActive ? (
             <PlayCircleFilledIcon onClick={handleStart} fontSize="large" />
           ) : (
             <StopCircleIcon onClick={handleReset} fontSize="large" />

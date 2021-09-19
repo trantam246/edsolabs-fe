@@ -6,27 +6,25 @@ import Sidebar from "../common/Sidebar";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import { useStyles } from "./style";
-import { groupDay } from "../common/common";
-import { getTasksLimit } from "../apis/apis";
+import { getTasks } from "../apis/apis";
 
 export default function Timer() {
   const classes = useStyles();
-  const [limit, setLimit] = useState(5);
+  const [limit, setLimit] = useState(1);
   const handleLoadmore = () => {
-    setLimit(limit + 5);
+    setLimit(limit + 1);
   };
   const [tasks, setTask] = useState([]);
   useEffect(() => {
-    getTasksLimit(limit)
+    getTasks()
       .then((res) => {
-        setTask(res.data);
+        setTask(res.data.reverse());
       })
       .catch((err) => {
         console.log(err);
         alert("Không thể kết nối tới server");
       });
   }, [limit]);
-
   return (
     <div>
       {" "}
@@ -37,7 +35,7 @@ export default function Timer() {
         <Grid item xs={9} className={classes.main}>
           <Header />
           <Filter />
-          <Showtask task={groupDay(tasks).reverse()} />
+          <Showtask task={tasks} limit={limit} />
           <div className={classes.loadmore}>
             {" "}
             <Button variant="contained" onClick={handleLoadmore}>

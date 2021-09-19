@@ -1,6 +1,7 @@
 import { withStyles } from "@mui/styles";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import moment from "moment";
 
 export const getUser = () => {
   const userStr = localStorage.getItem("name");
@@ -38,38 +39,10 @@ export const chooseTag = (a, b, c, d) => {
 };
 
 export const groupDay = (task) => {
-  const dayGroup = [];
-  task.forEach((item) => {
-    const index = dayGroup.findIndex((i) => {
-      return (
-        new Date(i.date).toLocaleTimeString() ===
-        new Date(item.start_time).toLocaleTimeString()
-      );
-    });
-    if (index === -1) {
-      const newItem = {
-        date: item.start_time,
-        tasks: [],
-      };
-      dayGroup.push(newItem);
-      dayGroup[dayGroup.length - 1].tasks.push(item);
-    } else {
-      dayGroup[index].tasks.push(item);
-    }
-  });
-  return dayGroup;
-};
-
-export const formatDay = (date) => {
-  const a = new Date().toLocaleDateString();
-  if (a === new Date(date).toLocaleDateString()) {
-    return "Today";
-  }
-  if (date) {
-    const day = new Date(date);
-    return day.toLocaleDateString();
-  }
-  return;
+  const listDay = [
+    ...new Set(task.map((e) => moment(e.start_time).format("DD/MM/YYYY"))),
+  ];
+  return listDay;
 };
 
 export const renderTags = (i) => {
