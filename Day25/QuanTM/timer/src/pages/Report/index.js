@@ -23,7 +23,7 @@ export default function Report() {
   const { tasks, tags } = useGlobalContext();
   const [selected, setSelected] = useState("This week");
   const [dateRange, setDateRange] = useState(null);
-  const [chartData, setChartData] = useState(null);
+  const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
     if (selected === "Date range") {
@@ -41,21 +41,22 @@ export default function Report() {
       return;
     }
     let matchTasks = [];
+    const finishTasks = tasks.filter((task) => task.status === 1);
     if (!dateRange) {
-      matchTasks = [...tasks];
+      matchTasks = [...finishTasks];
     } else {
       if (!dateRange.startDate) {
-        matchTasks = tasks.filter(({ start_time }) =>
+        matchTasks = finishTasks.filter(({ start_time }) =>
           momentDate(start_time).isBefore(momentDate(dateRange.endDate))
         );
       }
       if (!dateRange.endDate) {
-        matchTasks = tasks.filter(({ start_time }) =>
+        matchTasks = finishTasks.filter(({ start_time }) =>
           momentDate(start_time).isAfter(momentDate(dateRange.startDate))
         );
       }
       if (dateRange.startDate && dateRange.endDate) {
-        matchTasks = tasks.filter(({ start_time }) =>
+        matchTasks = finishTasks.filter(({ start_time }) =>
           momentDate(start_time).isBetween(
             momentDate(dateRange.startDate),
             momentDate(dateRange.endDate)
@@ -96,7 +97,7 @@ export default function Report() {
                 labels: tags.map((tag) => tag.name),
                 datasets: [
                   {
-                    label: "My First Dataset",
+                    label: "Tasks Productivity ",
                     data: chartData,
                     backgroundColor: [
                       "rgb(255, 99, 132)",
@@ -119,7 +120,7 @@ export default function Report() {
                 datasets: [
                   {
                     axis: "y",
-                    label: "My First Dataset",
+                    label: "Tasks Productivity",
                     data: chartData,
                     backgroundColor: [
                       "rgb(255, 99, 132)",

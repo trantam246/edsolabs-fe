@@ -6,7 +6,7 @@ import { useReportContext } from "../../pages/Report";
 import { formatDate } from "../../utils";
 
 export default function ReportHeader() {
-  const { selected, dateRange } = useReportContext();
+  const { selected, dateRange, chartData } = useReportContext();
 
   const renderLabel = () => {
     if (selected !== "Date range") {
@@ -28,7 +28,8 @@ export default function ReportHeader() {
   return (
     <Box display="flex" justifyContent="space-between" alignItems="center">
       <Typography variant="h5" component="h2">
-        {renderLabel()}: 36.64 hours
+        {renderLabel()}: {chartData.reduce((total, value) => total + value, 0)}{" "}
+        hours
       </Typography>
       <ReportMenu />
     </Box>
