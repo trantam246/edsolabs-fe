@@ -74,10 +74,6 @@ export default function Report() {
         setListTask(result);
       });
   }, []);
-
-  // lấy ra phần trăm cho từng tags
-
-  // return focus to the button when we transitioned from !open -> open
   const prevOpen = React.useRef(open);
   React.useEffect(() => {
     if (prevOpen.current === true && open === false) {
@@ -236,10 +232,9 @@ export default function Report() {
   const getLastWeek = () => {
     let sum = 0;
     var lastWeekStart = moment(
-      moment().startOf('week').subtract(1, 'weeks'),
+      moment().startOf('isoweek').subtract(1, 'weeks'),
     ).format('YYYY-MM-DD');
     var days = [];
-
     for (var i = 0; i <= 6; i++) {
       days.push(moment(lastWeekStart).add(i, 'days').format('YYYY-MM-DD'));
     }
@@ -284,17 +279,14 @@ export default function Report() {
       coding: (percentTag.coding / sumTagMinute) * 100,
     };
     setPersen(percentTagsLastWeek);
-
     setTotalHours((sum / 60).toFixed(2));
   };
   const getThisMonth = () => {
     let sum = 0;
     var thisMonthStart = moment(moment().startOf('month')).format('YYYY-MM-DD');
     var days = [];
-
-    const dem = Number(moment(moment().endOf('month')).format('DD'));
-
-    for (var i = 0; i < dem; i++) {
+    const day = Number(moment(moment().endOf('month')).format('DD'));
+    for (var i = 0; i < day; i++) {
       days.push(moment(thisMonthStart).add(i, 'days').format('YYYY-MM-DD'));
     }
     days.map((day) => {
@@ -458,7 +450,6 @@ export default function Report() {
         training: (percentTag.training / sumTagMinute) * 100,
         coding: (percentTag.coding / sumTagMinute) * 100,
       };
-
       setPersen(percentTags);
       setTotalHours((sum / 60).toFixed(2));
     });
