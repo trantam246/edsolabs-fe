@@ -1,10 +1,7 @@
-
-import './reset.css';
-import Routers from './Router/rouster.jsx';
-
+import './css/reset.css';
+import Routers from './router/rouster';
 
 function App() {
-
   return (
     <div className="App">
       <Routers />

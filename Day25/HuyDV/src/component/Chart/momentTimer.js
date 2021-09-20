@@ -1,12 +1,12 @@
-import moment from "moment";
+import moment from 'moment';
 
 export const GET_TODAY = () => {
-  return [moment().format('YYYY-MM-DD').toString()]
-}
+  return [moment().format('YYYY-MM-DD').toString()];
+};
 
 export const GET_YESTERDAY = () => {
   return [moment().subtract(1, 'days').format('YYYY-MM-DD').toString()];
-}
+};
 
 export const GET_CURRENT_WEEK = () => {
   var weekStart = moment(moment().startOf('isoweek')).format('YYYY-MM-DD'); // start day of this week

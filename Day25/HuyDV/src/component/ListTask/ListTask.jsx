@@ -1,62 +1,84 @@
-// import PropTypes from 'prop-types'
 import { ListTaskDate, TitleListTaskDate } from './style';
-import { useState } from 'react';
 import Task from '../Task/Task';
 
+const ListTask = ({
+  searchDate,
+  processDayGroup,
+  size,
+  handleClickListsDelete,
+  LsTask,
+  LsTag,
+}) => {
+  const newDate = new Date();
+  const dateToday =
+    newDate.getFullYear() +
+    '-0' +
+    (newDate.getMonth() + 1) +
+    '-' +
+    newDate.getDate();
 
-const ListTask = ({ searchDate, processDayGroup, size, handleClickListsDelete, LsTask, LsTag }) => {
+  const handleClickListsDeletes = (value) => {
+    handleClickListsDelete(value);
+  };
 
-    const newDate = new Date();
-    const dateToday = newDate.getFullYear() + '-0' + (newDate.getMonth() + 1) + '-' + newDate.getDate();
+  const sortOuput = processDayGroup(LsTask).sort((a, b) => {
+    a = new Date(a.date);
+    b = new Date(b.date);
+    return b - a;
+  });
 
-
-    const handleClickListsDeletes = (value) => {
-        handleClickListsDelete(value)
+  const listTask = sortOuput.map((item, index) => {
+    if (size > index++) {
+      return (
+        <ListTaskDate key={index}>
+          <TitleListTaskDate>
+            {item.date.split(' ')[0] === dateToday
+              ? `Today`
+              : item.date.split(' ')[0]}
+          </TitleListTaskDate>
+          <Task
+            dayTask={item.tasks}
+            handleClickListsDelete={handleClickListsDeletes}
+            LsTag={LsTag}
+          />
+        </ListTaskDate>
+      );
     }
+  });
 
-    const sortOuput = processDayGroup(LsTask).sort((a, b) => {
-        a = new Date(a.date);
-        b = new Date(b.date);
-        return b - a;
-    })
-
-    const listTask = sortOuput.map((item, index) => {
-        if (size > index++) {
-            return <ListTaskDate key={index}>
-                <TitleListTaskDate>{item.date.split(" ")[0] === dateToday ? `Today` : item.date.split(" ")[0]}</TitleListTaskDate>
-                <Task dayTask={item.tasks} handleClickListsDelete={handleClickListsDeletes} LsTag={LsTag} />
-            </ListTaskDate>
-        }
-    })
-
-    const GetListTask = () => {
-        if (searchDate && searchDate !== 'NaN-0NaN-0NaN') {
-            if (searchDate !== '') {
-                const list = sortOuput.map((item, index) => {
-                    const date = item.date.split(' ')[0];
-                    if (size > index++) {
-                        if (date === searchDate) {
-                            return <ListTaskDate key={index}>
-                                <TitleListTaskDate>{item.date.split(" ")[0] === dateToday ? `Today` : item.date.split(" ")[0]}</TitleListTaskDate>
-                                <Task dayTask={item.tasks} handleClickListsDelete={handleClickListsDeletes} LsTag={LsTag} />
-                            </ListTaskDate>
-                        }
-                    }
-                })
-                return list;
+  const GetListTask = () => {
+    if (searchDate && searchDate !== 'NaN-0NaN-0NaN') {
+      if (searchDate !== '') {
+        const list = sortOuput.map((item, index) => {
+          const date = item.date.split(' ')[0];
+          if (size > index++) {
+            if (date === searchDate) {
+              return (
+                <ListTaskDate key={index}>
+                  <TitleListTaskDate>
+                    {item.date.split(' ')[0] === dateToday
+                      ? `Today`
+                      : item.date.split(' ')[0]}
+                  </TitleListTaskDate>
+                  <Task
+                    dayTask={item.tasks}
+                    handleClickListsDelete={handleClickListsDeletes}
+                    LsTag={LsTag}
+                  />
+                </ListTaskDate>
+              );
             }
-            else {
-                return listTask
-            }
-
-        }
-        else {
-            return listTask;
-        }
+          }
+        });
+        return list;
+      } else {
+        return listTask;
+      }
+    } else {
+      return listTask;
     }
-    return (
-        <GetListTask />
-    )
-}
+  };
+  return <GetListTask />;
+};
 
-export default ListTask
+export default ListTask;
