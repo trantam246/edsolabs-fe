@@ -45,9 +45,9 @@ export default function ListTask(props) {
   });
   const handleNumPages = () => {
     if (numPages + 3 < taskGroupByDays.length) {
-      setNumPages(taskGroupByDays.length);
-    } else {
       setNumPages(numPages + 3);
+    } else {
+      setNumPages(taskGroupByDays.length);
     }
   };
   const getDate = (data) => {

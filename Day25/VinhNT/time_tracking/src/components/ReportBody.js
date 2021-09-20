@@ -129,7 +129,15 @@ export default function ReportBody(props) {
       <div className={classes.root}>
         {label && (
           <Typography variant="h6">
-            {label} : {sumMin} mins
+            {sumMin > 180 ? (
+              <>
+                {label} : {Math.round((sumMin / 60) * 100) / 100} hours
+              </>
+            ) : (
+              <>
+                {label} : {sumMin} mins
+              </>
+            )}
           </Typography>
         )}
         <MenuDateRangePicker update={onUpdate} />
