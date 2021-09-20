@@ -45,8 +45,8 @@ export default function Login({ setToken }) {
       username,
       password,
     });
-    history.push('./');
     setToken(token);
+    history.push('./');
   };
   const classes = useStyles();
   return (

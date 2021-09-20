@@ -14,12 +14,12 @@ import useToken from './hooks/useToken';
 function App() {
   // const [token, setToken] = useState();
   const { token, setToken } = useToken();
-  if (!token) {
-    return <Login setToken={setToken} />;
-  }
-  if (token === '404') {
-    return <Login setToken={setToken} />;
-  }
+  // if (!token) {
+  //   return <Login setToken={setToken} />;
+  // }
+  // if (token === '404') {
+  //   return <Login setToken={setToken} />;
+  // }
   return (
     <Router>
       <Switch>
