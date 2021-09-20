@@ -48,7 +48,12 @@ export default function HeaderTimer(props) {
         setDesc(e.target.value)
     }
     const handleBlur = () => {
-        setPost({ ...post, description: desc })
+        if (desc.trim().length === 0) {
+            alert("Điền vào 'What are you working on?'")
+            return
+        }
+        else
+            setPost({ ...post, description: desc })
     }
     const handleTagIcon = () => {
         setShowListTag(!showListTag)

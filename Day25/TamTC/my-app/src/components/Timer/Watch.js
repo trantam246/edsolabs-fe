@@ -4,8 +4,8 @@ import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import PauseCircleFilledIcon from '@material-ui/icons/PauseCircleFilled';
 import { makeStyles } from "@material-ui/core/styles"
 import moment from 'moment'
-import taskApi from '../../API/taskApi'
-const useStyles = makeStyles((theme) => ({
+import taskApi from '../../api/taskApi'
+const useStyles = makeStyles(() => ({
     icon: {
         color: 'black',
         width: '20rem',
@@ -25,6 +25,7 @@ const Watch = (props) => {
     const [time, setTime] = useState({ s: 0, m: 0, h: 0 })
     const [inter, setInter] = useState();
     const [post, setPost] = useState(props.newTask)
+    const [id, setId] = useState(0)
     const postTask = async (a) => {
         try {
             await taskApi.addTask(a)
@@ -32,7 +33,15 @@ const Watch = (props) => {
             throw (error)
         }
     }
-
+    const fetchTask = () => {
+        try {
+            taskApi.getTask().then((res) => {
+                setId(res.length)
+            })
+        } catch (error) {
+            throw error
+        }
+    }
     const updateTask = async (task, id) => {
         try {
             await taskApi.updateTask(task, id)
@@ -40,23 +49,28 @@ const Watch = (props) => {
             throw error
         }
     }
-
     const start = () => {
-        run();
-        const startRun = moment().format('YYYY-MM-DD HH:mm:s')
-        const newTask = {
-            id: Math.round(Math.random()),
-            ...props.newTask,
-            start_time: startRun,
-            end_time: null,
-            time_spent: null,
-            status: 0
+        console.log(props)
+        if (props.newTask.description?.trim().length === 0 || props.newTask.tags.length === 0) {
+            alert("Điền vào 'What are you working on?' và Chọn ít nhất 1 tag")
+            setPlayIcon(playIcon)
+        } else {
+            run();
+            const startRun = moment().format('YYYY-MM-DD HH:mm:s')
+            const newTask = {
+                ...props.newTask,
+                start_time: startRun,
+                end_time: null,
+                time_spent: null,
+                status: 0
+            }
+            setInter(setInterval(run, 1000));
+            setPost(newTask)
+            postTask(newTask).then(() => props.onLoadTask(newTask)).then(() => fetchTask())
         }
-        setPost(newTask)
-        playIcon && postTask(newTask)
-        playIcon && props.onLoadTask(newTask)
-        setInter(setInterval(run, 1000));
+
     };
+
     let updatedS = time.s, updatedM = time.m, updatedH = time.h;
     const run = () => {
         if (updatedM === 60) {
@@ -74,15 +88,18 @@ const Watch = (props) => {
     const stop = () => {
         const stopRun = moment().format('YYYY-MM-DD HH:mm:s')
         const spent = `${updatedH}h${updatedM}m${updatedS}s`
-        // playIcon && updateTask({ ...post, end_time: stopRun, time_spent: spent, status: 1 }, 2)
+        const doneTask = { ...post, id: id, end_time: stopRun, time_spent: spent, status: 1 }
         clearInterval(inter);
         time.s = 0
         time.m = 0
         time.h = 0
+        console.log('id', id)
+        updateTask(doneTask, id).then(() => props.onLoadTask({ ...post, ...doneTask }))
+
     };
     const handlePlayIcon = () => {
         setPlayIcon(!playIcon)
-        playIcon? start() : stop()
+        playIcon ? start() : stop()
     }
     return (
         <>

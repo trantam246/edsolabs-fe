@@ -11,7 +11,7 @@ export default function MainTimer(props) {
     return (
         <Main>
             <DateFilter tasks={props.tasks} onFilterDays={handleFilterDays} />
-            <TasksList tasks={props.tasks} />
+            <TasksList tasks={props.tasks}  />
         </Main>
     );
 }

@@ -73,15 +73,18 @@ export default function TasksList(props) {
           </List>
         </div>
       ))}
-      <Button
-        variant="contained"
-        color="primary"
-        className={classes.btn}
-        type="button"
-        onClick={loadMore}
-      >
-        Load more
-      </Button>
+      {daysGroup.slice(0, visible).length === visible && (
+        <Button
+          Button
+          variant="contained"
+          color="primary"
+          className={classes.btn}
+          type="button"
+          onClick={loadMore}
+        >
+          Load more
+        </Button>
+      )}
     </>
   )
 }

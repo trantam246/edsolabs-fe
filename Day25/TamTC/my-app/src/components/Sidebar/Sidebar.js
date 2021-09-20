@@ -11,7 +11,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon"
 import ListItemText from "@material-ui/core/ListItemText"
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import userApi from "../../API/userApi"
+import userApi from "../../api/userApi"
 
 
 const drawerWidth = '20rem'

@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import { makeStyles } from "@material-ui/core/styles"
 import Container from "@material-ui/core/Container"
-import userApi from "../../API/userApi"
+import userApi from "../../api/userApi"
 import {
   useHistory,
 } from "react-router-dom"

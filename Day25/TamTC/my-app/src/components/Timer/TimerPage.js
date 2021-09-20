@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react"
 
-import HeaderTimer from './HeaderTimer'
+import HeaderTimer from "./HeaderTimer"
 import MainTimer from "./MainTimer"
-import taskApi from "../../API/taskApi"
-import tagApi from "../../API/tagApi"
-
+import taskApi from "../../api/taskApi"
+import tagApi from "../../api/tagApi"
 
 const TimerPage = (props) => {
   const [task, setTask] = useState([])
@@ -12,7 +11,9 @@ const TimerPage = (props) => {
   const fetchTag = () => {
     try {
       tagApi.getTag().then((res) => setTag(res))
-    } catch (error) { throw error }
+    } catch (error) {
+      throw error
+    }
   }
 
   const fetchTask = () => {
@@ -20,7 +21,9 @@ const TimerPage = (props) => {
       taskApi.getTask().then((res) => {
         setTask(res)
       })
-    } catch (error) { throw error }
+    } catch (error) {
+      throw error
+    }
   }
 
   useEffect(() => {
@@ -28,36 +31,45 @@ const TimerPage = (props) => {
     fetchTag()
   }, [])
 
-  const formatTask = task?.map(o => ({
+  const formatTask = task?.map((o) => ({
     ...o,
-    tags_desc: tag?.filter(t => o.tags?.includes(t.id)).map(n => n.name).join(', ')
+    tags_desc: tag
+      ?.filter((t) => o.tags?.includes(t.id))
+      .map((n) => n.name)
+      .join(", "),
   }))
 
   const newTask = {
-    id: null,
-    description: '',
+    // id: task.length + 1,
+    id: "",
+    description: "",
     start_time: null,
     end_time: null,
     time_spent: null,
     tags: [],
-    status: 0
+    status: 0,
   }
   const handleLoadTask = (newTask) => {
     setTask([...task, newTask])
+    fetchTask()
   }
   const handleFilterDays = (days) => {
     setTimeout(() => {
       setTask(task)
-    }, 5000)
+    }, 3000)
     setTask(days)
   }
   return (
-    (
-      <>
-        <HeaderTimer tags={tag} newTask={newTask} tasks={task} onLoadTask={handleLoadTask} />
-        <MainTimer tasks={formatTask} onFilterDays={handleFilterDays} />
-      </>
-    ))
+    <>
+      <HeaderTimer
+        tags={tag}
+        newTask={newTask}
+        tasks={task}
+        onLoadTask={handleLoadTask}
+      />
+      <MainTimer tasks={formatTask} tag={tag} onFilterDays={handleFilterDays} />
+    </>
+  )
 }
 
 export default TimerPage
