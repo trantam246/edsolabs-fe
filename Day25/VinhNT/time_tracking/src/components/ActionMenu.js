@@ -35,8 +35,6 @@ function getModalStyle() {
   };
 }
 export default function ActionMenu(props) {
-  // props.render(1);
-  console.log(props);
   const curTask = {
     id: props.id,
     description: props.description,

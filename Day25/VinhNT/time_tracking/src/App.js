@@ -12,7 +12,6 @@ import Login from './pages/Login';
 import useToken from './hooks/useToken';
 
 function App() {
-  // const [token, setToken] = useState();
   const { token, setToken } = useToken();
   // if (!token) {
   //   return <Login setToken={setToken} />;
@@ -24,7 +23,6 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          {/* <Timer /> */}
           {!token ? <Redirect to="/login" /> : <Timer />}
         </Route>
         <Route path="/report">
