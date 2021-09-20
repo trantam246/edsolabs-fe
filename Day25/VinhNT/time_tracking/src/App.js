@@ -2,7 +2,12 @@ import React from 'react';
 import './App.css';
 import Timer from './pages/Timer';
 import Report from './pages/Report';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
 import Login from './pages/Login';
 import useToken from './hooks/useToken';
 
@@ -19,14 +24,15 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Timer />
+          {/* <Timer /> */}
+          {!token ? <Redirect to="/login" /> : <Timer />}
         </Route>
         <Route path="/report">
           <Report />
         </Route>
-        {/* <Route path="/login">
-            <Login setToken={setToken} />
-          </Route> */}
+        <Route path="/login">
+          <Login setToken={setToken} />
+        </Route>
       </Switch>
     </Router>
   );

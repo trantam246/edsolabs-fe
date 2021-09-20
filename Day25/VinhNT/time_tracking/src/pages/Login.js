@@ -8,6 +8,7 @@ import {
   TextField,
   Typography,
 } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/styles';
 import image from '../public/assest/paper.jpg';
 async function loginUser(credentials) {
@@ -37,12 +38,14 @@ const useStyles = makeStyles((theme) => ({
 export default function Login({ setToken }) {
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
+  const history = useHistory();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = await loginUser({
       username,
       password,
     });
+    history.push('./');
     setToken(token);
   };
   const classes = useStyles();

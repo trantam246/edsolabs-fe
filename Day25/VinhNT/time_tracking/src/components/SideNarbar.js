@@ -8,7 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import { Link } from 'react-router-dom';
 import TimerIcon from '@material-ui/icons/Timer';
-
+import { useHistory } from 'react-router-dom';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import action from '../services/action';
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SideNarbar() {
   const classes = useStyles();
-  //   const history = useHistory();
+  const history = useHistory();
   const [user, setUser] = useState();
   useEffect(() => {
     async function getUser() {
@@ -95,8 +95,8 @@ export default function SideNarbar() {
                 onClick={(e) => {
                   e.preventDefault();
                   localStorage.removeItem('token');
-                  window.location.reload(false);
-                  // history.push('/login')
+                  // window.location.reload(false);
+                  history.push('/login');
                 }}
               >
                 <ListItemIcon>
