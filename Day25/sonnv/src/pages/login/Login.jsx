@@ -39,9 +39,7 @@ const Login = () => {
 
   const handleLogin = (username, password) => {
     if (username.trim() === '' || password.trim() === '') {
-      console.log('enter username password');
     } else {
-      // check user
       getAllUsers()
         .then((res) => {
           // password incorrect
@@ -52,10 +50,7 @@ const Login = () => {
                 user.password !== password.trim()
             )
           ) {
-            console.log('password incorrect');
           }
-
-          // save user ,login successfully
           res.data.map((user) => {
             if (
               user.username === username.trim() &&
@@ -68,11 +63,10 @@ const Login = () => {
           });
         })
         .catch((e) => {
-          console.log(e);
+      
         });
     }
 
-    // console.log(rs);
   };
 
   return (
