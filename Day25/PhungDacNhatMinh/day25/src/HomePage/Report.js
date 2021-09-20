@@ -11,7 +11,6 @@ import {
   durationMins2Days,
   formatTimeSpent,
   formatNowDay,
-  formatDay,
   getThisWeek,
   getLastWeek,
   getThisMonth,
@@ -55,13 +54,6 @@ function Report() {
       .catch(() => {});
   };
 
-  console.log(moment().add(-1, "days").format("L"));
-  // console.log(
-  //   moment(moment("2021-09-19 11:22").format("L")).isBetween(
-  //     "2021-9-15",
-  //     "2021-9-25"
-  //   )
-  // );
   const handleClose = () => {
     setShow(false);
   };
@@ -415,8 +407,6 @@ function Report() {
     if (data && e === "Date range") {
       async function asyncCall() {
         await chooseDateRange();
-        console.log(moment(start).format("L"));
-        console.log(moment(end).format("L"));
         let totalTimer = PROCESS_DAY_GROUP(data)
           .reverse()
           .map((e) => {
@@ -472,7 +462,6 @@ function Report() {
         setPerT(perT);
         setPerC(perC);
         setTotalTimer(formatTimeSpent(Math.floor(totalTimer)));
-        console.log(totalTimer);
       }
       if (start && end) {
         asyncCall();
