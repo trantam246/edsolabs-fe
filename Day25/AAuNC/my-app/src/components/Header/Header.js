@@ -21,16 +21,21 @@ export default function Header() {
         item.description = taskName;
     }
     
+    const setValueInput = () => {
+        if (tagsItem.length !== 0) {
+            return item.description
+        }
+        return taskName;
+    }
 
     const changeInput = (e) => {
-        e.preventDefault();
         setTaskName(e.target.value);
     }
 
     return (
         <>
             <Grid container justifyContent="space-between" className="headerReport">
-                <Grid item component={Input} type="text" value={taskName} disableUnderline onChange={changeInput} xs />
+                <Grid item component={Input} type="text" value={setValueInput()} disableUnderline onChange={changeInput} xs />
                 <Grid item container justifyContent="flex-end" xs>
                     <Grid item component={Tag} getTags={getTags} />
                     <Grid item component={Timer} />

@@ -85,7 +85,7 @@ export default function ListItem(props) {
         }
         else{
             setItem({
-                "id": Math.floor(Math.random()*100),
+                "id": null,
                 "description": obj.description,
                 "start_time": moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
                 "end_time": null,

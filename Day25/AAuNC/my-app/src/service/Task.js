@@ -8,7 +8,7 @@ const getAllList = (callback) => {
 }
 
 //hàm post
-const postItem = (data) => {
+const postItem = (data, callback) => {
     var options = {
         method: 'POST',
         headers: {
@@ -18,6 +18,7 @@ const postItem = (data) => {
     }
     fetch('http://localhost:5000/tasks', options)
         .then(res => res.json())
+        .then(callback)
         .catch(error => console.log('Error:', error));
 }
 

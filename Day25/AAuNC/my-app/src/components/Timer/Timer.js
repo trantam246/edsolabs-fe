@@ -8,7 +8,7 @@ import { postItem, updateItem } from '../../service/Task';
 
 export default function Timer(props) {
 
-    const { item, reload, getReload, running, setRunning, setTagsItem } = useContext(ItemContext);
+    const { item, getReload, running, setRunning, setTagsItem } = useContext(ItemContext);
 
     //set ID cho setInterval
     const timerRef = useRef(null)
@@ -35,9 +35,7 @@ export default function Timer(props) {
 
         if (running === true) {
             //post
-            postItem(item);
-            //set reload state
-            getReload();
+            postItem(item, (data) => item.id = data.id);
             //Chạy đồng hồ
             let sec = 0;
             timerRef.current = setInterval(function () {
@@ -53,8 +51,6 @@ export default function Timer(props) {
             updateItem(item.id, item);
             //set tagsItem
             setTagsItem([]);
-            //set reload state
-            getReload();
             //Dừng đồng hồ
             clearInterval(timerRef.current)
 
@@ -62,6 +58,8 @@ export default function Timer(props) {
             minutes.textContent = '00';
             hours.textContent = '00';
         }
+        //set reload state
+        getReload();
     }, [running])
 
     //bấm chạy
@@ -72,8 +70,6 @@ export default function Timer(props) {
             item.end_time = null;
             item.time_spent = null;
             item.status = 0;
-            //set id
-            item.id = Math.floor(Math.random() * 100);
             //Lấy thời gian start
             item.start_time = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
             setRunning(!running);
@@ -86,7 +82,7 @@ export default function Timer(props) {
             //Lấy thời gian end
             item.end_time = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
             //Tính khoảng thời gian
-            var diffTime = moment(item.end_time).diff(item.start_time);
+            var diffTime = moment(item.end_time).diff(item.start_time)
             item.time_spent = moment.utc(diffTime).format("HH:mm:ss");
             item.status = 1;
             setRunning(!running);
