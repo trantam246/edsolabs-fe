@@ -31,32 +31,28 @@ export default function ListTags(props) {
 
   return (
     <List className={classes.root}>
-      {props.tags.map((value) => {
+      {props.tags.map((value, index) => {
         const labelId = `${value}`;
 
         return (
           <>
             <ListItem
-              key={props.tags.indexOf(value)}
+              key={index}
               role={undefined}
               dense
               button
               onClick={handleToggle(value)}
             >
-              <ListItemIcon key={props.tags.indexOf(value) + 0.1}>
+              <ListItemIcon key={index + 0.1}>
                 <Checkbox
                   edge="start"
                   tabIndex={-1}
                   disableRipple
                   inputProps={{ 'aria-labelledby': labelId }}
-                  onClick={props.update(checked)}
+                  onClick={() => props.update(checked)}
                 />
               </ListItemIcon>
-              <ListItemText
-                key={props.tags.indexOf(value) + 0.2}
-                id={labelId}
-                primary={value}
-              />
+              <ListItemText key={index + 0.2} id={labelId} primary={value} />
             </ListItem>
           </>
         );
