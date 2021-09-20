@@ -11,6 +11,7 @@ import {
   durationMins2Days,
   formatTimeSpent,
   formatNowDay,
+  formatDay,
   getThisWeek,
   getLastWeek,
   getThisMonth,
@@ -32,6 +33,8 @@ function Report() {
       key: "selection",
     },
   ]);
+  const [start, setStart] = useState("");
+  const [end, setEnd] = useState("");
   const [perO, setPerO] = useState();
   const [perM, setPerM] = useState();
   const [perT, setPerT] = useState();
@@ -41,6 +44,24 @@ function Report() {
     history.push("/");
   }
 
+  const chooseDateRange = (item) => {
+    new Promise((resolve, reject) => {
+      setStart(item.selection.startDate);
+      setEnd(item.selection.endDate);
+      setState([item.selection]);
+      resolve();
+    })
+      .then(() => {})
+      .catch(() => {});
+  };
+
+  console.log(moment().add(-1, "days").format("L"));
+  // console.log(
+  //   moment(moment("2021-09-19 11:22").format("L")).isBetween(
+  //     "2021-9-15",
+  //     "2021-9-25"
+  //   )
+  // );
   const handleClose = () => {
     setShow(false);
   };
@@ -391,9 +412,74 @@ function Report() {
       setPerC(perC);
       setTotalTimer(formatTimeSpent(Math.floor(totalTimer)));
     }
+    if (data && e === "Date range") {
+      async function asyncCall() {
+        await chooseDateRange();
+        console.log(moment(start).format("L"));
+        console.log(moment(end).format("L"));
+        let totalTimer = PROCESS_DAY_GROUP(data)
+          .reverse()
+          .map((e) => {
+            let day = moment(e.date).format("L");
+            let time0 = 0;
+            if (
+              moment(day).isBetween(
+                moment(start).add(-1, "days").format("L"),
+                moment(end).add(1, "days").format("L")
+              )
+            ) {
+              time0 = e.tasks
+                .map((o) => {
+                  let d = durationMins2Days(o.start_time, o.end_time);
+                  let O = 0;
+                  let M = 0;
+                  let T = 0;
+                  let C = 0;
+                  let arr = o.tags;
+                  let equally = d / arr.length;
+                  arr.forEach((u) => {
+                    if (u === 1) {
+                      O = equally;
+                      timeO += O;
+                    }
+                    if (u === 2) {
+                      M = equally;
+                      timeM += M;
+                    }
+                    if (u === 3) {
+                      T = equally;
+                      timeT += T;
+                    }
+                    if (u === 4) {
+                      C = equally;
+                      timeC += C;
+                    }
+                  });
+                  return d;
+                })
+                .reduce((pre, cur) => pre + cur);
+            }
+            return time0;
+          })
+          .reduce((pre, cur) => pre + cur);
+        let sum = timeO + timeM + timeT + timeC;
+        let perO = timeO / sum;
+        let perM = timeM / sum;
+        let perT = timeT / sum;
+        let perC = timeC / sum;
+        setPerO(perO);
+        setPerM(perM);
+        setPerT(perT);
+        setPerC(perC);
+        setTotalTimer(formatTimeSpent(Math.floor(totalTimer)));
+        console.log(totalTimer);
+      }
+      if (start && end) {
+        asyncCall();
+      }
+    }
     return;
   };
-
   return (
     <>
       <div className="main ">
@@ -470,10 +556,7 @@ function Report() {
                     <Modal.Body>
                       <DateRange
                         editableDateInputs={true}
-                        onChange={(item) => {
-                          console.log([item.selection]);
-                          return setState([item.selection]);
-                        }}
+                        onChange={(item) => chooseDateRange(item)}
                         moveRangeOnFirstSelection={false}
                         ranges={state}
                       />
