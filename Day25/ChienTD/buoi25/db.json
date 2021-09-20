@@ -14,67 +14,39 @@
     },
     {
       "id": 2,
-      "description": "This is a second task",
-      "start_time": "2021-09-14 17:00:0",
-      "end_time": null,
-      "time_spent": null,
+      "description": "This is a first task",
+      "start_time": "2021-09-13 17:00:0",
+      "end_time": "2021-09-14 17:30:0",
+      "time_spent": "30 mins",
       "tags": [
-        3,
-        4
+        1,
+        2
       ],
-      "status": 0
+      "status": 1
     },
     {
       "id": 3,
-      "description": "This is a 3 task",
-      "start_time": "2021-09-15 17:00:0",
-      "end_time": null,
-      "time_spent": null,
+      "description": "This is a first task",
+      "start_time": "2021-09-14 17:00:0",
+      "end_time": "2021-09-13 17:30:0",
+      "time_spent": "30 mins",
       "tags": [
-        3,
-        4
+        1,
+        2
       ],
-      "status": 0
+      "status": 1
     },
     {
       "id": 4,
-      "description": "This is a 4 task",
+      "description": "This is a first task",
       "start_time": "2021-09-15 17:00:0",
-      "end_time": null,
-      "time_spent": null,
+      "end_time": "2021-09-13 17:30:0",
+      "time_spent": "30 mins",
       "tags": [
         1,
-        4
+        2
       ],
-      "status": 0
-    },
-    {
-      "id": 5,
-      "description": "This is a 5 task",
-      "start_time": "2021-09-15 17:00:0",
-      "end_time": null,
-      "time_spent": null,
-      "tags": [
-        3,
-        4
-      ],
-      "status": 0
-    },
-    {
-      "end_time": "",
-      "id": 6,
-      "start_time": "2021/09/20, 16:22:04",
-      "status": 0,
-      "tags": [],
-      "time_spent": ""
-    },
-    {
-      "end_time": "",
-      "id": 7,
-      "start_time": "2021/09/20, 16:22:07",
-      "status": 0,
-      "tags": [],
-      "time_spent": ""
+      "status": 1
     }
   ],
   "tags": [

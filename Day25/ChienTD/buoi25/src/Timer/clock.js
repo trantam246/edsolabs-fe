@@ -16,8 +16,7 @@ const formatTime = (timer) => {
 };
 
 const Clock = (props) => {
-  const { getReload } = useContext(DataContext);
-
+  const { getReload, listTasks } = useContext(DataContext);
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [timeStart, setTimeStart] = useState();
@@ -36,59 +35,78 @@ const Clock = (props) => {
     tags: [],
     time_spent: "",
   });
+
   const { valueDes } = props;
   const { valueTag } = props;
 
+  // xử lý start
   const handleStart = () => {
     setStatus(1);
     setIsActive(true);
     setIsPaused(true);
-    console.log(newTask);
-    console.log("start: ",timeStart)
+    const today = new Date();
+    setTimeStart(moment(today).format("YYYY/MM/DD, HH:mm:ss"));
+    setStatus(1);
     const fetchNewTask = async () => {
       try {
         await TasksApi.postTask(newTask);
+        getReload();
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchNewTask();
+    countRef.current = setInterval(() => {
+      setTimer((timer) => timer + 1);
+    }, 1000);
+  };
+
+  // Xử lý pause
+  const handlePause = () => {
+    setStatus(0);
+    clearInterval(countRef.current);
+    setIsActive(false);
+    setIsPaused(false);
+    const endTime = new Date();
+    setTimeEnd(moment(endTime).format("YYYY/MM/DD, HH:mm:ss"));
+    const fetchNewTask = async () => {
+      try {
+        await TasksApi.putTask(listTasks[0].id, newTask);
       } catch (error) {
         console.log(error);
       }
     };
     fetchNewTask();
     getReload();
-    countRef.current = setInterval(() => {
-      setTimer((timer) => timer + 1);
-    }, 1000);
-  };
-
-  const handlePause = () => {
-    clearInterval(countRef.current);
-    setIsActive(false);
-    setIsPaused(false);
-    console.log("end: ",timeEnd)
-    console.log("spent: ",timeSpent)
     setTimer(0);
   };
 
   useEffect(() => {
-    const endTime = new Date();
-    setTimeEnd(moment(endTime).format("YYYY/MM/DD, HH:mm:ss"));
     //Tính thời gian
-    // var diffTime = moment(timeEnd).diff(timeStart, "HH:mm:ss");
-    var duration = moment.duration(moment(timeStart).diff(moment(timeEnd)));
+    var a = moment(timeEnd);
+    var b = moment(timeStart);
+    var duration = a.diff(b);
     setTimeSpent(duration);
-    setStatus(0);
-  }, [isPaused, timeEnd, timeStart]);
+    setNewTask((prev) => {
+      return {
+        ...prev,
+        end_time: timeEnd,
+        time_spent: timeSpent,
+        status: status,
+      };
+    });
+  }, [timeEnd, timeSpent]);
 
+  // thực hiện start khi thay đổi
   useEffect(() => {
-    const today = new Date();
-    setTimeStart(moment(today).format("YYYY/MM/DD, HH:mm:ss"));
-    setNewTask({
-      description: valueDes,
-      end_time: "",
-      id: "",
-      start_time: timeStart,
-      status: status,
-      tags: valueTag,
-      time_spent: "",
+    setNewTask((prev) => {
+      return {
+        ...prev,
+        description: valueDes,
+        start_time: timeStart,
+        status: status,
+        tags: valueTag,
+      };
     });
   }, [valueDes, valueTag, timeStart, status]);
 
