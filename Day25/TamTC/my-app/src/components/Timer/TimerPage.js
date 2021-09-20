@@ -62,6 +62,12 @@ const TimerPage = (props) => {
   const handleDeleteTask = (newTasks) => {
     setTask(newTasks)
   }
+  const handleStart = (startTask) => {
+    setTask([...task, startTask])
+  }
+  const handlePlay = () => {
+    props.onPlay(true)
+  }
   return (
     <>
       <HeaderTimer
@@ -69,12 +75,15 @@ const TimerPage = (props) => {
         newTask={newTask}
         tasks={task}
         onLoadTask={handleLoadTask}
+        onPlay={handlePlay}
       />
       <MainTimer
         tasks={formatTask}
         tag={tag}
         onFilterDays={handleFilterDays}
         onDeleted={handleDeleteTask}
+        onStart={handleStart}
+        onPlay={handlePlay}
       />
     </>
   )

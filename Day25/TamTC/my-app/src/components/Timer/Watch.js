@@ -54,7 +54,7 @@ const Watch = (props) => {
             alert("Điền vào 'What are you working on?' và Chọn ít nhất 1 tag")
             setPlayIcon(playIcon)
         } else {
-            run();
+            playIcon && run();
             const startRun = moment().format('YYYY-MM-DD HH:mm:s')
             const newTask = {
                 ...props.newTask,

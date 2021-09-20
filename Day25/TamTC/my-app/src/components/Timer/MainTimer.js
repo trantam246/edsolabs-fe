@@ -12,10 +12,21 @@ export default function MainTimer(props) {
     const handleDeleteTask = (newTasks) => {
         props.onDeleted(newTasks)
     }
+
+    const handleStart = (newTasks) => {
+        props.onStart(newTasks)
+    }
+
     return (
         <Main>
-            <DateFilter tasks={props.tasks} onFilterDays={handleFilterDays} />
-            <TasksList tasks={props.tasks} onDeleted={handleDeleteTask}/>
+            <DateFilter
+                tasks={props.tasks}
+                onFilterDays={handleFilterDays} />
+            <TasksList
+                tasks={props.tasks}
+                onDeleted={handleDeleteTask}
+                onStart={handleStart}
+            />
         </Main>
     );
 }

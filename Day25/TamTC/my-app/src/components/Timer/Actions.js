@@ -10,6 +10,7 @@ import { useTheme } from "@mui/material/styles"
 import MenuItem from "@mui/material/MenuItem"
 import MenuList from "@mui/material/MenuList"
 import taskApi from "../../api/taskApi"
+import moment from "moment"
 import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles(() => ({
@@ -39,24 +40,14 @@ const useStyles = makeStyles(() => ({
 const Actions = (props) => {
   const classes = useStyles()
   const [open, setOpen] = useState(false)
-const [tasks, setTasks] = useState(props.tasks)
+  const [tasks, setTasks] = useState(props.tasks)
   const theme = useTheme()
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"))
-  // const [tasks, setTasks] = useState(props.tasks)
 
   const handleClickOpen = () => {
     setOpen(true)
   }
 
-  // const fetchTask = () => {
-  //   try {
-  //     taskApi.getTask().then((res) => {
-  //       setId(res.length)
-  //     })
-  //   } catch (error) {
-  //     throw error
-  //   }
-  // }
   const deleteTask = async (id) => {
     try {
       await taskApi.deleteTask(id)
@@ -64,6 +55,7 @@ const [tasks, setTasks] = useState(props.tasks)
       throw error
     }
   }
+
   const handleClose = () => {
     setOpen(false)
   }
@@ -74,13 +66,36 @@ const [tasks, setTasks] = useState(props.tasks)
     const newTasks = tasks.filter((task) => task.id !== props.id)
     setTasks(newTasks)
     props.onDeleted(newTasks)
-    props.tasks?.splice(props.id - 1, 1)
-    // fetchTask()
+  }
+
+  const postTask = async (a) => {
+    try {
+      await taskApi.addTask(a)
+    } catch (error) {
+      throw error
+    }
+  }
+
+  const handleRun = () => {
+    const startTask = {
+      id: "",
+      description: props.desc,
+      start_time: moment().format("YYYY-MM-DD HH:mm:s"),
+      end_time: null,
+      time_spent: null,
+      tags: props.tags,
+      status: 0,
+    }
+
+    props.status === 1 &&
+      postTask(startTask).then(() => props.onStart(startTask))
   }
 
   return (
     <MenuList className={classes.actions__list}>
-      <MenuItem>{props.status === 1 ? "Start" : "Stop"}</MenuItem>
+      <MenuItem onClick={handleRun}>
+        {props.status === 1 ? "Start" : "Stop"}
+      </MenuItem>
       <MenuItem onClick={handleClickOpen}>Delete</MenuItem>
       {open && (
         <div>

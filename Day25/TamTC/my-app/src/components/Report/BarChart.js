@@ -6,8 +6,7 @@ const useStyles = makeStyles(() => ({
     width: "50%",
     float: "right",
     marginTop: "10rem",
-    },
-    
+  },
 }))
 
 const BarChart = (props) => {
@@ -45,8 +44,6 @@ const BarChart = (props) => {
             },
           ],
         }}
-        // height={10}
-        // width={50%}
         options={{
           indexAxis: "y",
           maintainAspectRatio: false,

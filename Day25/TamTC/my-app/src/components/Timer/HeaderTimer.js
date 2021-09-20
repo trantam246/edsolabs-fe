@@ -78,9 +78,15 @@ export default function HeaderTimer(props) {
             />
 
             <div className={classes.icon}>
-                <LoyaltyIcon onClick={handleTagIcon} className={classes.icon__tag} />
+                <LoyaltyIcon
+                    onClick={handleTagIcon}
+                    className={classes.icon__tag} />
                 {showListTag && <TagsList tags={props.tags} onAdd={handleAdd} />}
-                <Watch newTask={post} tasks={props.tasks} onLoadTask={handleLoadTask} />
+                <Watch
+                    newTask={post}
+                    tasks={props.tasks}
+                    onLoadTask={handleLoadTask}
+                />
             </div>
         </Header>
     );

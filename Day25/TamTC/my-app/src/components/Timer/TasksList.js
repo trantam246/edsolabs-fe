@@ -47,6 +47,11 @@ export default function TasksList(props) {
   const handleDeleteTask = (newTasks) => {
     props.onDeleted(newTasks)
   }
+
+  const handleStart = (newTasks) => {
+    props.onStart(newTasks)
+  }
+
   return (
     <>
       {daysGroup.slice(0, visible).map((ul, idx) => (
@@ -68,10 +73,12 @@ export default function TasksList(props) {
                   start={item.start_time}
                   end={item.end_time}
                   spent={item.time_spent}
+                  tags={item.tags}
                   tagsDesc={item.tags_desc}
                   status={item.status}
                   tasks={props.tasks}
                   onDeleted={handleDeleteTask}
+                  onStart={handleStart}
                 />
               )
             })}
