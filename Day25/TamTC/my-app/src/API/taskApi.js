@@ -15,5 +15,9 @@ const taskApi = {
     const request = { ...task }
     return await axiosClient.put(url, request)
   },
+  async deleteTask( id) {
+    const url = "/tasks/" + id
+    return await axiosClient.delete(url)
+  }
 }
 export default taskApi

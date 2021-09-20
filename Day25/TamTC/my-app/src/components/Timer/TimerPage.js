@@ -59,7 +59,9 @@ const TimerPage = (props) => {
     }, 3000)
     setTask(days)
   }
-
+  const handleDeleteTask = (newTasks) => {
+    setTask(newTasks)
+  }
   return (
     <>
       <HeaderTimer
@@ -68,7 +70,12 @@ const TimerPage = (props) => {
         tasks={task}
         onLoadTask={handleLoadTask}
       />
-      <MainTimer tasks={formatTask} tag={tag} onFilterDays={handleFilterDays} />
+      <MainTimer
+        tasks={formatTask}
+        tag={tag}
+        onFilterDays={handleFilterDays}
+        onDeleted={handleDeleteTask}
+      />
     </>
   )
 }

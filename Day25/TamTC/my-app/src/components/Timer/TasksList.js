@@ -44,7 +44,9 @@ export default function TasksList(props) {
         (d) => dayjs(d.start_time).format("DD/MM/YYYY") === day
       )
     )
-
+  const handleDeleteTask = (newTasks) => {
+    props.onDeleted(newTasks)
+  }
   return (
     <>
       {daysGroup.slice(0, visible).map((ul, idx) => (
@@ -61,12 +63,15 @@ export default function TasksList(props) {
               return (
                 <Task
                   key={idx}
+                  id={item.id}
                   desc={item.description}
                   start={item.start_time}
                   end={item.end_time}
                   spent={item.time_spent}
                   tagsDesc={item.tags_desc}
                   status={item.status}
+                  tasks={props.tasks}
+                  onDeleted={handleDeleteTask}
                 />
               )
             })}

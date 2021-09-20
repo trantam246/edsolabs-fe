@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState } from "react"
 import Button from "@mui/material/Button"
 import Dialog from "@mui/material/Dialog"
 import DialogActions from "@mui/material/DialogActions"
@@ -9,7 +9,7 @@ import useMediaQuery from "@mui/material/useMediaQuery"
 import { useTheme } from "@mui/material/styles"
 import MenuItem from "@mui/material/MenuItem"
 import MenuList from "@mui/material/MenuList"
-
+import taskApi from "../../api/taskApi"
 import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles(() => ({
@@ -38,17 +38,46 @@ const useStyles = makeStyles(() => ({
 }))
 const Actions = (props) => {
   const classes = useStyles()
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = useState(false)
+const [tasks, setTasks] = useState(props.tasks)
   const theme = useTheme()
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"))
+  // const [tasks, setTasks] = useState(props.tasks)
 
   const handleClickOpen = () => {
     setOpen(true)
   }
 
+  // const fetchTask = () => {
+  //   try {
+  //     taskApi.getTask().then((res) => {
+  //       setId(res.length)
+  //     })
+  //   } catch (error) {
+  //     throw error
+  //   }
+  // }
+  const deleteTask = async (id) => {
+    try {
+      await taskApi.deleteTask(id)
+    } catch (error) {
+      throw error
+    }
+  }
   const handleClose = () => {
     setOpen(false)
   }
+
+  const handleDelete = () => {
+    setOpen(false)
+    deleteTask(props.id)
+    const newTasks = tasks.filter((task) => task.id !== props.id)
+    setTasks(newTasks)
+    props.onDeleted(newTasks)
+    props.tasks?.splice(props.id - 1, 1)
+    // fetchTask()
+  }
+
   return (
     <MenuList className={classes.actions__list}>
       <MenuItem>{props.status === 1 ? "Start" : "Stop"}</MenuItem>
@@ -77,7 +106,7 @@ const Actions = (props) => {
               <Button autoFocus onClick={handleClose}>
                 No
               </Button>
-              <Button onClick={handleClose} autoFocus>
+              <Button onClick={handleDelete} autoFocus>
                 Yes
               </Button>
             </DialogActions>

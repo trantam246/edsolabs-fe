@@ -46,6 +46,9 @@ export default function Task(props) {
     const handleClickAction = () => {
         setOpenAction(!openAction)
     }
+    const handleDeleteTask = (newTasks) => {
+        props.onDeleted(newTasks)
+    }
     return (
         <ListItem alignItems="flex-start" className={classes.task__item}>
             <Typography className={classes.title}>{props.desc}</Typography>
@@ -54,7 +57,7 @@ export default function Task(props) {
                 <Typography>{formatTime}</Typography>
                 <Typography>{props.spent}</Typography>
             </div>
-            <MoreVertIcon className={classes.icon__action} onClick={handleClickAction} />{openAction && <Actions status={props.status} />}
+            <MoreVertIcon className={classes.icon__action} onClick={handleClickAction} />{openAction && <Actions status={props.status} id={props.id} tasks={props.tasks} onDeleted={handleDeleteTask} />}
         </ListItem>
     );
 }
