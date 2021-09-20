@@ -6,13 +6,13 @@ export const ClockTimer = ({ onHandleTimeSpend = () => {} }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (clockTimeRef.current.second === 60) {
+      if (clockTimeRef.current.second === 59) {
         clockTimeRef.current.second = 0;
         clockTimeRef.current.minute++;
       } else {
         clockTimeRef.current.second++;
       }
-      if (clockTimeRef.current.minutes === 60) {
+      if (clockTimeRef.current.minutes === 59) {
         clockTimeRef.hour++;
       }
 
