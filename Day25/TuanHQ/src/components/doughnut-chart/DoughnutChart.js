@@ -7,7 +7,7 @@ const DoughnutChart = ({ spentTimeEachTag }) => {
     datasets: [
       {
         label: 'Time do this tag (hours)',
-        data: spentTimeEachTag.map((tag) => tag.time_spent),
+        data: spentTimeEachTag.map((tag) => tag.total_time_spent),
         backgroundColor: [
           'rgb(44, 196, 219)',
           'rgb(232, 88, 170)',

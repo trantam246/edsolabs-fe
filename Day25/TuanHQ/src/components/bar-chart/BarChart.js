@@ -11,7 +11,7 @@ const BarChart = ({ spentTimeEachTag }) => {
         minBarLength: 2,
         axis: 'y',
         label: 'Time do this tag (hours)',
-        data: spentTimeEachTag.map((tag) => tag.time_spent),
+        data: spentTimeEachTag.map((tag) => tag.total_time_spent),
         backgroundColor: [
           'rgba(255, 99, 132, 0.6)',
           'rgba(54, 162, 235, 0.6)',
