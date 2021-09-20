@@ -10,7 +10,7 @@ import {
   useHistory,
   useLocation
 } from "react-router-dom";
-
+import logo from '../../../logo-dark.png';
 const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
@@ -25,7 +25,11 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(5),
         textAlign: 'center',
         color: theme.palette.text.secondary,
-        backgroundColor: 'rgba(0,0,0,0.1)'
+        backgroundColor: 'rgba(0,0,0,0.1)',
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'column',
+        alignItems: 'center',
     },
     margin: {
         margin: theme.spacing(1.5),
@@ -49,7 +53,7 @@ export const LoginPage = (props) => {
                 props.getAvt(item.avatar)
                 props.getName(item.fullname)
                 localStorage.setItem("acess",true);
-                history.push("/home")
+                history.push("/home/timer")
             } else {
                 alert('Sai thong tin dang nhap')
                 setUsername('')
@@ -70,6 +74,7 @@ export const LoginPage = (props) => {
     return (
     <div className={classes.root}>
         <Paper className={classes.paper}>
+            <img src={logo} alt="logo"/>
             <form onSubmit={loginUser}>
                 <Grid container alignItems="flex-end">
                         <TextField

@@ -41,9 +41,9 @@ export const TimerHeader = (props) => {
     setAnchorEl(null);
   };
   //Get Start and Stop
-  const [startTime, setStart] = useState({})
+  const [startTime, setStart] = useState(0)
   const [descrip, setDescrip] = useState("")
-
+  const [endTime, setEndTime] = useState(0)
   const getKeyByValue = (object, value) => {
     return Object.keys(object).filter(key => object[key] === value);
   }
@@ -76,13 +76,26 @@ export const TimerHeader = (props) => {
   const [getTask, setTask] = useState(tasks);
   const [submitted, setSubmitted] = useState(false);
 
+  const getEnd = () => {
+    if(submitted) {
+      setInterval(() => {
+        setEndTime(moment());
+      },1000)
+      return endTime;
+    } else {
+      clearInterval(endTime)
+    }
+  }
+
   const handleInputChange = event => {
     const { name, value } = event.target;
     setTask({ ...getTask, [name]: value });
   };
+
   //addTask function
   const addTask = e => {
     setStart(moment())
+    setSubmitted(true)
     e.preventDefault();
     setHide(true)
     const data = {
@@ -115,6 +128,7 @@ export const TimerHeader = (props) => {
   const updateTask = (e) => {
     handleInputChange(e);
     setHide(false)
+    setSubmitted(false)
     let data = {
       id: props.id,
       description: getTask.description,
@@ -190,22 +204,26 @@ export const TimerHeader = (props) => {
               </MenuItem>
             </Menu>
           </Grid>
-          <Grid key={2} item xs>
-            {hide === true && <Typography variant="h5" id="timer">
-              00:00:00
-            </Typography>}
-            {hide === false && <Typography variant="h5" id="timer">
-              {moment(moment() - startTime).utc().format('HH:mm:ss')}
-            </Typography>}
-          </Grid>
-          <Grid key={3} item xs>
-            {(hide === false) && <IconButton onClick={addTask}>
+          {submitted ? (
+            <Grid container alignItems="center" key={2} item xs>
+              <Typography variant="h5" id="timer">
+                {moment(getEnd() - startTime).utc().format('HH:mm:ss')}
+              </Typography>
+              <IconButton onClick={updateTask}>
+                <StopIcon/>
+              </IconButton>
+            </Grid>
+          ) : (
+            <Grid container alignItems="center" key={3} item xs>
+            <Typography variant="h5" id="timer">
+                00:00:00
+              </Typography>
+            <IconButton onClick={addTask}>
               <PlayCircleFilledWhiteIcon/>
-            </IconButton>}
-            {(hide === true) && <IconButton onClick={updateTask}>
-              <StopIcon/>
-            </IconButton>}
-          </Grid>
+            </IconButton>
+            </Grid>
+          )
+          }
         </Grid>
       </Grid>
     </Grid>
