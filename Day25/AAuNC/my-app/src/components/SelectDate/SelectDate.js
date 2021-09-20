@@ -12,7 +12,10 @@ export default function SelectDate(props) {
         setTime(event.target.value);
     };
 
-    getSelect(time)
+    //mói chỉ làm được today và yesterday
+    if(time === 'Today' || time === 'Yesterday') {
+        getSelect(time)
+    }
 
     return (
         <div>
