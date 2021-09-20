@@ -11,6 +11,10 @@ import {
   durationMins2Days,
   formatTimeSpent,
   formatNowDay,
+  getThisWeek,
+  getLastWeek,
+  getThisMonth,
+  getLastMonth,
 } from "../Components/Function";
 import moment from "moment";
 import BarChart from "../Components/BarChart";
@@ -51,7 +55,6 @@ function Report() {
   let timeM = 0;
   let timeT = 0;
   let timeC = 0;
-
   const totalTimerInRange = (e) => {
     setDateRange(e);
     if (
@@ -113,6 +116,10 @@ function Report() {
       formatNowDay(new Date())
     ) {
       setTotalTimer(0);
+      setPerO(0);
+      setPerM(0);
+      setPerT(0);
+      setPerC(0);
     }
     if (data && e === "Yesterday") {
       let check = PROCESS_DAY_GROUP(data).filter(
@@ -168,9 +175,223 @@ function Report() {
         setPerC(perC);
         setTotalTimer(time1);
       } else {
+        setTotalTimer(0);
+        setPerO(0);
+        setPerM(0);
+        setPerT(0);
+        setPerC(0);
         return 0;
       }
     }
+    if (data && e === "Last week") {
+      let totalTimer = PROCESS_DAY_GROUP(data)
+        .reverse()
+        .map((e) => {
+          let day = formatNowDay(e.date);
+          let time0 = 0;
+          if (getLastWeek().includes(day)) {
+            time0 = e.tasks
+              .map((o) => {
+                let d = durationMins2Days(o.start_time, o.end_time);
+                let O = 0;
+                let M = 0;
+                let T = 0;
+                let C = 0;
+                let arr = o.tags;
+                let equally = d / arr.length;
+                arr.forEach((u) => {
+                  if (u === 1) {
+                    O = equally;
+                    timeO += O;
+                  }
+                  if (u === 2) {
+                    M = equally;
+                    timeM += M;
+                  }
+                  if (u === 3) {
+                    T = equally;
+                    timeT += T;
+                  }
+                  if (u === 4) {
+                    C = equally;
+                    timeC += C;
+                  }
+                });
+                return d;
+              })
+              .reduce((pre, cur) => pre + cur);
+          }
+          return time0;
+        })
+        .reduce((pre, cur) => pre + cur);
+      let sum = timeO + timeM + timeT + timeC;
+      let perO = timeO / sum;
+      let perM = timeM / sum;
+      let perT = timeT / sum;
+      let perC = timeC / sum;
+      setPerO(perO);
+      setPerM(perM);
+      setPerT(perT);
+      setPerC(perC);
+      setTotalTimer(formatTimeSpent(Math.floor(totalTimer)));
+    }
+    if (data && e === "This week") {
+      let totalTimer = PROCESS_DAY_GROUP(data)
+        .reverse()
+        .map((e) => {
+          let day = formatNowDay(e.date);
+          let time0 = 0;
+          if (getThisWeek().includes(day)) {
+            time0 = e.tasks
+              .map((o) => {
+                let d = durationMins2Days(o.start_time, o.end_time);
+                let O = 0;
+                let M = 0;
+                let T = 0;
+                let C = 0;
+                let arr = o.tags;
+                let equally = d / arr.length;
+                arr.forEach((u) => {
+                  if (u === 1) {
+                    O = equally;
+                    timeO += O;
+                  }
+                  if (u === 2) {
+                    M = equally;
+                    timeM += M;
+                  }
+                  if (u === 3) {
+                    T = equally;
+                    timeT += T;
+                  }
+                  if (u === 4) {
+                    C = equally;
+                    timeC += C;
+                  }
+                });
+                return d;
+              })
+              .reduce((pre, cur) => pre + cur);
+          }
+          return time0;
+        })
+        .reduce((pre, cur) => pre + cur);
+      let sum = timeO + timeM + timeT + timeC;
+      let perO = timeO / sum;
+      let perM = timeM / sum;
+      let perT = timeT / sum;
+      let perC = timeC / sum;
+      setPerO(perO);
+      setPerM(perM);
+      setPerT(perT);
+      setPerC(perC);
+      setTotalTimer(formatTimeSpent(Math.floor(totalTimer)));
+    }
+    if (data && e === "This month") {
+      let totalTimer = PROCESS_DAY_GROUP(data)
+        .reverse()
+        .map((e) => {
+          let day = formatNowDay(e.date);
+          let time0 = 0;
+          if (getThisMonth().includes(day)) {
+            time0 = e.tasks
+              .map((o) => {
+                let d = durationMins2Days(o.start_time, o.end_time);
+                let O = 0;
+                let M = 0;
+                let T = 0;
+                let C = 0;
+                let arr = o.tags;
+                let equally = d / arr.length;
+                arr.forEach((u) => {
+                  if (u === 1) {
+                    O = equally;
+                    timeO += O;
+                  }
+                  if (u === 2) {
+                    M = equally;
+                    timeM += M;
+                  }
+                  if (u === 3) {
+                    T = equally;
+                    timeT += T;
+                  }
+                  if (u === 4) {
+                    C = equally;
+                    timeC += C;
+                  }
+                });
+                return d;
+              })
+              .reduce((pre, cur) => pre + cur);
+          }
+          return time0;
+        })
+        .reduce((pre, cur) => pre + cur);
+      let sum = timeO + timeM + timeT + timeC;
+      let perO = timeO / sum;
+      let perM = timeM / sum;
+      let perT = timeT / sum;
+      let perC = timeC / sum;
+      setPerO(perO);
+      setPerM(perM);
+      setPerT(perT);
+      setPerC(perC);
+      setTotalTimer(formatTimeSpent(Math.floor(totalTimer)));
+    }
+    if (data && e === "Last month") {
+      let totalTimer = PROCESS_DAY_GROUP(data)
+        .reverse()
+        .map((e) => {
+          let day = formatNowDay(e.date);
+          let time0 = 0;
+          if (getLastMonth().includes(day)) {
+            time0 = e.tasks
+              .map((o) => {
+                let d = durationMins2Days(o.start_time, o.end_time);
+                let O = 0;
+                let M = 0;
+                let T = 0;
+                let C = 0;
+                let arr = o.tags;
+                let equally = d / arr.length;
+                arr.forEach((u) => {
+                  if (u === 1) {
+                    O = equally;
+                    timeO += O;
+                  }
+                  if (u === 2) {
+                    M = equally;
+                    timeM += M;
+                  }
+                  if (u === 3) {
+                    T = equally;
+                    timeT += T;
+                  }
+                  if (u === 4) {
+                    C = equally;
+                    timeC += C;
+                  }
+                });
+                return d;
+              })
+              .reduce((pre, cur) => pre + cur);
+          }
+          return time0;
+        })
+        .reduce((pre, cur) => pre + cur);
+      let sum = timeO + timeM + timeT + timeC;
+      let perO = timeO / sum;
+      let perM = timeM / sum;
+      let perT = timeT / sum;
+      let perC = timeC / sum;
+      setPerO(perO);
+      setPerM(perM);
+      setPerT(perT);
+      setPerC(perC);
+      setTotalTimer(formatTimeSpent(Math.floor(totalTimer)));
+    }
+    return;
   };
 
   return (
@@ -249,7 +470,10 @@ function Report() {
                     <Modal.Body>
                       <DateRange
                         editableDateInputs={true}
-                        onChange={(item) => setState([item.selection])}
+                        onChange={(item) => {
+                          console.log([item.selection]);
+                          return setState([item.selection]);
+                        }}
                         moveRangeOnFirstSelection={false}
                         ranges={state}
                       />

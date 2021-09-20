@@ -125,3 +125,77 @@ export const durationMins2Days = (a, b) => {
   let mins = days * 1440;
   return mins;
 };
+
+//week
+let weekStart = moment().clone().startOf("week");
+
+//this week
+export const getThisWeek = () => {
+  let thisDays = [];
+  for (let i = 2; i <= 8; i++) {
+    thisDays.push(formatNowDay(moment(weekStart).add(i, "days")));
+  }
+  return thisDays;
+};
+//last week
+export const getLastWeek = () => {
+  let lastDays = [];
+  for (let i = 1; i >= -5; i--) {
+    lastDays.push(formatNowDay(moment(weekStart).add(i, "days")));
+  }
+  return lastDays;
+};
+
+//month
+let i = 0;
+let j = 0;
+let monthStart = moment().format("MMM");
+switch (monthStart) {
+  case "Jan":
+    i = 31;
+    j = 30;
+    break;
+  case "Mar":
+    i = 31;
+    j = 27;
+    break;
+  case "May":
+  case "Jul":
+  case "Aug":
+  case "Oct":
+  case "Dec":
+    i = 31;
+    j = 29;
+    break;
+  case "Apr":
+  case "Jun":
+  case "Sep":
+  case "Nov":
+    i = 30;
+    j = 30;
+    break;
+  case "Feb":
+    i = 28;
+    j = 30;
+    break;
+
+  default:
+    break;
+}
+let month = moment().clone().startOf("month");
+//this month
+export const getThisMonth = () => {
+  let thisDays = [];
+  for (let x = 1; x <= i; x++) {
+    thisDays.push(formatNowDay(moment(month).add(x, "days")));
+  }
+  return thisDays;
+};
+//last month
+export const getLastMonth = () => {
+  let lastDays = [];
+  for (let y = 0; y >= -j; y--) {
+    lastDays.push(formatNowDay(moment(month).add(y, "days")));
+  }
+  return lastDays;
+};
