@@ -16,13 +16,18 @@ export default function DateRangePicker() {
   const classes = useStyles();
 
   const handleStartChange = (e) => {
-    const startDate = toServerDate(e.target.value, "start");
+    let startDate = e.target.value;
+    if (startDate) {
+      startDate = toServerDate(e.target.value, "start");
+    }
     setDateRange((dateRange) => ({ ...dateRange, startDate }));
   };
 
   const handleEndChange = (e) => {
-    const endDate = toServerDate(e.target.value, "end");
-
+    let endDate = e.target.value;
+    if (endDate) {
+      endDate = toServerDate(e.target.value, "end");
+    }
     setDateRange((dateRange) => ({ ...dateRange, endDate }));
   };
 
