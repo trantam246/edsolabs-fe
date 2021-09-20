@@ -6,10 +6,7 @@
       "start_time": "2021-09-13 17:00:0",
       "end_time": "2021-09-13 13:30:0",
       "time_spent": 86403,
-      "tags": [
-        1,
-        2
-      ],
+      "tags": [1, 2],
       "status": 1
     },
     {
@@ -18,10 +15,7 @@
       "start_time": "2021-09-14 07:00:0",
       "end_time": null,
       "time_spent": 134124,
-      "tags": [
-        3,
-        4
-      ],
+      "tags": [3, 4],
       "status": 0
     },
     {
@@ -30,10 +24,7 @@
       "start_time": "2021-09-14 17:00:0",
       "end_time": null,
       "time_spent": 12341,
-      "tags": [
-        1,
-        4
-      ],
+      "tags": [1, 4],
       "status": 0
     },
     {
@@ -42,10 +33,7 @@
       "start_time": "2021-09-15 19:00:0",
       "end_time": null,
       "time_spent": 124324,
-      "tags": [
-        1,
-        2
-      ],
+      "tags": [1, 2],
       "status": 0
     },
     {
@@ -54,10 +42,7 @@
       "start_time": "2021-09-17 17:00:0",
       "end_time": null,
       "time_spent": "2342",
-      "tags": [
-        3,
-        2
-      ],
+      "tags": [3, 2],
       "status": 0
     },
     {
@@ -65,10 +50,7 @@
       "start_time": "2021-09-18 16:14:59",
       "end_time": "2021-09-18 16:15:11",
       "time_spent": 12,
-      "tags": [
-        4,
-        3
-      ],
+      "tags": [4, 3],
       "status": 1,
       "createdAt": 1631956499290,
       "id": 6
@@ -78,10 +60,7 @@
       "start_time": "2021-09-18 16:44:07",
       "end_time": "2021-09-18 16:44:24",
       "time_spent": 17,
-      "tags": [
-        1,
-        2
-      ],
+      "tags": [1, 2],
       "status": 1,
       "createdAt": 1631958247026,
       "id": 7
@@ -91,9 +70,7 @@
       "start_time": "2021-09-19 15:51:42",
       "end_time": "2021-09-19 15:51:59",
       "time_spent": 15,
-      "tags": [
-        2
-      ],
+      "tags": [2],
       "status": 1,
       "createdAt": 1632041503005,
       "id": 8
@@ -103,12 +80,110 @@
       "start_time": "2021-09-19 15:52:59",
       "end_time": "2021-09-19 15:53:10",
       "time_spent": 10,
-      "tags": [
-        2
-      ],
+      "tags": [2],
       "status": 1,
       "createdAt": 1632041579287,
       "id": 9
+    },
+    {
+      "description": "Test load more",
+      "start_time": "2021-09-20 14:41:22",
+      "end_time": "2021-09-20 14:41:43",
+      "time_spent": 20,
+      "tags": [1],
+      "status": 1,
+      "createdAt": 1632123682070,
+      "id": 10
+    },
+    {
+      "description": "test fixed timer on 2 page",
+      "start_time": "2021-09-20 14:42:14",
+      "end_time": "2021-09-20 14:44:02",
+      "time_spent": 107,
+      "tags": [3, 4],
+      "status": 1,
+      "createdAt": 1632123734131,
+      "id": 11
+    },
+    {
+      "description": "Done load more UwU",
+      "start_time": "2021-09-20 14:46:30",
+      "end_time": "2021-09-20 14:46:45",
+      "time_spent": 14,
+      "tags": [1, 2],
+      "status": 1,
+      "createdAt": 1632123990384,
+      "id": 12
+    },
+    {
+      "description": "Task của ngày 12",
+      "start_time": "2021-09-12 14:46:30",
+      "end_time": "2021-09-12 14:46:45",
+      "time_spent": 14,
+      "tags": [1, 3],
+      "status": 1,
+      "createdAt": 1632123990384,
+      "id": 12
+    },
+    {
+      "description": "Task của ngày 11",
+      "start_time": "2021-09-11 14:46:30",
+      "end_time": "2021-09-11 14:46:45",
+      "time_spent": 14,
+      "tags": [1, 3],
+      "status": 1,
+      "createdAt": 1632123990384,
+      "id": 12
+    },
+    {
+      "description": "Task của ngày 09",
+      "start_time": "2021-09-09 14:46:30",
+      "end_time": null,
+      "time_spent": 14324,
+      "tags": [1, 3],
+      "status": 1,
+      "createdAt": 1632123990384,
+      "id": 12
+    },
+    {
+      "description": "Task của ngày 08",
+      "start_time": "2021-09-08 14:46:30",
+      "end_time": null,
+      "time_spent": 33514,
+      "tags": [2, 4],
+      "status": 1,
+      "createdAt": 1632123990384,
+      "id": 12
+    },
+    {
+      "description": "Task của ngày 07",
+      "start_time": "2021-09-07 14:46:30",
+      "end_time": null,
+      "time_spent": 345314,
+      "tags": [2, 3],
+      "status": 1,
+      "createdAt": 1632123990384,
+      "id": 12
+    },
+    {
+      "description": "Task của ngày 06",
+      "start_time": "2021-09-06 14:46:30",
+      "end_time": null,
+      "time_spent": 23414,
+      "tags": [2, 3],
+      "status": 1,
+      "createdAt": 1632123990384,
+      "id": 12
+    },
+    {
+      "description": "Task của ngày 05",
+      "start_time": "2021-09-05 14:46:30",
+      "end_time": null,
+      "time_spent": 1432423,
+      "tags": [1, 4],
+      "status": 1,
+      "createdAt": 1632123990384,
+      "id": 12
     }
   ],
   "tags": [

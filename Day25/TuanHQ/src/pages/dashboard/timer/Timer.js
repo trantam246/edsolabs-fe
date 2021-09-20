@@ -1,4 +1,4 @@
-import { Box, Typography } from '@material-ui/core';
+import { Box, Typography, Button } from '@material-ui/core';
 import DateFilter from 'components/date-filter/DateFilter';
 import ListTask from 'components/list-task/ListTask';
 import { useTaskContext } from 'contexts/TaskContext';
@@ -17,15 +17,22 @@ const getDay = (tasks) => {
   return listDay;
 };
 
+const dayPerPage = 5;
+let holdingDays = [];
+
 const Timer = () => {
   const { tasks } = useTaskContext();
 
+  // danh sách các ngày có trong db
   const listDaysInit = getDay(tasks);
 
-  const [listDays, setListDays] = useState(listDaysInit);
+  const [listDays, setListDays] = useState([]);
+  //danh sách sẽ hiển thị ra
   const [listTasks, setListTasks] = useState(tasks);
 
   const [dateFilter, setDateFilter] = useState('');
+
+  const [next, setNext] = useState(5);
 
   const getDateFilter = (value) => {
     setDateFilter(moment(value).format('DD/MM/YYYY'));
@@ -34,10 +41,29 @@ const Timer = () => {
 
   const refreshData = () => {
     setDateFilter('');
+    holdingDays = [];
+    sliceListDays(0, dayPerPage);
+  };
+
+  const sliceListDays = (start, end, day = listDaysInit) => {
+    const sliceDays = day.slice(start, end);
+    holdingDays = [...holdingDays, ...sliceDays];
+    setListDays(holdingDays);
+  };
+
+  const loadMoreDays = () => {
+    sliceListDays(next, next + dayPerPage);
+    setNext(next + dayPerPage);
   };
 
   useEffect(() => {
-    setListDays(getDay(tasks));
+    sliceListDays(0, dayPerPage);
+  }, []);
+
+  useEffect(() => {
+    // setListDays(getDay(tasks));
+    // sliceListDays(0, dayPerPage);
+    refreshData();
     setListTasks(tasks);
   }, [tasks]);
 
@@ -45,9 +71,10 @@ const Timer = () => {
     if (dateFilter.trim() !== '') {
       const day = getDay(tasks).filter((d) => d === dateFilter);
       setListDays(day);
-    } else {
-      setListDays(getDay(tasks));
     }
+    // else {
+    //   // sliceListDays(0, dayPerPage);
+    // }
   }, [tasks, dateFilter]);
 
   return (
@@ -68,6 +95,14 @@ const Timer = () => {
           </Box>
         );
       })}
+
+      {listDays.length !== listDaysInit.length && dateFilter.trim() === '' && (
+        <Box display="flex" justifyContent="center" my={2}>
+          <Button variant="outlined" color="secondary" onClick={loadMoreDays}>
+            Load more + {listDaysInit.length - next}
+          </Button>
+        </Box>
+      )}
     </div>
   );
 };

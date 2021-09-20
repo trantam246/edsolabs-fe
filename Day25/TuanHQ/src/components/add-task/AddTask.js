@@ -3,22 +3,27 @@ import {
   Divider,
   Grid,
   IconButton,
+  LinearProgress,
   TextField,
   Typography,
-  LinearProgress,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import StopIcon from '@material-ui/icons/Stop';
 import Tag from 'components/tag/Tag';
-import { useTaskContext } from 'contexts/TaskContext';
 import { useTagContext } from 'contexts/TagContext';
+import { useTaskContext } from 'contexts/TaskContext';
 import moment from 'moment';
 import React, { useEffect, useRef, useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    // width: 100%,
+    position: 'sticky',
+    top: 0,
+    zIndex: 1,
+    backgroundColor: 'white',
     width: '100%',
     '& .MuiInput-underline::before': {
       content: 'none',
@@ -153,7 +158,7 @@ const AddTask = () => {
   };
 
   return (
-    <div className={classes.root}>
+    <Box className={classes.root}>
       <Grid container>
         <Grid item xs={12} sm={12} md={7}>
           <Box
@@ -220,7 +225,7 @@ const AddTask = () => {
         </Grid>
       </Grid>
       <Divider />
-    </div>
+    </Box>
   );
 };
 

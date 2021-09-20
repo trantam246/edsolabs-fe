@@ -10,7 +10,7 @@ import {
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import { useTagContext } from 'contexts/TagContext';
 import { useTaskContext } from 'contexts/TaskContext';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 const Tag = ({ getTagsDoing, tagsDoing }) => {
   const { playing } = useTaskContext();
