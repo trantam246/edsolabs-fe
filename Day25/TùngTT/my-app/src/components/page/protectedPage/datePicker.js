@@ -8,7 +8,7 @@ import {
 import { Grid } from '@material-ui/core';
 export const DateRange = (props) => {
   const [selectedDate, setSelectedDate] = useState(moment());
-
+  
   const handleDateChange = (date) => {
     setSelectedDate(date);
     props.getDate(date)

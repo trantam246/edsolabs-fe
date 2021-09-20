@@ -151,11 +151,7 @@ export const TimerPage = (props) => {
           <Grid container spacing={4}>
             {arrFilter.length >= 1 ? (
               <Grid item xs={12}>
-                {moment().format("YYYY-MM-DD") === moment(arrFilter[0][0]).format("YYYY-MM-YY") ? (
-                  <p>Today</p>
-                ) : (
-                  <p>{moment(arrFilter[0][0]).format("YYYY-MM-YY")}</p>
-                )}
+                <p>{moment(arrFilter[0][0]).format("YYYY-MM-YY")}</p>
                 {arrFilter[0][1].map(item => {
                   return (
                     <div>
