@@ -50,7 +50,6 @@ const Watch = (props) => {
         }
     }
     const start = () => {
-        console.log(props)
         if (props.newTask.description?.trim().length === 0 || props.newTask.tags.length === 0) {
             alert("Điền vào 'What are you working on?' và Chọn ít nhất 1 tag")
             setPlayIcon(playIcon)
@@ -93,7 +92,6 @@ const Watch = (props) => {
         time.s = 0
         time.m = 0
         time.h = 0
-        console.log('id', id)
         updateTask(doneTask, id).then(() => props.onLoadTask({ ...post, ...doneTask }))
 
     };

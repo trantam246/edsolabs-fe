@@ -11,7 +11,6 @@ import TimerPage from "./components/Timer/TimerPage";
 import ReportPage from "./components/Report/ReportPage";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-
   useEffect(() => {
     const storedLogin = localStorage.getItem('isLoggedIn')
     if (storedLogin === '1') setIsLoggedIn(true)
@@ -26,12 +25,13 @@ function App() {
     setIsLoggedIn(false)
   }
 
+ 
   return (
     <Router>
       {isLoggedIn && <Sidebar onLogout={logoutHandler} />}
       <Switch>
         <Route exact path="/">{isLoggedIn ? <TimerPage /> : <Login onLogin={loginHandler} />}</Route>
-        <Route path="/report"> {isLoggedIn ? <ReportPage /> : <Login onLogin={loginHandler} />}</Route>
+        <Route path="/report"> {isLoggedIn ? <ReportPage  /> : <Login onLogin={loginHandler} />}</Route>
         <Route path="/login" >{!isLoggedIn && <Login onLogin={loginHandler} />}
         </Route>
       </Switch>

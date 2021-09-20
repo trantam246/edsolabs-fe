@@ -9,19 +9,24 @@ const useStyles = makeStyles(() => ({
         fontSize: '2rem'
     }
 }))
-const DoughnutChart = () => {
+const DoughnutChart = (props) => {
     const classes = useStyles()
 
     return (
         <div className={classes.doughnut__chart}>
-            <h3 className={classes.total__week}>This week: 30 hours</h3>
+            <h3 className={classes.total__week}>Today: {props.today?.totalTime / 1000}s</h3>
             <div >
                 <Doughnut
                     data={{
                         labels: ["Online", "Meeting", "Training", "Coding"],
                         datasets: [{
                             label: 'Time',
-                            data: [10, 20, 30, 40],
+                            data: [
+                                props.today?.online / 1000,
+                                props.today?.meeting / 1000,
+                                props.today?.training / 1000,
+                                props.today?.coding / 1000,
+                            ],
                             backgroundColor: [
                                 'rgb(255, 99, 132)',
                                 'rgb(54, 162, 235)',

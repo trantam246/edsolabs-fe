@@ -20,7 +20,7 @@ const useStyles = makeStyles(() => ({
     fontSize: "2rem !important",
   },
   btn: {
-    margin: "10rem auto",
+    margin: "2rem auto",
     display: "flex",
   },
 }))
@@ -75,7 +75,6 @@ export default function TasksList(props) {
       ))}
       {daysGroup.slice(0, visible).length === visible && (
         <Button
-          Button
           variant="contained"
           color="primary"
           className={classes.btn}

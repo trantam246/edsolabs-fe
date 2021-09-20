@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-
 import HeaderTimer from "./HeaderTimer"
 import MainTimer from "./MainTimer"
 import taskApi from "../../api/taskApi"
@@ -8,6 +7,7 @@ import tagApi from "../../api/tagApi"
 const TimerPage = (props) => {
   const [task, setTask] = useState([])
   const [tag, setTag] = useState([])
+
   const fetchTag = () => {
     try {
       tagApi.getTag().then((res) => setTag(res))
@@ -40,7 +40,6 @@ const TimerPage = (props) => {
   }))
 
   const newTask = {
-    // id: task.length + 1,
     id: "",
     description: "",
     start_time: null,
@@ -49,6 +48,7 @@ const TimerPage = (props) => {
     tags: [],
     status: 0,
   }
+
   const handleLoadTask = (newTask) => {
     setTask([...task, newTask])
     fetchTask()
@@ -59,6 +59,7 @@ const TimerPage = (props) => {
     }, 3000)
     setTask(days)
   }
+
   return (
     <>
       <HeaderTimer
