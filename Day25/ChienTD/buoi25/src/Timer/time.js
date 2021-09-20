@@ -11,7 +11,6 @@ function Time(props) {
   const [description, SetDescription] = useState();
   const [tag, setTag] = useState([]);
   const [time, setTime] = useState();
-  const [newTask, setNewTask] = useState({description: "", end_time: "", id: "", start_time: "", status: "", tags: [], time_spent: ""});
 
   // Sự kiện nhận dữ liệu
   const changeDescription = (e) => {
@@ -25,16 +24,6 @@ function Time(props) {
   const valueTime = (props) => {
     setTime(props);
   }
-
-  useEffect(() => {
-    const oldValueTask = {...newTask};
-    return {
-      oldValueTask,
-      description: description,
-      start_time: time,
-      tags: tag
-    }
-  }, [description, time, tag, newTask]);  
 
   return (
     <Box>

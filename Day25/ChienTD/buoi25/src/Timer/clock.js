@@ -17,13 +17,13 @@ const formatTime = (timer) => {
 
 const Clock = (props) => {
   const { getReload } = useContext(DataContext);
- 
+
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [timeStart, setTimeStart] = useState();
   const [timeEnd, setTimeEnd] = useState();
   const [status, setStatus] = useState(1);
-  const [timeSpent, setTimeSpent] = use
+  const [timeSpent, setTimeSpent] = useState();
   const [timer, setTimer] = useState(0);
   const countRef = useRef(null);
 
@@ -44,7 +44,7 @@ const Clock = (props) => {
     setIsActive(true);
     setIsPaused(true);
     console.log(newTask);
-
+    console.log("start: ",timeStart)
     const fetchNewTask = async () => {
       try {
         await TasksApi.postTask(newTask);
@@ -63,23 +63,24 @@ const Clock = (props) => {
     clearInterval(countRef.current);
     setIsActive(false);
     setIsPaused(false);
-    // xử lý pause
-    const endStart = new Date();
-    setTimeEnd(moment(endStart).format("YYYY/MM/DD, HH:mm"));
-    setStatus(0);
-    
-    // setNewTask(prev => {
-    //   return {
-    //     ...prev,
-    //     end_time: 
-    //   }
-    // })
+    console.log("end: ",timeEnd)
+    console.log("spent: ",timeSpent)
     setTimer(0);
   };
 
   useEffect(() => {
+    const endTime = new Date();
+    setTimeEnd(moment(endTime).format("YYYY/MM/DD, HH:mm:ss"));
+    //Tính thời gian
+    // var diffTime = moment(timeEnd).diff(timeStart, "HH:mm:ss");
+    var duration = moment.duration(moment(timeStart).diff(moment(timeEnd)));
+    setTimeSpent(duration);
+    setStatus(0);
+  }, [isPaused, timeEnd, timeStart]);
+
+  useEffect(() => {
     const today = new Date();
-    setTimeStart(moment(today).format("YYYY/MM/DD, HH:mm"));
+    setTimeStart(moment(today).format("YYYY/MM/DD, HH:mm:ss"));
     setNewTask({
       description: valueDes,
       end_time: "",
