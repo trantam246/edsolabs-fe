@@ -1,9 +1,10 @@
-import { Box, Typography, Button } from '@material-ui/core';
+import { Box, Button, Typography } from '@material-ui/core';
 import DateFilter from 'components/date-filter/DateFilter';
 import ListTask from 'components/list-task/ListTask';
 import { useTaskContext } from 'contexts/TaskContext';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
+import Skeletons from 'components/skeleton/Skeletons';
 
 const getDay = (tasks) => {
   const listDay = [
@@ -21,7 +22,7 @@ const dayPerPage = 5;
 let holdingDays = [];
 
 const Timer = () => {
-  const { tasks } = useTaskContext();
+  const { tasks, taskLoading } = useTaskContext();
 
   // danh sách các ngày có trong db
   const listDaysInit = getDay(tasks);
@@ -43,6 +44,7 @@ const Timer = () => {
     setDateFilter('');
     holdingDays = [];
     sliceListDays(0, dayPerPage);
+    setNext(5);
   };
 
   const sliceListDays = (start, end, day = listDaysInit) => {
@@ -80,6 +82,8 @@ const Timer = () => {
   return (
     <div>
       <DateFilter getDateFilter={getDateFilter} refreshData={refreshData} />
+
+      {taskLoading && <Skeletons />}
 
       {listDays.map((day, index) => {
         const tasksInDay = listTasks.filter(

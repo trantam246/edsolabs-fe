@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useUserContext } from 'contexts/UserContext';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useTagContext } from 'contexts/TagContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,17 +34,23 @@ const Login = () => {
   const history = useHistory();
 
   const { name, getAllUsers, saveOnLocalStorage } = useUserContext();
+  const { callSnackbar } = useTagContext();
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = (username, password) => {
     if (username.trim() === '' || password.trim() === '') {
-      console.log('enter username password');
+      callSnackbar('Enter username password :((', 'error');
     } else {
       // check user
       getAllUsers()
         .then((res) => {
+          // username incorrect
+          if (res.data.some((user) => user.username !== username.trim())) {
+            callSnackbar('Username incorrect :((', 'error');
+          }
+
           // password incorrect
           if (
             res.data.some(
@@ -52,7 +59,7 @@ const Login = () => {
                 user.password !== password.trim()
             )
           ) {
-            console.log('password incorrect');
+            callSnackbar('Password incorrect :((', 'error');
           }
 
           // save user ,login successfully
@@ -62,6 +69,7 @@ const Login = () => {
               user.password === password.trim()
             ) {
               saveOnLocalStorage(user);
+              callSnackbar('Login success <3', 'success');
               history.replace('/');
             }
             return user;
@@ -78,7 +86,7 @@ const Login = () => {
   return (
     <Paper elevation={3} className={classes.root}>
       <Typography variant="h4" gutterBottom align="center">
-        Login {name}
+        Login
       </Typography>
 
       <form>

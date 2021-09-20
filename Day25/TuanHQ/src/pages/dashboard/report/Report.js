@@ -1,9 +1,29 @@
-import { Box, Grid, Paper, Typography } from '@material-ui/core';
+import {
+  Box,
+  FormControl,
+  Grid,
+  InputLabel,
+  makeStyles,
+  MenuItem,
+  Paper,
+  Select,
+  Typography,
+} from '@material-ui/core';
 import { useTaskContext } from 'contexts/TaskContext';
 import BarChart from 'components/bar-chart/BarChart';
 import DoughnutChart from 'components/doughnut-chart/DoughnutChart';
 import React, { useState } from 'react';
 import { useTagContext } from 'contexts/TagContext';
+
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+}));
 
 const Productivity = () => {
   return (
@@ -22,7 +42,16 @@ const Productivity = () => {
 const Report = () => {
   const { playing, tasks } = useTaskContext();
 
-  const { tags } = useTagContext();
+  const { tags, callSnackbar } = useTagContext();
+
+  const [filter, setFilter] = useState('');
+
+  const handleChangeFilter = (event) => {
+    setFilter(event.target.value);
+    callSnackbar(`${event.target.value} - Functions in development`, 'warning');
+  };
+
+  const classes = useStyles();
 
   const minsTags = () => {
     // Lấy ra danh sách tags trong mỗi task, và thời gian cho mỗi tag
@@ -74,9 +103,29 @@ const Report = () => {
     <div>
       {!playing && <Productivity />}
       <Box p={2}>
-        <Typography variant="h6" gutterBottom>
-          Total: {totalTimeSpent()} hours
-        </Typography>
+        <Box display="flex" justifyContent="space-between" alignItems="center">
+          <Typography variant="h6" gutterBottom>
+            Total: {totalTimeSpent()} hours
+          </Typography>
+
+          <FormControl className={classes.formControl}>
+            <InputLabel id="demo-simple-select-label">Filter</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={filter}
+              onChange={handleChangeFilter}
+            >
+              <MenuItem value={'Today'}>Today</MenuItem>
+              <MenuItem value={'Yesterday'}>Yesterday</MenuItem>
+              <MenuItem value={'This week'}>This week</MenuItem>
+              <MenuItem value={'Last week'}>Last week</MenuItem>
+              <MenuItem value={'This month'}>This month</MenuItem>
+              <MenuItem value={'Last month'}>Last month</MenuItem>
+              <MenuItem value={'Date range'}>Date range</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
 
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={6}>
