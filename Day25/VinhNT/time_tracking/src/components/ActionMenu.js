@@ -125,11 +125,11 @@ export default function ActionMenu(props) {
         Are you sure to delete this item?
       </Typography>
       <Divider />
-      <Grid container spacing="0" justifyContent="space-around">
+      <Grid container spacing={0} justifyContent="space-around">
         <Grid className={classes.confirmBtn} item xs={5}>
           <Button onClick={handleCloseConfirm}>No</Button>
         </Grid>
-        <Divider orientation="vertical" flexitem />
+        <Divider orientation="vertical" />
         <Grid className={classes.confirmBtn} item xs={5}>
           <Button onClick={handleDeleteAction}>Yes</Button>
         </Grid>
