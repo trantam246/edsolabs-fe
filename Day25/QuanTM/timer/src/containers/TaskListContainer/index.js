@@ -4,13 +4,6 @@ import { Box, makeStyles } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     gap: theme.spacing(3),
-    overflow: "scroll",
-    overflowY: "hidden",
-    [theme.breakpoints.up("md")]: {
-      "&::-webkit-scrollbar": {
-        display: "none",
-      },
-    },
   },
 }));
 

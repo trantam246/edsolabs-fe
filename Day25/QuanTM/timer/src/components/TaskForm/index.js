@@ -235,10 +235,10 @@ export default function TaskForm() {
     <Paper className={classes.root} elevation={3}>
       <form onSubmit={handleSubmit}>
         <Grid container alignItems="center">
-          <Grid item xs={12} md={8}>
+          <Grid item xs={8}>
             {renderTextField()}
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={4}>
             <Box
               display="flex"
               alignItems="center"

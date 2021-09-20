@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { TextField, Button, makeStyles } from "@material-ui/core";
+import { TextField, Button, Box, makeStyles } from "@material-ui/core";
 import moment from "moment";
 
 import TaskForm from "../../components/TaskForm";
@@ -12,6 +12,9 @@ import deleteTaskAPI from "../../api/deleteTaskAPI";
 import DeleteDialog from "../../components/DeleteDialog";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    minWidth: theme.breakpoints.values.md,
+  },
   textField: {
     display: "block",
   },
@@ -79,30 +82,32 @@ export default function Timer() {
 
   return (
     <DeleteContext.Provider value={{ setOpen, open, id, setId, onDeleteTask }}>
-      <TaskForm />
-      <TaskListContainer>
-        <TextField
-          label="Date filter"
-          type="date"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-          className={classes.textField}
-          onChange={handleChange}
-        />
-        <TaskList>{renderList()}</TaskList>
-        <Button
-          variant="contained"
-          color="primary"
-          className={classes.button}
-          onClick={() => setTotalRecord((total) => total + total)}
-          disabled={totalRecord >= uniqDate.length}
-        >
-          Load More
-        </Button>
-      </TaskListContainer>
-      <DeleteDialog />
+      <Box className={classes.root}>
+        <TaskForm />
+        <TaskListContainer>
+          <TextField
+            label="Date filter"
+            type="date"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            variant="outlined"
+            className={classes.textField}
+            onChange={handleChange}
+          />
+          <TaskList>{renderList()}</TaskList>
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            onClick={() => setTotalRecord((total) => total + total)}
+            disabled={totalRecord >= uniqDate.length}
+          >
+            Load More
+          </Button>
+        </TaskListContainer>
+        <DeleteDialog />
+      </Box>
     </DeleteContext.Provider>
   );
 }

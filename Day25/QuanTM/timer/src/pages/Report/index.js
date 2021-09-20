@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Paper, Typography, Grid, makeStyles } from "@material-ui/core";
+import { Paper, Typography, Grid, Box, makeStyles } from "@material-ui/core";
 import { Pie, Bar } from "react-chartjs-2";
 
 import ReportContainer from "../../containers/ReportContainer";
@@ -9,6 +9,9 @@ import { useGlobalContext } from "../../components/ContextProvider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    minWidth: theme.breakpoints.values.sm,
+  },
+  paper: {
     padding: theme.spacing(2),
   },
   typo: {
@@ -81,64 +84,66 @@ export default function Report() {
     <ReportContext.Provider
       value={{ selected, setSelected, dateRange, setDateRange, chartData }}
     >
-      <Paper elevation={3} className={classes.root}>
-        <Typography variant="h5" component="h1" className={classes.typo}>
-          Productivity Report
-        </Typography>
-      </Paper>
-      <ReportContainer>
-        <ReportHeader />
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
-            <Pie
-              width={100}
-              height={100}
-              data={{
-                labels: tags.map((tag) => tag.name),
-                datasets: [
-                  {
-                    label: "Tasks Productivity ",
-                    data: chartData,
-                    backgroundColor: [
-                      "rgb(255, 99, 132)",
-                      "rgb(54, 162, 235)",
-                      "rgb(255, 205, 86)",
-                      "#198754",
-                    ],
-                    hoverOffset: 4,
-                  },
-                ],
-              }}
-            ></Pie>
+      <Box className={classes.root}>
+        <Paper elevation={3} className={classes.paper}>
+          <Typography variant="h5" component="h1" className={classes.typo}>
+            Productivity Report
+          </Typography>
+        </Paper>
+        <ReportContainer>
+          <ReportHeader />
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={6}>
+              <Pie
+                width={100}
+                height={100}
+                data={{
+                  labels: tags.map((tag) => tag.name),
+                  datasets: [
+                    {
+                      label: "Tasks Productivity ",
+                      data: chartData,
+                      backgroundColor: [
+                        "rgb(255, 99, 132)",
+                        "rgb(54, 162, 235)",
+                        "rgb(255, 205, 86)",
+                        "#198754",
+                      ],
+                      hoverOffset: 4,
+                    },
+                  ],
+                }}
+              ></Pie>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Bar
+                width={100}
+                height={60}
+                data={{
+                  labels: ["online", "meetting", "training", "coding"],
+                  datasets: [
+                    {
+                      axis: "y",
+                      label: "Tasks Productivity",
+                      data: chartData,
+                      backgroundColor: [
+                        "rgb(255, 99, 132)",
+                        "rgb(54, 162, 235)",
+                        "rgb(255, 205, 86)",
+                        "#198754",
+                      ],
+                      hoverOffset: 4,
+                    },
+                  ],
+                }}
+                options={{
+                  indexAxis: "y",
+                }}
+              />
+            </Grid>
           </Grid>
-          <Grid item xs={12} md={6}>
-            <Bar
-              width={100}
-              height={60}
-              data={{
-                labels: ["online", "meetting", "training", "coding"],
-                datasets: [
-                  {
-                    axis: "y",
-                    label: "Tasks Productivity",
-                    data: chartData,
-                    backgroundColor: [
-                      "rgb(255, 99, 132)",
-                      "rgb(54, 162, 235)",
-                      "rgb(255, 205, 86)",
-                      "#198754",
-                    ],
-                    hoverOffset: 4,
-                  },
-                ],
-              }}
-              options={{
-                indexAxis: "y",
-              }}
-            />
-          </Grid>
-        </Grid>
-      </ReportContainer>
+        </ReportContainer>
+      </Box>
     </ReportContext.Provider>
   );
 }
