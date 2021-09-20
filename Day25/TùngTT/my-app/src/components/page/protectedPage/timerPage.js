@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +11,7 @@ import {Link} from '@material-ui/core';
 import dataFunction from '../func/dataFunction';
 import { TimePageTask } from './timePageTask';
 import moment from 'moment';
+import { DateRange } from './datePicker';
 moment().format();
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -133,27 +133,86 @@ export const TimerPage = (props) => {
     r[splitDay(a.start_time)] = [...r[splitDay(a.start_time)] || [], a];
     return r;
   }, {});
-
+  const [arrFilter, setArrFilter] = useState();
+  const [taskFilter, setTaskFilter] = useState();
+  const datePicker = (date) => {
+    let a = date.format('YYYY-MM-DD');
+    setTaskFilter(a);
+    setArrFilter(Object.entries(group).filter((e) => e[0] === a));
+    console.log(taskFilter)
+  }
+  
   return (
     <React.Fragment>
       <CssBaseline />
-        <form className={classes.container} noValidate>
-          <TextField
-            id="date"
-            label="Date filter"
-            type="date"
-            defaultValue="2017-05-24"
-            className={classes.textField}
-            InputLabelProps={{
-              shrink: true,
-            }}
-            />
-        </form>
+        <DateRange getDate={datePicker}/>
         <div className={classes.root}>
+          { taskFilter ? (
+          <Grid container spacing={4}>
+            {arrFilter.length >= 1 ? (
+              <Grid item xs={12}>
+                {moment().format("YYYY-MM-DD") === moment(arrFilter[0][0]).format("YYYY-MM-YY") ? (
+                  <p>Today</p>
+                ) : (
+                  <p>{moment(arrFilter[0][0]).format("YYYY-MM-YY")}</p>
+                )}
+                {arrFilter[0][1].map(item => {
+                  return (
+                    <div>
+                    <Grid key={item.id} className={classes.modGrid} container>
+                      <Grid item xs={6}>
+                        <Paper className={classes.paper}>{item.description}</Paper>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Paper className={classes.paper}>
+                          <Grid container alignItems="center">
+                            <Grid item xs>
+                              <IconButton>
+                                <LocalOfferIcon/>
+                              </IconButton>                  
+                            </Grid>
+                            <Grid item xs>
+                              <Link className={classes.linkMod}>{getTag(item,tags)}</Link>
+                            </Grid>
+                            <Grid item xs>
+                              <p>{splitTime(item.start_time)} - {splitTime(item.end_time)}</p>
+                            </Grid>
+                            <Grid item xs>
+                              <p>{item.time_spent} mins</p>
+                            </Grid>
+                            <Grid item xs>
+                            <TimePageTask id={item.id}
+                              descrip={item.description}
+                              startT={null}
+                              endT={null}
+                              timeSpent={null}
+                              tag={getTag(item,tags)}
+                              status={item.status}
+                              getHide={props.getHide}
+                            />
+                            </Grid>
+                          </Grid>                          
+                        </Paper>
+                      </Grid>
+                    </Grid>
+                    <Divider/>
+                  </div>
+                  ) 
+                })}
+              </Grid>
+            ) : (
+              <p>Không có hoạt động nào</p>
+            )}
+          </Grid>
+          ) : (
           <Grid container spacing={4}>
             {Object.entries(group).slice(0, visible).map((item,index) =>(
               <Grid key={index} item xs={12}>
-                <p>{item[0]}</p>
+                {moment().format("YYYY-MM-DD") === item[0] ? (
+                  <p>Today</p>
+                ) : (
+                  <p>{item[0]}</p>
+                )}
                 {item[1].map((ele) => (
                   <div>
                     <Grid key={ele.id} className={classes.modGrid} container>
@@ -180,7 +239,7 @@ export const TimerPage = (props) => {
                             <Grid item xs>
                             <TimePageTask id={ele.id}
                               descrip={ele.description}
-                              startT={moment().format('YYYY-MM-DD HH:mm:s')}
+                              startT={null}
                               endT={null}
                               timeSpent={null}
                               tag={getTag(ele,tags)}
@@ -197,7 +256,7 @@ export const TimerPage = (props) => {
                 ))}
               </Grid>
             ))}
-          </Grid>
+          </Grid>)}
           <Grid container spacing={10}>
             <Grid item xs={12} className={classes.btn}>
               {!isLoad && <Button variant="contained" color="secondary" onClick={showMore}>

@@ -15,7 +15,6 @@ import moment from 'moment';
 
 export const TimePageTask = (props) => {
   const [btnHide, setHideBtn] = useState(true); 
-  const [startTime, setStart] = useState({})
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -81,12 +80,14 @@ export const TimePageTask = (props) => {
     setTask({ ...getTask, [name]: value });
   };
   //addTask function
+  const [startTime, setStart] = useState({})
   const handleStart = e => {
     e.preventDefault();
+    handleInputChange(e)
     setStart(moment())
     const data = {
       description: props.descrip,
-      start_time: props.startT,
+      start_time: moment().format('YYYY-MM-DD HH:mm:ss'),
       end_time: null,
       time_spent: null,
       tags: getTagbyName(props.tag),
@@ -111,16 +112,22 @@ export const TimePageTask = (props) => {
   }
     // Update data 
   const handleStop = (e) => {
-    let data = {
+    let dataTask = {
       id: props.id,
       description: props.descrip,
-      start_time: props.startT,
-      end_time:  moment().format('YYYY-MM-DD HH:mm:s'),
+      start_time: getTask.start_time,
+      end_time:  moment().format('YYYY-MM-DD HH:mm:ss'),
       time_spent: moment(moment() - startTime).utc().format('HH:mm:ss'),
       tags: getTagbyName(props.tag),
       status: 1
     }
-    dataFunction.update(props.id, data)
+    dataFunction.update(props.id, dataTask).then((res) => {
+      setTask({
+        ...dataTask,
+        status: res.status
+      });
+    });
+    console.log(props.startT, moment().format('YYYY-MM-DD HH:mm:s'))
   }
   return (
     <>
@@ -136,7 +143,7 @@ export const TimePageTask = (props) => {
         TransitionComponent={Fade}>
         {props.status === 1 ? (
           <MenuItem onClick={handleStart}>Start</MenuItem>
-        )  : (
+        ) : (
           <MenuItem onClick={handleStop}>Stop</MenuItem>)}
         <MenuItem onClick={handleClickOpenDialog}>Delete</MenuItem>
         <Dialog
