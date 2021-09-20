@@ -1,0 +1,75 @@
+.my-task-inside {
+   display: flex;
+   justify-content: space-around;
+   border: 1px solid #c4c4c4;
+   align-items: center;
+   width: 90%;
+   border-radius: 4px;
+   margin: 20px 0 0 20px;
+}
+
+.format-date {
+   margin: 20px 0 0 20px;
+
+}
+
+.fa-tags {
+   margin-right: 10px;
+}
+
+.dropdown {
+   position: absolute;
+   left: 90%;
+}
+
+ul li {
+   position: relative;
+   display: block;
+   cursor: pointer;
+
+
+
+}
+
+ul li ul {
+   display: none;
+   position: absolute;
+   top: -10px;
+   left: 30px;
+   background: #ffffff;
+   cursor: pointer;
+
+}
+
+
+ul li:hover ul {
+   display: block;
+
+   border-radius: 4px;
+   border: 1px solid #f4f4f4;
+
+}
+
+
+
+.dropdown-item:hover,
+.drop-item:hover {
+   background: #f4f4f4;
+   border-top-left-radius: 1px;
+   border-top-right-radius: 1px;
+}
+
+::-webkit-scrollbar {
+   width: 1px;
+}
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+   background: black;
+}
+
+.search-date {
+   max-width: 80px;
+   margin-left: 20px;
+}

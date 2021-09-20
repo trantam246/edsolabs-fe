@@ -1,0 +1,54 @@
+.icon {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+}
+
+input {
+   padding-left: 50px !important;
+   line-height: 30px;
+   display: block;
+   width: 100%;
+
+}
+
+.form-input {
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   margin: 5px 0;
+}
+
+.iconic {
+   position: absolute;
+   left: 15px;
+   top: 30px;
+   width: 100%;
+   height: 100%;
+   z-index: 1000 !important;
+}
+
+.text-user {
+   display: inline;
+   padding-left: 2px;
+   font-size: 17px;
+   font-weight: 600;
+}
+
+.text {
+   color: #02706B;
+   font-size: 40px;
+   font-weight: bold;
+}
+
+
+.icon-class>.MuiSvgIcon-root {
+   color: #02706B;
+}
+
+.MuiFormControl-root {
+   margin: 15px 0 15px 0 !important;
+}
