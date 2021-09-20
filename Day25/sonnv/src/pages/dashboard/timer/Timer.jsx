@@ -1,4 +1,4 @@
-import { Box, Typography } from "@material-ui/core";
+import { Box, Button, Grid, Typography } from "@material-ui/core";
 import DateFilter from "../../../components/DateFilter";
 import ListTask from "../../../components/ListTask";
 import { useTaskContext } from "../../../contexts/TaskContext";
@@ -21,9 +21,8 @@ const Timer = () => {
   const listDaysInit = getDay(tasks);
   const [listDays, setListDays] = useState(listDaysInit);
   const [listTasks, setListTasks] = useState(tasks);
-
   const [selectDate, setSelectDate] = useState("");
-
+  const [visible, setVisible] = useState(3)
   const getDateFilter = (value) => {
     setSelectDate(moment(value).format("DD/MM/YYYY"));
   };
@@ -32,6 +31,10 @@ const Timer = () => {
     setSelectDate("");
   };
 
+  const showMore = () => {
+
+    setVisible((item) => item + 3)
+  }
   useEffect(() => {
     setListDays(getDay(tasks));
     setListTasks(tasks);
@@ -47,24 +50,36 @@ const Timer = () => {
   }, [tasks, selectDate]);
 
   return (
-    <div>
-      <DateFilter getDateFilter={getDateFilter} clearDate={clearDate} />
+    <Grid container>
+      <Grid item xs={12}>
+        <DateFilter getDateFilter={getDateFilter} clearDate={clearDate} />
+      </Grid>
 
-      {listDays.map((day, index) => {
-        const tasksInDay = listTasks.filter(
-          (task) => moment(task.start_time).format("DD/MM/YYYY") === day
-        );
+      <Grid item xs={12}>
+        {listDays.slice(0, visible).map((day, index) => {
+          const tasksInDay = listTasks.filter(
+            (task) => moment(task.start_time).format("DD/MM/YYYY") === day
+          );
 
-        return (
-          <Box px={2} pt={1} key={index}>
-            <Typography variant="subtitle1" gutterBottom>
-              {day === moment().format("DD/MM/YYYY") ? "Today" : day}
-            </Typography>
-            <ListTask tasksInDay={tasksInDay} />
-          </Box>
-        );
-      })}
-    </div>
+          return (
+            <Box px={2} pt={1} key={index}>
+              <Typography variant="subtitle1" gutterBottom>
+                {day === moment().format("DD/MM/YYYY") ? "Today" : day}
+              </Typography>
+              <ListTask tasksInDay={tasksInDay} />
+            </Box>
+          );
+        })}
+      </Grid>
+      <Grid
+        item
+        xs={12} style={{ textAlign:"center"}}
+      >
+        <Button variant="contained" color="primary" onClick={showMore}>
+          Load More
+        </Button>
+      </Grid>
+    </Grid>
   );
 };
 

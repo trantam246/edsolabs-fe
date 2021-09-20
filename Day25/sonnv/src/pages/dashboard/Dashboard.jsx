@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
 function Dashboard() {
   const classes = useStyles();
   const user = JSON.parse(localStorage.getItem("user"));
-  const { playing } = useTaskContext();
   const { loginSuccess } = useUserContext();
 
   return (
@@ -41,7 +40,6 @@ function Dashboard() {
                 <Timer />
               </Route>
               <Route path="/report">
-                <AddTask />
                 <Report />
               </Route>
               <Route path="/login" component={Login}></Route>
