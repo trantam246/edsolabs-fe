@@ -36,14 +36,6 @@ function Time(props) {
     }
   }, [description, time, tag, newTask]);  
 
-  // const fetchNewTask = async () => {
-  //   try {
-  //     await TasksApi.postTask(newTask);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
-  // fetchNewTask();
   return (
     <Box>
       <Box display="flex" p={2} borderBottom={2} mt={0} mb={0}>

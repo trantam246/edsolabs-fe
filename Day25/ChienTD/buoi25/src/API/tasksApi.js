@@ -9,6 +9,16 @@ const TasksApi = {
   postTask(params) {
     const url = "/tasks";
     return axiosClient.post(url, params);
+  },
+
+  deleteTask(id) {
+    const url = "/tasks/" + id;
+    return axiosClient.delete(url);
+  },
+
+  putTask(id, params) {
+    const url = "/tasks/" + id;
+    return axiosClient.put(url, params);
   }
 };
 export default TasksApi;

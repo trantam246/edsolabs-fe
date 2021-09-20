@@ -26,7 +26,7 @@ const OneTask = (props) => {
         <Box component="h5" m={0} display="flex" alignItems="center">
           {valueTask.tags.map((x) => {
             return listTags.map((o) => {
-              if (x === o.id) {
+              if (x == o.id) {
                 return <Box component="span" key={o.id}> {o.name}, </Box>;
               }
             });

@@ -18,37 +18,37 @@ function App() {
     setIsLogin(props);
   };
 
-  useEffect(() => {
-    const fetchTasksList = async () => {
-      try {
-        const response = await TasksApi.getAll();
-        setListTaks(response);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchTasksList = async () => {
+  //     try {
+  //       const response = await TasksApi.getAll();
+  //       setListTaks(response);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
 
-    const fetchUsersList = async () => {
-      try {
-        const response = await UsersApi.getAll();
-        setListUsers(response);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  //   const fetchUsersList = async () => {
+  //     try {
+  //       const response = await UsersApi.getAll();
+  //       setListUsers(response);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
 
-    const fetchTagsList = async () => {
-      try {
-        const response = await TagsApi.getAll(); 
-        setListTags(response);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchTasksList();
-    fetchUsersList();
-    fetchTagsList();
-  }, []);
+  //   const fetchTagsList = async () => {
+  //     try {
+  //       const response = await TagsApi.getAll(); 
+  //       setListTags(response);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   fetchTasksList();
+  //   fetchUsersList();
+  //   fetchTagsList();
+  // }, []);
 
   return (
     <DataContextProvider>

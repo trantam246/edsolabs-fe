@@ -7,7 +7,6 @@ import {DataContext} from '../context/dataContent'
 
 function Home(props) {
   const dataTasks = useContext(DataContext);
-  console.log('home', dataTasks)
   return (
     <Router>
       <Box width="100%" height="100vh" display="flex">

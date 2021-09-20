@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Box from "@mui/material/Box";
 import { TextField } from "@mui/material";
 import Button from "@mui/material/Button";
+import { DataContext } from "../context/dataContent";
 
 function Login(props) {
   const [user, setUser] = useState("");
@@ -9,32 +10,18 @@ function Login(props) {
   const [isLogin, setIsLogin] = useState(false);
   const [isAuthLogin, setIsAuthLogin] = useState(-1);
   const [userLocalStore, setUserLocalStore] = useState();
-  const { dataUser } = props;
+  const {listUsers} = useContext(DataContext);
+
   const changeUser = (e) => {
     setUser(e.target.value);
   };
   const changePass = (e) => {
     setPass(e.target.value);
   };
-  // const dataLocalStore = () => {
-  //   if (userLocalStore) {
-  //     const tkLocal = userLocalStore.username;
-  //     const mkLocal = userLocalStore.password;
-  //     if (
-  //       dataUser.findIndex(
-  //         (x) => x.username === tkLocal && x.password === mkLocal
-  //       ) >= 0
-  //     ) {
-  //       setIsLogin(userLocalStore);
-  //       props.onLogin(userLocalStore);
-  //     }
-  //   }
-  // };
   const handlerSubmit = (e) => {
     e.preventDefault();
-    props.onLogin(dataUser[isLogin]);
-    if (dataUser[isLogin] === undefined) {
-      alert(dataUser[isLogin])
+    props.onLogin(listUsers[isLogin]);
+    if (listUsers[isLogin] === undefined) {
       alert("tài khoản hoặc mật khẩu không chính xác");
     }
   };
@@ -44,12 +31,12 @@ function Login(props) {
       const tkLocal = userLocalStore.username;
       const mkLocal = userLocalStore.password;
       if (
-        dataUser.findIndex(
+        listUsers.findIndex(
           (x) => x.username === tkLocal && x.password === mkLocal
         ) >= 0
       ) {
         setIsLogin(
-          dataUser.findIndex(
+          listUsers.findIndex(
             (x) => x.username === tkLocal && x.password === mkLocal
           )
         );
@@ -57,18 +44,18 @@ function Login(props) {
       }
     } else {
       setIsAuthLogin(
-        dataUser.findIndex((x) => x.username === user && x.password === pass)
+        listUsers.findIndex((x) => x.username === user && x.password === pass)
       );
       if (isAuthLogin < 0) {
         setIsLogin(false);
       } else {
         setIsLogin(isAuthLogin);
-        const tk = dataUser[isAuthLogin];
+        const tk = listUsers[isAuthLogin];
         localStorage.setItem("user", JSON.stringify(tk));
         setUserLocalStore(tk);
       }
     }
-  }, [dataUser, isAuthLogin, user, pass, userLocalStore, props]);
+  }, [listUsers, isAuthLogin, user, pass, userLocalStore, props]);
 
   return (
     <Box
