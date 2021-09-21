@@ -1,0 +1,107 @@
+{
+  "tasks": [
+    {
+      "id": 2,
+      "description": "This is a second task",
+      "start_time": "2021-09-14 07:00:0",
+      "end_time": "2021-09-14 07:02:0",
+      "time_spent": 120,
+      "tags": [
+        3,
+        4
+      ],
+      "status": 1
+    },
+    {
+      "id": 3,
+      "description": "This is a 3 task",
+      "start_time": "2021-09-14 17:00:0",
+      "end_time": "2021-09-14 17:03:0",
+      "time_spent": 180,
+      "tags": [
+        1,
+        4
+      ],
+      "status": 1
+    },
+    {
+      "id": 4,
+      "description": "This is a 4 task",
+      "start_time": "2021-09-15 19:00:0",
+      "end_time": "2021-09-15 19:01:0",
+      "time_spent": 60,
+      "tags": [
+        1,
+        2
+      ],
+      "status": 1
+    },
+    {
+      "id": 5,
+      "description": "This is a 5 task",
+      "start_time": "2021-09-17 17:00:0",
+      "end_time": "2021-09-17 17:01:0",
+      "time_spent": 1,
+      "tags": [
+        3,
+        2
+      ],
+      "status": 1,
+      "createdAt": 1631969771271
+    },
+    {
+      "description": "card",
+      "start_time": "2021-09-21 02:54:41",
+      "end_time": "2021-09-21 02:57:48",
+      "time_spent": 156,
+      "tags": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "status": 1,
+      "id": 29
+    },
+    {
+      "description": "card 1",
+      "start_time": "2021-09-21 03:00:00",
+      "end_time": "2021-09-21 03:00:15",
+      "time_spent": 14,
+      "tags": [
+        1,
+        2,
+        3
+      ],
+      "status": 1,
+      "id": 30
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "Online"
+    },
+    {
+      "id": 2,
+      "name": "Meeting"
+    },
+    {
+      "id": 3,
+      "name": "Training"
+    },
+    {
+      "id": 4,
+      "name": "Coding"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "demo",
+      "avatar": "https://i0.wp.com/triethocduongpho.net/wp-content/uploads/2019/02/m%C3%A9o-quan-t%C3%A2m.png?fit=768%2C526&ssl=1",
+      "fullname": "Mr Admin"
+    }
+  ]
+}
