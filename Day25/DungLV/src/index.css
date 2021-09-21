@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Glory", sans-serif !important;
+}
+a {
+  text-decoration: none;
+  color: black;
+  transition: linear 0.3s;
+}
+a:hover {
+  background-color: #e0e0e0;
+  transition: linear 0.3s;
+}

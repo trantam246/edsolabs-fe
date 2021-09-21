@@ -1,0 +1,24 @@
+
+.nav{
+    padding: 50px;
+    height: 100vh;
+}
+.nav__item{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+.nav__item:hover{
+    color: rgb(243, 160, 6);
+    
+}
+.active{
+    color: rgb(243, 160, 6);
+}
+@media only screen  and (max-width: 767px) {
+    .nav{
+        padding: 50px;
+        height: auto;
+    }
+}

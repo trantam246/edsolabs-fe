@@ -7,8 +7,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import taskApi from "../../apis/taskApi"
 import dayjs from "dayjs"
 import FilterOptions from './FilterOptions';
-// import moment from 'moment'
-
+import FilterOptions from './FilterOptions';
 
 const useStyles = makeStyles(() => ({
   main__header: {
@@ -59,9 +58,6 @@ const ReportPage = (props) => {
     training: filterToday.reduce((pre, cur) => pre + cur.training, 0),
     coding: filterToday.reduce((pre, cur) => pre + cur.coding, 0),
   }))[0]
-
-  // console.log(moment().subtract(1, 'day').)
-  // const filterYesterday = timerTask.filter()
 
   return (
     <>

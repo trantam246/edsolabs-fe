@@ -13,7 +13,6 @@ import EqualizerIcon from '@material-ui/icons/Equalizer';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import userApi from "../../apis/userApi"
 
-
 const drawerWidth = '20rem'
 const useStyles = makeStyles((theme) => ({
     root: {

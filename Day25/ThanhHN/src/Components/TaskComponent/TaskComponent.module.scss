@@ -1,0 +1,47 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 2px solid #000;
+  font-weight: 500;
+
+  &:last-child {
+    border: none;
+  }
+
+  .detail {
+    display: flex;
+    align-items: center;
+
+    .action {
+      & > span {
+        margin-left: 10px;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .date {
+      margin: 0 20px;
+    }
+
+    .listIcon {
+      margin-left: 20px;
+      cursor: pointer;
+      position: relative;
+
+      .deleteTask {
+        position: absolute;
+      }
+
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+}

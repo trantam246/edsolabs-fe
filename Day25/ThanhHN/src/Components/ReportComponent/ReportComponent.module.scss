@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+
+  .title {
+    font-size: 24px;
+    padding: 30px;
+  }
+
+  .timeCheck {
+    display: flex;
+    align-items: center;
+    border: 2px solid #000;
+    height: 30px;
+    margin-right: 30px;
+    cursor: pointer;
+    position: relative;
+
+    span {
+      padding: 0 5px;
+    }
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

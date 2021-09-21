@@ -1,0 +1,66 @@
+.wrapper {
+  position: relative;
+
+  input {
+    padding: 35px 200px 35px 20px;
+    border: 2px solid #000;
+    font-size: 24px;
+    font-weight: 500;
+    border-left: none;
+  }
+
+  fieldset {
+    border: none;
+  }
+
+  .headerDetail {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    top: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 20px;
+
+    .iconTag {
+      position: relative;
+      cursor: pointer;
+
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .time {
+      margin: 0 20px;
+      font-size: 20px;
+    }
+
+    .audioIcon {
+      cursor: pointer;
+
+      svg {
+        width: 35px;
+        height: 35px;
+      }
+
+      .stop {
+        margin-right: -5px;
+        margin-top: -5px;
+
+        svg {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}
+
+.report {
+  .headerDetail {
+    display: none;
+  }
+}
