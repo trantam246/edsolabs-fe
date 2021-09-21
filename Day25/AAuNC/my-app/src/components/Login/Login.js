@@ -2,7 +2,6 @@ import { Button, Grid, Paper, FormGroup, TextField } from '@material-ui/core';
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 
-
 export default function Login() {
   // account from form
   const [username, setUsername] = useState('');
@@ -18,15 +17,7 @@ export default function Login() {
       .then(data => {
         setUsers([...data])
       });
-
   }, [])
-
-  // const { from } = this.props.location.state || { from: { pathname: '/' } }
-  // const { redirectToReferrer } = this.state
-
-  // if (redirectToReferrer === true) {
-  //   <Redirect to={from} />
-  // }
 
   function handleSubmit(e) {
     let ok = false;
