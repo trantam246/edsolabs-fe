@@ -12,8 +12,9 @@ import {
 import { useTaskContext } from 'contexts/TaskContext';
 import BarChart from 'components/bar-chart/BarChart';
 import DoughnutChart from 'components/doughnut-chart/DoughnutChart';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTagContext } from 'contexts/TagContext';
+import moment from 'moment';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -24,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
   },
 }));
+
+const firstDay = moment(moment().startOf('week').toDate()).format('DD/MM/YYYY');
+const lastDay = moment(moment().endOf('week').toDate()).format('DD/MM/YYYY');
 
 const Productivity = () => {
   return (
@@ -40,29 +44,56 @@ const Productivity = () => {
 };
 
 const Report = () => {
+  const classes = useStyles();
   const { playing, tasks } = useTaskContext();
 
   const { tags, callSnackbar } = useTagContext();
 
-  const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState('All');
+  const [valueFilter, setValueFilter] = useState(null);
 
   const handleChangeFilter = (event) => {
     setFilter(event.target.value);
-    callSnackbar(`${event.target.value} - Functions in development`, 'warning');
+    setValueFilter(null);
+
+    if (event.target.value === 'Today') {
+      setValueFilter(moment().format('DD/MM/YYYY'));
+      callSnackbar(`Time do tags in ${event.target.value}`, 'success');
+    } else {
+      callSnackbar(
+        `${event.target.value} - Functions in development`,
+        'warning'
+      );
+    }
   };
 
-  const classes = useStyles();
-
-  const minsTags = () => {
+  const getTagsInTasks = () => {
     // Lấy ra danh sách tags trong mỗi task, và thời gian cho mỗi tag
     // thời gian mỗi tag = tổng thời gian chia số tag, dổi về giờ
-    const tagsInTask = tasks.map((task) => ({
-      tags: task.tags, //id
-      time_spent_tag:
-        tags.time_spent !== null
-          ? task.time_spent / task.tags.length / 3600
-          : 0, //mins
-    }));
+    // ngày thực hiện task này
+    const tagsInTask = tasks.map((task) => {
+      const o = {
+        tags: task.tags,
+        time_spent_tag:
+          tags.time_spent !== null
+            ? task.time_spent / task.tags.length / 3600
+            : 0, //mins
+        dayDoTask: moment(task.start_time).format('DD/MM/YYYY'),
+      };
+      return o;
+    });
+
+    return tagsInTask;
+  };
+
+  const minsTags = () => {
+    let tagsInTask = getTagsInTasks();
+
+    if (filter === 'Today') {
+      tagsInTask = getTagsInTasks().filter(
+        (task) => task.dayDoTask === valueFilter
+      );
+    }
 
     // console.log(tagsInTask);
 
@@ -70,7 +101,8 @@ const Report = () => {
     const spentTimeEachTag = tags.map((tag) => ({
       id: tag.id,
       name: tag.name,
-      time_spent: 0,
+      total_time_spent: 0,
+      day_do_tag: [],
     }));
 
     // duyệt từng task,
@@ -79,7 +111,11 @@ const Report = () => {
       spentTimeEachTag.map((tag) => {
         // nếu trong danh sách task.tags có id của tag thì cộng thêm time_spent cho tag đó
         if (task.tags.includes(tag.id)) {
-          tag.time_spent += task.time_spent_tag;
+          tag.total_time_spent += task.time_spent_tag;
+          tag.day_do_tag.push({
+            day_name: task.dayDoTask,
+            time_spent: task.time_spent_tag,
+          });
         }
       });
     });
@@ -92,13 +128,17 @@ const Report = () => {
 
   const totalTimeSpent = () => {
     const total = spentTimeEachTag.reduce(
-      (prev, curr) => prev + curr.time_spent,
+      (prev, curr) => prev + curr.total_time_spent,
       0
     );
     return total.toFixed(2);
   };
 
-  // console.log(totalTimeSpent());
+  useEffect(() => {
+    // console.log(valueFilter);
+    setSpentTimeEachTag(minsTags());
+  }, [valueFilter]);
+
   return (
     <div>
       {!playing && <Productivity />}
@@ -116,6 +156,7 @@ const Report = () => {
               value={filter}
               onChange={handleChangeFilter}
             >
+              <MenuItem value={'All'}>All</MenuItem>
               <MenuItem value={'Today'}>Today</MenuItem>
               <MenuItem value={'Yesterday'}>Yesterday</MenuItem>
               <MenuItem value={'This week'}>This week</MenuItem>

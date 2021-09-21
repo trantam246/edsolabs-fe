@@ -7,10 +7,10 @@ import {
   Typography,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { useTagContext } from 'contexts/TagContext';
 import { useUserContext } from 'contexts/UserContext';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useTagContext } from 'contexts/TagContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
