@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box } from "@mui/system";
 import OneTask from "./OneTask";
 import moment from "moment";
 
 const TaskADay = (props) => {
-  const { filterDay, listTasks } = props.dataADay;
+  const { filterDay, listTasks, valueFiterDate } = props.dataADay;
+  const [dateFilter, setDateFilter] = useState([]);
   const tasks = [...listTasks];
+  // if (valueFiterDate) {
+  //   console.log('filter>>', valueFiterDate)
+  //   setDateFilter(filterDay.filter(x => moment(x).format("DD/MM/YYYY") === moment(valueFiterDate).format("DD/MM/YYYY")))
+  // } else setDateFilter(filterDay)
   return (
     <Box mt={3}>
       {filterDay.map((element) => {

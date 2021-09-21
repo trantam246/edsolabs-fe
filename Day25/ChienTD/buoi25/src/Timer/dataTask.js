@@ -2,10 +2,12 @@ import React, { useContext, useState } from "react";
 import { Box } from "@mui/system";
 import { DataContext } from "../context/dataContent";
 import TaskADay from "./taskADay";
+import moment from "moment";
 
-function DataTask() {
+function DataTask(props) {
   const dataTasks = useContext(DataContext);
   const { listTasks } = dataTasks;
+  const {valueFiterDate} = props;
 
   let filterDay = [];
   listTasks.forEach((x) => {
@@ -13,9 +15,13 @@ function DataTask() {
         filterDay.push(x.start_time)
     }
   });
+  if (valueFiterDate) {
+    filterDay = filterDay.filter(x =>  moment(x).format("DD/MM/YYYY") === moment(valueFiterDate).format("DD/MM/YYYY"))
+  }
   const dataADay = {
     filterDay,
-    listTasks
+    listTasks,
+    valueFiterDate
   }
   return (
       <Box>

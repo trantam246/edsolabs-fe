@@ -11,6 +11,7 @@ function Time(props) {
   const [description, SetDescription] = useState();
   const [tag, setTag] = useState([]);
   const [time, setTime] = useState();
+  const [valueFiterDate, setValueFiterDate] = useState();
 
   // Sự kiện nhận dữ liệu
   const changeDescription = (e) => {
@@ -25,6 +26,11 @@ function Time(props) {
     setTime(props);
   }
 
+  const handleFilterDate = (e) => {
+    e.preventDefault();
+    setValueFiterDate(e.target.value);
+    console.log(valueFiterDate)
+  }
   return (
     <Box>
       <Box display="flex" p={2} borderBottom={2} mt={0} mb={0}>
@@ -49,9 +55,9 @@ function Time(props) {
       </Box>
       <Box p={5}>
         <Box className="filter-date" textAlign="left" fontWeight="bold">
-          Data Filter: <Box component="input" type="date" />
+          Data Filter: <Box component="input" type="date" onChange={handleFilterDate}/>
         </Box>
-        <DataTask />
+        <DataTask valueFiterDate={valueFiterDate}/>
       </Box>
     </Box>
   );
