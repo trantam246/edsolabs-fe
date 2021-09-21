@@ -1,0 +1,19 @@
+@baseUrl =http://localhost:3004
+GET {{baseUrl}}/tasks
+
+###
+
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+{
+    "id": 2,
+    "description": "This is a second task",
+    "start_time": "2021-09-14 17:00:0",
+    "end_time": null,
+    "time_spent": null,
+    "tags": [
+      3,
+      4
+    ],
+    "status": 0
+}

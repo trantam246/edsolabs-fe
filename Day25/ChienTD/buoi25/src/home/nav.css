@@ -1,0 +1,8 @@
+.pointer {
+    cursor: pointer;
+}
+.tyle-link {
+    color: black;
+    text-decoration: none !important;
+    font-weight: bold;
+}
