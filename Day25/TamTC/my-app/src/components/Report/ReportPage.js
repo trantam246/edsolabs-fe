@@ -4,9 +4,10 @@ import BarChart from "./BarChart"
 import DoughnutChart from "./DoughnutChart"
 import Main from '../UI/Main'
 import { makeStyles } from "@material-ui/core/styles"
-import taskApi from "../../api/taskApi"
+import taskApi from "../../apis/taskApi"
 import dayjs from "dayjs"
 import FilterOptions from './FilterOptions';
+// import moment from 'moment'
 
 
 const useStyles = makeStyles(() => ({
@@ -59,13 +60,16 @@ const ReportPage = (props) => {
     coding: filterToday.reduce((pre, cur) => pre + cur.coding, 0),
   }))[0]
 
+  // console.log(moment().subtract(1, 'day').)
+  // const filterYesterday = timerTask.filter()
+
   return (
     <>
       <Header>Productivity report</Header>
       <Main className={classes.main__header}>
-        <DoughnutChart today={valueFilterToday}/>
+        <DoughnutChart today={valueFilterToday} />
         <BarChart today={valueFilterToday} />
-        <FilterOptions  />
+        <FilterOptions />
       </Main>
     </>
   )

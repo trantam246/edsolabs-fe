@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 import HeaderTimer from "./HeaderTimer"
 import MainTimer from "./MainTimer"
-import taskApi from "../../api/taskApi"
-import tagApi from "../../api/tagApi"
+import taskApi from "../../apis/taskApi"
+import tagApi from "../../apis/tagApi"
 
 const TimerPage = (props) => {
   const [task, setTask] = useState([])
