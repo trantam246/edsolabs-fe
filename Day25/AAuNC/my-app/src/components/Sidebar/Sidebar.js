@@ -12,8 +12,6 @@ export default function Sidebar() {
     let account = JSON.parse(localStorage.getItem('account'));
 
     const logOut = () => {
-        // localStorage.setItem('isLogged', 'false');
-        // localStorage.removeItem('account');
         localStorage.clear();
         history.push('/');
     }
@@ -25,13 +23,6 @@ export default function Sidebar() {
                     <CardHeader
                         avatar={<Avatar src={account.avatar} />}
                         title={account.fullname}
-                    />
-                }
-
-                {(isLogged === false || isLogged === null) &&
-                    <CardHeader
-                        avatar={<Avatar>A</Avatar>}
-                        title="Ngô Chung Á Âu"
                     />
                 }
 

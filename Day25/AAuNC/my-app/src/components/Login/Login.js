@@ -21,14 +21,21 @@ export default function Login() {
 
   }, [])
 
+  // const { from } = this.props.location.state || { from: { pathname: '/' } }
+  // const { redirectToReferrer } = this.state
+
+  // if (redirectToReferrer === true) {
+  //   <Redirect to={from} />
+  // }
+
   function handleSubmit(e) {
     let ok = false;
     e.preventDefault();
-    if(username == '') {
-      alert('Enter username') 
+    if (username == '') {
+      alert('Enter username')
       return;
     }
-    else if(password == '') {
+    else if (password == '') {
       alert('Enter password')
       return
     }
@@ -41,8 +48,8 @@ export default function Login() {
         }
       }
     }
-    
-    if(ok === true) history.replace('/timer');
+
+    if (ok === true) history.replace('/timer');
     else alert("Error information !!!")
   }
 
