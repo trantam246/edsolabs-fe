@@ -22,7 +22,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            {JSON.parse(localStorage.getItem('isLogged')) === true ? <Redirect to="/timer"/> : <Login />}
+            <Login />
           </Route>
           <PrivateRoute path='/timer' component={TimerPage} />
           <PrivateRoute path='/report' component={ReportPage} />
