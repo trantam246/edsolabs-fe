@@ -1,2 +1,0 @@
-# @name getAllTask
-GET  http://localhost:3004/api/tasks 
