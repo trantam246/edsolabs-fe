@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 import Tabs from "@mui/material/Tabs"
 import Tab from "@mui/material/Tab"
-import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import Header from "../header/Header"
 import Search from "../search/Search"
@@ -13,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
   container: {
     textAlign: "center",
     marginTop: "80px",
+    [`@media(max-width: 1023px)`]: {
+      padding:'0 !important'
+    },
   },
 
   box: {
@@ -52,8 +54,8 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+        <Box sx={{ div: 3 }}>
+          <Box>{children}</Box>
         </Box>
       )}
     </div>
@@ -75,19 +77,13 @@ function a11yProps(index) {
 
 export default function Home() {
   const classes = useStyles()
-
   const [value, setValue] = useState(0)
-  const [active, setActive] = useState(true)
   const handleChange = (event, newValue) => {
     setValue(newValue)
-  }
-  const handleClick = (e) => {
-    setActive(!active)
   }
   return (
     <>
       <Header />
-
       <Box sx={{ width: "100%" }} className={classes.container}>
         <Box className={classes.box}>
           <Tabs
@@ -99,14 +95,10 @@ export default function Home() {
             <Tab
               label="Students List"
               {...a11yProps(0)}
-              onClick={handleClick}
-              className={active ? `${classes.active}` : ""}
             />
             <Tab
               label="Teams"
               {...a11yProps(1)}
-              onClick={handleClick}
-              className={active ? "active" : ""}
             />
           </Tabs>
         </Box>

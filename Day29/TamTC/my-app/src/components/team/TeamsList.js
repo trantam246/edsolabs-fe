@@ -7,10 +7,18 @@ const useStyles = makeStyles((theme) => ({
   tables__list: {
     display: "flex",
     flexWrap: "wrap",
+    justifyContent: "center",
   },
   table: {
     width: "46%",
     margin: "20px",
+    [`@media(max-width: 1024px)`]: {
+      width: "44% !important",
+    },
+    [`@media(max-width: 767px)`]: {
+      width: "100% !important",
+      margin: "20px 4px",
+    },
   },
   title: {
     float: "left",
