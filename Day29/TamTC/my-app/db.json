@@ -1,0 +1,187 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "full_name": "Sampson Aucourte",
+      "gender": "M",
+      "rank": 5,
+      "dob": "2/3/1973"
+    },
+    {
+      "id": 2,
+      "full_name": "Elissa Dennis",
+      "gender": "M",
+      "rank": 3,
+      "dob": "6/19/2000"
+    },
+    {
+      "id": 3,
+      "full_name": "Ker Lamort",
+      "gender": "F",
+      "rank": 3,
+      "dob": "3/29/1975"
+    },
+    {
+      "id": 4,
+      "full_name": "Ludovika Cassley",
+      "gender": "F",
+      "rank": 1,
+      "dob": "2/21/1973"
+    },
+    {
+      "id": 5,
+      "full_name": "Neilla Riggs",
+      "gender": "M",
+      "rank": 1,
+      "dob": "6/19/1984"
+    },
+    {
+      "id": 6,
+      "full_name": "Hestia Charlson",
+      "gender": "F",
+      "rank": 1,
+      "dob": "9/29/1970"
+    },
+    {
+      "id": 7,
+      "full_name": "Tammy Littley",
+      "gender": "F",
+      "rank": 1,
+      "dob": "4/23/2003"
+    },
+    {
+      "id": 8,
+      "full_name": "Hettie Peerman",
+      "gender": "M",
+      "rank": 4,
+      "dob": "11/6/1976"
+    },
+    {
+      "id": 9,
+      "full_name": "Enrichetta Appleyard",
+      "gender": "F",
+      "rank": 3,
+      "dob": "2/11/1977"
+    },
+    {
+      "id": 10,
+      "full_name": "Waly Hayes",
+      "gender": "M",
+      "rank": 4,
+      "dob": "5/18/1975"
+    },
+    {
+      "id": 11,
+      "full_name": "Giulio Dabernott",
+      "gender": "F",
+      "rank": 2,
+      "dob": "7/4/1988"
+    },
+    {
+      "id": 12,
+      "full_name": "Dorothee Dilgarno",
+      "gender": "F",
+      "rank": 4,
+      "dob": "1/11/1987"
+    },
+    {
+      "id": 13,
+      "full_name": "Maiga South",
+      "gender": "M",
+      "rank": 5,
+      "dob": "7/31/2001"
+    },
+    {
+      "id": 14,
+      "full_name": "Lewiss Dukelow",
+      "gender": "F",
+      "rank": 2,
+      "dob": "8/2/1994"
+    },
+    {
+      "id": 15,
+      "full_name": "Terencio Hairon",
+      "gender": "F",
+      "rank": 3,
+      "dob": "9/8/1974"
+    },
+    {
+      "id": 16,
+      "full_name": "Mollie Keelinge",
+      "gender": "M",
+      "rank": 1,
+      "dob": "6/24/1980"
+    },
+    {
+      "id": 17,
+      "full_name": "Stephen Desborough",
+      "gender": "M",
+      "rank": 4,
+      "dob": "1/11/1988"
+    },
+    {
+      "id": 18,
+      "full_name": "Melisande Yea",
+      "gender": "F",
+      "rank": 2,
+      "dob": "5/1/2001"
+    },
+    {
+      "id": 19,
+      "full_name": "Loise Peart",
+      "gender": "F",
+      "rank": 2,
+      "dob": "5/1/1992"
+    },
+    {
+      "id": 20,
+      "full_name": "Johnath McPhee",
+      "gender": "F",
+      "rank": 5,
+      "dob": "10/7/1970"
+    },
+    {
+      "id": 21,
+      "full_name": "Arline Hutchens",
+      "gender": "F",
+      "rank": 2,
+      "dob": "10/14/1982"
+    },
+    {
+      "id": 22,
+      "full_name": "Odille Blaver",
+      "gender": "M",
+      "rank": 5,
+      "dob": "5/24/1977"
+    },
+    {
+      "id": 23,
+      "full_name": "Leila Lowen",
+      "gender": "M",
+      "rank": 5,
+      "dob": "12/13/1991"
+    },
+    {
+      "id": 24,
+      "full_name": "Thedrick Lissimore",
+      "gender": "F",
+      "rank": 3,
+      "dob": "12/3/1997"
+    },
+    {
+      "id": 25,
+      "full_name": "Ricardo Wisham",
+      "gender": "M",
+      "rank": 4,
+      "dob": "1/6/1999"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@gmail.com",
+      "password": "admin",
+      "fullname": "Administrator"
+    }
+  ]
+}
