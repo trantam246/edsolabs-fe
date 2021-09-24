@@ -1,5 +1,9 @@
 import React, { useContext, useState, useRef } from "react"
 import Box from "@mui/material/Box"
+import Select from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
 import SearchIcon from "@material-ui/icons/Search"
 import { makeStyles } from "@material-ui/core/styles"
 import Context from "../../context/Context"
@@ -58,7 +62,7 @@ export default function Search() {
     const nameRef = useRef()
     const ageRef = useRef()
 
-    const [gender, setGender] = useState("Male")
+    const [gender, setGender] = useState("")
     const handleChangeGender = (event) => {
         setGender(event.target.value)
     }
@@ -86,10 +90,22 @@ export default function Search() {
                     ref={nameRef}
                     placeholder="Search by name..."
                 />
-                <select name="" id="" onChange={handleChangeGender} className={classes.select}>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select>
+
+                <FormControl>
+                    <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={gender}
+                        className={classes.select}
+                        label="Gender"
+                        onChange={handleChangeGender}
+                    >
+                        <MenuItem value="Male">Male</MenuItem>
+                        <MenuItem value="Female">Female</MenuItem>
+
+                    </Select>
+                </FormControl>
                 <input
                     type="number"
                     id="age"

@@ -33,8 +33,8 @@ export default function TeamsList() {
     studentsList.forEach((s) => s.rank === idx + 1 && group.push(s))
     groups.push(group)
   })
-  
-  ranks.forEach(r => {
+
+  ranks.forEach((r) => {
     const allStudentsByGroup = []
     groups.map((o) => allStudentsByGroup.push(o.shift()))
     result.push(allStudentsByGroup)
