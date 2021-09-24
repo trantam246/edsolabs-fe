@@ -94,17 +94,18 @@ export default function StudentsList() {
           </TableBody>
         </Table>
       </TableContainer>
-      {studentsList?.slice(0, visible).length === visible && (
-        <Button
-          variant="contained"
-          color="primary"
-          className={classes.btn}
-          type="button"
-          onClick={loadMore}
-        >
-          Load more students
-        </Button>
-      )}
+      {studentsList?.slice(0, visible).length === visible &&
+        studentsList?.slice(visible).length > 0 && (
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.btn}
+            type="button"
+            onClick={loadMore}
+          >
+            Load more students
+          </Button>
+        )}
     </>
   )
 }
